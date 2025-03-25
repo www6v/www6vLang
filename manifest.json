@@ -1,0 +1,15 @@
+{
+  "name": "Language",
+  "short_name": "Language",
+  "start_url": "/Lang/",
+  "scope": "/Lang/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/Lang/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}

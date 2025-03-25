@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ConcurrentCollection on Language</title>
+    <link>http://localhost:1313/Lang/tags/concurrentCollection/</link>
+    <description>Recent content in ConcurrentCollection on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/Lang/tags/concurrentCollection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java并发容器总结</title>
+      <link>http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/</guid>
+      <description>&#xA;参考: # 关于Java集合的小抄 白衣 谈谈ConcurrentHashMap1.7和1.8的不同实现 占小狼 高性能队列——Disruptor 非阻塞算法在并发容器中的实现 程晓明 从volatile解读ConcurrentHashMap（jdk1.6.0）无锁读 绫萱 JAVA并发容器代码随读 BucketLi 聊聊并发（四）深入分析ConcurrentHashMap 方 腾飞 Java8 新特性之流式数据处理 深蓝至尊 不止JDK7的HashMap，JDK8的ConcurrentHashMap也会造成CPU 100% 朱小厮 朱忠华 </description>
+    </item>
+  </channel>
+</rss>

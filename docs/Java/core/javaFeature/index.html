@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="版本 # 版本 发布日期 JDK 19 2022/09/20 JDK 20 2023/03/21 版本&#43;特性 [1] # Java 1.4 # NIO（New I/O） Java 5（Java 1.5） # 泛型 自动装箱/拆箱 枚举类型 Java 7 # Try-with-resources Java SE 8（Java 8）- LTS长期支持版本 # Lambda 表达式：简化函数式编程。允许以更简洁的语法编写函数式接口的实例，使代码更加简洁。 Stream API：用于处理集合，支持函数式操作，如过滤、映射和聚合。 方法引用：允许直接引用现有方法或构造函数，避免了重复编写类似的代码。 接口的默认方法：在接口中提供默认实现，提高接口的灵活性。 时间 API：提供了一组强大的时间操作类，简化了日期和时间的操作。 重复注解：允许在同一个地方多次声明同一个注解，提高了代码的可读性。 CompletableFuture 类：简化异步编程，提供更好的错误处理和异常处理机制。 Nashorn 引擎：提供了一种基于 JavaScript 的解决方案，允许将 JavaScript 代码嵌入到 Java 应用程序中。 Optional 类：减少空指针异常，提高代码可读性。 Java SE 9（Java 9） # 模块系统（Project Jigsaw）：将 Java 的庞大代码库划分为可重用的模块，简化大型应用的构建和维护。 JShell：Java 的交互式命令行工具，用于快速尝试和测试 Java 代码片段。 新的集合工厂方法：方便地创建不可变集合，如 List.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Java/core/javaFeature/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="Java Feature">
+  <meta property="og:description" content="版本 # 版本 发布日期 JDK 19 2022/09/20 JDK 20 2023/03/21 版本&#43;特性 [1] # Java 1.4 # NIO（New I/O） Java 5（Java 1.5） # 泛型 自动装箱/拆箱 枚举类型 Java 7 # Try-with-resources Java SE 8（Java 8）- LTS长期支持版本 # Lambda 表达式：简化函数式编程。允许以更简洁的语法编写函数式接口的实例，使代码更加简洁。 Stream API：用于处理集合，支持函数式操作，如过滤、映射和聚合。 方法引用：允许直接引用现有方法或构造函数，避免了重复编写类似的代码。 接口的默认方法：在接口中提供默认实现，提高接口的灵活性。 时间 API：提供了一组强大的时间操作类，简化了日期和时间的操作。 重复注解：允许在同一个地方多次声明同一个注解，提高了代码的可读性。 CompletableFuture 类：简化异步编程，提供更好的错误处理和异常处理机制。 Nashorn 引擎：提供了一种基于 JavaScript 的解决方案，允许将 JavaScript 代码嵌入到 Java 应用程序中。 Optional 类：减少空指针异常，提高代码可读性。 Java SE 9（Java 9） # 模块系统（Project Jigsaw）：将 Java 的庞大代码库划分为可重用的模块，简化大型应用的构建和维护。 JShell：Java 的交互式命令行工具，用于快速尝试和测试 Java 代码片段。 新的集合工厂方法：方便地创建不可变集合，如 List.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>Java Feature | Language</title>
+<link rel="icon" href="/Lang/favicon.png" >
+<link rel="manifest" href="/Lang/manifest.json">
+<link rel="canonical" href="http://localhost:1313/Lang/docs/Java/core/javaFeature/">
+<link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/Lang/fuse.min.js"></script>
+  <script defer src="/Lang/en.search.min.695578ac24c4439a907f39eaa3177cccd3969cdcb92b1d5ed4cba926be783c5a.js" integrity="sha256-aVV4rCTEQ5qQfznqoxd8zNOWnNy5Kx1e1MupJr54PFo=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Java/core/javaFeature/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/Lang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4dbd9973c314c925060bb22db712a12c" class="toggle" checked />
+    <label for="section-4dbd9973c314c925060bb22db712a12c" class="flex justify-between">
+      <a role="button" class="">Core</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaFeature/" class="active">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0f6298b2a160495a65e02125b7bede8" class="toggle"  />
+    <label for="section-f0f6298b2a160495a65e02125b7bede8" class="flex justify-between">
+      <a role="button" class="">并发</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/cancelAndShutdown/" class="">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fcbc45d62c50e38c77722e909500d5db" class="toggle"  />
+    <label for="section-fcbc45d62c50e38c77722e909500d5db" class="flex justify-between">
+      <a role="button" class="">Other</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangStudy/" class="">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangSlice/" class="">Golang基础-Slice</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMemoryModel/" class="">Golang Rumtime-内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasic/" class="">Golang 基础</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangGMP/" class="">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/Lang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Java Feature</h3>
+
+  <label for="toc-control">
+    
+    <img src="/Lang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#版本">版本</a></li>
+    <li><a href="#版本特性-1">版本+特性 [1]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#java-14">Java 1.4</a></li>
+            <li><a href="#java-5java-15">Java 5（Java 1.5）</a></li>
+            <li><a href="#java-7">Java 7</a></li>
+            <li><a href="#java-se-8java-8--lts长期支持版本">Java SE 8（Java 8）- LTS长期支持版本</a></li>
+            <li><a href="#java-se-9java-9">Java SE 9（Java 9）</a></li>
+            <li><a href="#java-se-10java-10">Java SE 10（Java 10）</a></li>
+            <li><a href="#java-se-11java-11-lts长期支持版本">Java SE 11（Java 11）-LTS长期支持版本</a></li>
+            <li><a href="#java-se-12java-12">Java SE 12（Java 12）</a></li>
+            <li><a href="#java-se-13-java-13">Java SE 13 （Java 13）</a></li>
+            <li><a href="#java-se-14-java-14">Java SE 14 （Java 14）</a></li>
+            <li><a href="#java-se-15-java-15">Java SE 15 （Java 15）</a></li>
+            <li><a href="#java-se-16-java-16">Java SE 16 （Java 16）</a></li>
+            <li><a href="#java-se-17java-17-lts长期支持版本">Java SE 17（Java 17）-LTS长期支持版本</a></li>
+            <li><a href="#java-se-18java-182">Java SE 18（Java 18）[2]</a></li>
+            <li><a href="#java-se-19java-19-3">Java SE 19（Java 19） [3]</a></li>
+            <li><a href="#java-se-20java-20-4">Java SE 20（Java 20） [4]</a></li>
+            <li><a href="#java-se-21java-21-5">Java SE 21（Java 21） [5]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#特性-8">特性 [8]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#文字块-text-blocks---jdk-13-jdk-15">文字块 text blocks |  JDK 13-JDK 15</a></li>
+            <li><a href="#record--档案类-不可变---jdk14-jdk16">record  档案类 [不可变] |  JDK14-JDK16</a></li>
+            <li><a href="#sealed-classes-封闭类---扩展性----jdk-15-jdk-17">sealed classes 封闭类   [扩展性] |   JDK 15-JDK 17</a></li>
+            <li><a href="#类型匹配-切除臃肿的强制转换--jdk-14-jdk-16">类型匹配 [切除臃肿的强制转换] | JDK 14-JDK 16</a></li>
+            <li><a href="#switch-表达式-简化多情景操作---jdk-12-jdk-14">switch 表达式 [简化多情景操作] |  JDK 12-JDK 14</a></li>
+            <li><a href="#switch匹配-适配不同的类型----jdk-17-21">switch匹配 [适配不同的类型]  |  JDK 17-21</a></li>
+            <li><a href="#外部内存接口--jdk18-">外部内存接口 | JDK18-?</a></li>
+            <li><a href="#外部函数接口取代java本地接口---jdk-17-">外部函数接口[取代Java本地接口] |  JDK 17-?</a></li>
+            <li><a href="#gc">GC</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<h1 id="版本">
+  版本
+  <a class="anchor" href="#%e7%89%88%e6%9c%ac">#</a>
+</h1>
+<p><img src="./images/version.jpg" alt="version.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>发布日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JDK 19</td>
+<td>2022/09/20</td>
+</tr>
+<tr>
+<td>JDK 20</td>
+<td>2023/03/21</td>
+</tr>
+</tbody>
+</table>
+<h1 id="版本特性-1">
+  版本+特性 [1]
+  <a class="anchor" href="#%e7%89%88%e6%9c%ac%e7%89%b9%e6%80%a7-1">#</a>
+</h1>
+<h3 id="java-14">
+  Java 1.4
+  <a class="anchor" href="#java-14">#</a>
+</h3>
+<ul>
+<li>NIO（New I/O）</li>
+</ul>
+<h3 id="java-5java-15">
+  Java 5（Java 1.5）
+  <a class="anchor" href="#java-5java-15">#</a>
+</h3>
+<ul>
+<li>泛型</li>
+<li>自动装箱/拆箱</li>
+<li>枚举类型</li>
+</ul>
+<h3 id="java-7">
+  Java 7
+  <a class="anchor" href="#java-7">#</a>
+</h3>
+<ul>
+<li>Try-with-resources</li>
+</ul>
+<h3 id="java-se-8java-8--lts长期支持版本">
+  Java SE 8（Java 8）- LTS长期支持版本
+  <a class="anchor" href="#java-se-8java-8--lts%e9%95%bf%e6%9c%9f%e6%94%af%e6%8c%81%e7%89%88%e6%9c%ac">#</a>
+</h3>
+<ul>
+<li><strong>Lambda 表达式</strong>：简化函数式编程。允许以更简洁的语法编写函数式接口的实例，使代码更加简洁。</li>
+<li><strong>Stream API</strong>：用于处理集合，支持函数式操作，如过滤、映射和聚合。</li>
+<li>方法引用：允许直接引用现有方法或构造函数，避免了重复编写类似的代码。</li>
+<li><strong>接口的默认方法</strong>：在接口中提供默认实现，提高接口的灵活性。</li>
+<li>时间 API：提供了一组强大的时间操作类，简化了日期和时间的操作。</li>
+<li>重复注解：允许在同一个地方多次声明同一个注解，提高了代码的可读性。</li>
+<li><strong>CompletableFuture 类</strong>：简化异步编程，提供更好的错误处理和异常处理机制。</li>
+<li>Nashorn 引擎：提供了一种基于 JavaScript 的解决方案，允许将 JavaScript 代码嵌入到 Java 应用程序中。</li>
+<li><strong>Optional 类</strong>：减少空指针异常，提高代码可读性。</li>
+</ul>
+<h3 id="java-se-9java-9">
+  Java SE 9（Java 9）
+  <a class="anchor" href="#java-se-9java-9">#</a>
+</h3>
+<ul>
+<li><strong>模块系统（Project Jigsaw）</strong>：将 Java 的庞大代码库划分为可重用的模块，简化大型应用的构建和维护。</li>
+<li>JShell：Java 的交互式命令行工具，用于快速尝试和测试 Java 代码片段。</li>
+<li>新的集合工厂方法：方便地创建不可变集合，如 List.of()、Set.of() 和 Map.of()。</li>
+</ul>
+<h3 id="java-se-10java-10">
+  Java SE 10（Java 10）
+  <a class="anchor" href="#java-se-10java-10">#</a>
+</h3>
+<ul>
+<li><strong>局部变量类型推断</strong>：使用 var 关键字自动推断局部变量的类型，简化代码。</li>
+<li>垃圾收集器接口改进：提高了垃圾收集器的可插拔性和灵活性。</li>
+</ul>
+<h3 id="java-se-11java-11-lts长期支持版本">
+  Java SE 11（Java 11）-LTS长期支持版本
+  <a class="anchor" href="#java-se-11java-11-lts%e9%95%bf%e6%9c%9f%e6%94%af%e6%8c%81%e7%89%88%e6%9c%ac">#</a>
+</h3>
+<ul>
+<li>新的 HTTP 客户端 API：支持 HTTP/2 和 WebSocket，提供了更现代化的编程方式。</li>
+<li>改进的垃圾收集：引入了 <strong>ZGC</strong> 和 Epsilon 垃圾收集器。</li>
+<li>String 类的新方法：如 lines()、isBlank()、strip() 等。</li>
+</ul>
+<h3 id="java-se-12java-12">
+  Java SE 12（Java 12）
+  <a class="anchor" href="#java-se-12java-12">#</a>
+</h3>
+<ul>
+<li><strong>switch 表达式</strong>：允许在 switch 语句中使用表达式，提高了代码的可读性和简洁性。</li>
+<li>改进的字符串类：提供了一些新的方法，使得字符串的操作更加方便和高效。</li>
+<li>Shenandoah 垃圾回收器：提供了一种低停顿时间的垃圾回收器，适用于大型堆内存的应用程序。</li>
+<li>微基准测试套件：提供了一种用于快速测试性能的微基准测试框架。</li>
+<li>JDK 源代码重构：对 JDK 源代码进行了重构，提高了代码的可读性和维护性。</li>
+</ul>
+<h3 id="java-se-13-java-13">
+  Java SE 13 （Java 13）
+  <a class="anchor" href="#java-se-13-java-13">#</a>
+</h3>
+<ul>
+<li><strong>文本块</strong>：允许以更简洁的语法创建多行字符串，提高了代码的可读性和简洁性。</li>
+<li>改进的 switch 表达式：允许在 switch 语句中使用表达式，提供更好的类型推断和更灵活的写法。</li>
+<li>ZGC 垃圾回收器改进：提高了 ZGC 垃圾回收器的性能和可靠性。</li>
+<li>应用程序类数据共享改进：提高了应用程序类数据共享的性能和效率。</li>
+</ul>
+<h3 id="java-se-14-java-14">
+  Java SE 14 （Java 14）
+  <a class="anchor" href="#java-se-14-java-14">#</a>
+</h3>
+<p>2020年3月17日</p>
+<ul>
+<li>instanceof 模式匹配：允许在 instanceof 操作符中使用模式匹配，提高了代码的简洁性和可读性。</li>
+<li><strong>Records 类</strong>：提供了一种更简单和安全的数据类的定义方式。</li>
+<li>Switch 表达式增强：允许使用箭头操作符(-&gt;)作为 lambda 表达式的简写语法。</li>
+<li>文本块增强：允许在文本块中使用嵌入式表达式，使得文本块更加灵活和强大。</li>
+<li>改进的 NullPointerException 信息：提供更详细的 NullPointerException 信息。</li>
+</ul>
+<h3 id="java-se-15-java-15">
+  Java SE 15 （Java 15）
+  <a class="anchor" href="#java-se-15-java-15">#</a>
+</h3>
+<ul>
+<li><strong>隐式的类文件</strong>：允许在 Java 源代码中定义多个类，而不需要单独的类文件。</li>
+<li>改进的文本块：允许在文本块中使用转义字符和 Unicode 转义，提高了文本块的灵活性和可读性。</li>
+<li>改进的 switch 表达式：允许在 switch 语句中使用多个匹配项，提供更灵活的写法。</li>
+<li><strong>Sealed 类和接口</strong>：允许控制哪些类或接口可以继承或实现该类或接口，提高了代码的安全性和可维护性。</li>
+<li>其他改进：包括增强的 ZGC 垃圾回收器、改进的内存管理、新增的 Unix 域套接字 API 等。</li>
+</ul>
+<h3 id="java-se-16-java-16">
+  Java SE 16 （Java 16）
+  <a class="anchor" href="#java-se-16-java-16">#</a>
+</h3>
+<ul>
+<li>增强的文本块：允许在文本块中使用转义字符和嵌入式表达式。</li>
+<li>移除了废弃的 ParallelScavenge 垃圾回收器。</li>
+<li>改进的 ZGC 垃圾回收器：提高了性能和可靠性，增加了可配置参数。</li>
+<li>Records 类的增强：允许在 records 类中添加静态方法和私有构造函数。</li>
+<li><strong>Vector API</strong>：提供了一种新的 API，用于高效地执行矢量化操作。</li>
+</ul>
+<h3 id="java-se-17java-17-lts长期支持版本">
+  Java SE 17（Java 17）-LTS长期支持版本
+  <a class="anchor" href="#java-se-17java-17-lts%e9%95%bf%e6%9c%9f%e6%94%af%e6%8c%81%e7%89%88%e6%9c%ac">#</a>
+</h3>
+<ul>
+<li><strong>嵌套枚举</strong>：允许在类和接口中定义嵌套枚举，提高了代码的可读性和简洁性。</li>
+<li>改进的 switch 语句：允许在 switch 语句中使用 case 标签作为表达式，提供更灵活的写法。</li>
+<li>预览性功能：包括<strong>模式匹配</strong>、嵌套枚举、记录类的序列化等新特性。</li>
+<li>增强的垃圾回收器：提高了性能和可靠性，增加了可配置参数。</li>
+<li>其他改进：包括新的内存管理和性能优化，增强的 JIT 编译器等。</li>
+</ul>
+<h3 id="java-se-18java-182">
+  Java SE 18（Java 18）[2]
+  <a class="anchor" href="#java-se-18java-182">#</a>
+</h3>
+<p>400：默认使用 UTF-8
+408：简易 Web 服务器
+413：Java API 文档中的代码片段
+416：使用方法句柄重新实现核心反射
+417：矢量 API
+418：网络地址解析 SPI
+419：<strong>外部函数和内存 API</strong>
+420：switch 的模式匹配
+421：废弃对象终止机制</p>
+<h3 id="java-se-19java-19-3">
+  Java SE 19（Java 19） [3]
+  <a class="anchor" href="#java-se-19java-19-3">#</a>
+</h3>
+<p>405: 	Record Patterns (Preview)
+422: 	Linux/RISC-V Port
+424: 	Foreign Function &amp; Memory API (Preview)
+425: 	<strong>Virtual Threads (Preview)</strong>
+426: 	Vector API (Fourth Incubator)
+427: 	Pattern Matching for switch (Third Preview)
+428: 	<strong>Structured Concurrency (Incubator)</strong></p>
+<h3 id="java-se-20java-20-4">
+  Java SE 20（Java 20） [4]
+  <a class="anchor" href="#java-se-20java-20-4">#</a>
+</h3>
+<p>429: 	<strong>Scoped Values (Incubator)</strong>
+432: 	Record Patterns (Second Preview)
+433: 	Pattern Matching for switch (Fourth Preview)
+434: 	Foreign Function &amp; Memory API (Second Preview)
+436: 	Virtual Threads (Second Preview)
+437: 	Structured Concurrency (Second Incubator)
+438: 	Vector API (Fifth Incubator)</p>
+<h3 id="java-se-21java-21-5">
+  Java SE 21（Java 21） [5]
+  <a class="anchor" href="#java-se-21java-21-5">#</a>
+</h3>
+<p>430: 	String Templates (Preview)
+431: 	Sequenced Collections
+439: 	<strong>Generational ZGC</strong>
+440: 	Record Patterns
+441: 	<strong>Pattern Matching for switch</strong>
+442: 	Foreign Function &amp; Memory API (Third Preview)
+443: 	Unnamed Patterns and Variables (Preview)
+444: 	<strong>Virtual Threads</strong> [6][7]
+445: 	Unnamed Classes and Instance Main Methods (Preview)
+446: 	Scoped Values (Preview)
+448: 	Vector API (Sixth Incubator)
+449: 	Deprecate the Windows 32-bit x86 Port for Removal
+451: 	Prepare to Disallow the Dynamic Loading of Agents
+452: 	Key Encapsulation Mechanism API
+453: 	Structured Concurrency (Preview)</p>
+<h1 id="特性-8">
+  特性 [8]
+  <a class="anchor" href="#%e7%89%b9%e6%80%a7-8">#</a>
+</h1>
+<h3 id="文字块-text-blocks---jdk-13-jdk-15">
+  文字块 text blocks |  JDK 13-JDK 15
+  <a class="anchor" href="#%e6%96%87%e5%ad%97%e5%9d%97-text-blocks---jdk-13-jdk-15">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span>String textBlock <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            	&lt;h1&gt;&#34;Hello World!&#34;&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;Here is the text block:\n&#34;</span> <span style="color:#f92672">+</span> textBlock);
+</span></span></code></pre></div><h3 id="record--档案类-不可变---jdk14-jdk16">
+  record  档案类 [不可变] |  JDK14-JDK16
+  <a class="anchor" href="#record--%e6%a1%a3%e6%a1%88%e7%b1%bb-%e4%b8%8d%e5%8f%af%e5%8f%98---jdk14-jdk16">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">Circle</span>(<span style="color:#66d9ef">double</span> radius) <span style="color:#66d9ef">implements</span> Shape {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">area</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">PI</span> <span style="color:#f92672">*</span> radius <span style="color:#f92672">*</span> radius;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="sealed-classes-封闭类---扩展性----jdk-15-jdk-17">
+  sealed classes 封闭类   [扩展性] |   JDK 15-JDK 17
+  <a class="anchor" href="#sealed-classes-%e5%b0%81%e9%97%ad%e7%b1%bb---%e6%89%a9%e5%b1%95%e6%80%a7----jdk-15-jdk-17">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Shape</span> permits Circle, Square {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Shape</span>(String id) {
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">area</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="类型匹配-切除臃肿的强制转换--jdk-14-jdk-16">
+  类型匹配 [切除臃肿的强制转换] | JDK 14-JDK 16
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b%e5%8c%b9%e9%85%8d-%e5%88%87%e9%99%a4%e8%87%83%e8%82%bf%e7%9a%84%e5%bc%ba%e5%88%b6%e8%bd%ac%e6%8d%a2--jdk-14-jdk-16">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (shape <span style="color:#66d9ef">instanceof</span> Rectangle rect) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (rect.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> rect.<span style="color:#a6e22e">width</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="switch-表达式-简化多情景操作---jdk-12-jdk-14">
+  switch 表达式 [简化多情景操作] |  JDK 12-JDK 14
+  <a class="anchor" href="#switch-%e8%a1%a8%e8%be%be%e5%bc%8f-%e7%ae%80%e5%8c%96%e5%a4%9a%e6%83%85%e6%99%af%e6%93%8d%e4%bd%9c---jdk-12-jdk-14">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> daysInMonth <span style="color:#f92672">=</span> <span style="color:#66d9ef">switch</span> (month) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> Calendar.<span style="color:#a6e22e">JANUARY</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">MARCH</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">MAY</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">JULY</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">AUGUST</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">OCTOBER</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">DECEMBER</span> <span style="color:#f92672">-&gt;</span> 31;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> Calendar.<span style="color:#a6e22e">APRIL</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">JUNE</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">SEPTEMBER</span>,
+</span></span><span style="display:flex;"><span>        Calendar.<span style="color:#a6e22e">NOVEMBER</span> <span style="color:#f92672">-&gt;</span> 30;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> Calendar.<span style="color:#a6e22e">FEBRUARY</span> <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (((year <span style="color:#f92672">%</span> 4 <span style="color:#f92672">==</span> 0) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>(year <span style="color:#f92672">%</span> 100 <span style="color:#f92672">==</span> 0))
+</span></span><span style="display:flex;"><span>        		<span style="color:#f92672">||</span> (year <span style="color:#f92672">%</span> 400 <span style="color:#f92672">==</span> 0)) {
+</span></span><span style="display:flex;"><span>        	<span style="color:#66d9ef">yield</span> 29;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        	<span style="color:#66d9ef">yield</span> 28;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(
+</span></span><span style="display:flex;"><span>    	<span style="color:#e6db74">&#34;Calendar in JDK does not work&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="switch匹配-适配不同的类型----jdk-17-21">
+  switch匹配 [适配不同的类型]  |  JDK 17-21
+  <a class="anchor" href="#switch%e5%8c%b9%e9%85%8d-%e9%80%82%e9%85%8d%e4%b8%8d%e5%90%8c%e7%9a%84%e7%b1%bb%e5%9e%8b----jdk-17-21">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSquare</span>(Shape shape) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">switch</span> (shape) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">null</span>, Shape.<span style="color:#a6e22e">Circle</span> c <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">case</span> Shape.<span style="color:#a6e22e">Square</span> s <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="外部内存接口--jdk18-">
+  外部内存接口 | JDK18-?
+  <a class="anchor" href="#%e5%a4%96%e9%83%a8%e5%86%85%e5%ad%98%e6%8e%a5%e5%8f%a3--jdk18-">#</a>
+</h3>
+<ul>
+<li>
+<p>ByteBuffer &amp;&amp; 零拷贝
+使用堆外存储最常用的办法，就是使用 ByteBuffer 这个类来分配<strong>直接存储空间（direct</strong>
+<strong>buffer）</strong>。JVM 虚拟机会尽最大努力直接在直接存储空间上执行 IO 操作，避免数据在本
+地和 JVM 之间的拷贝。
+由于频繁的内存拷贝是性能的主要障碍之一。所以为了极致的性能，应用程序通常也会尽
+量避免内存的拷贝。理想的状况下，一份数据只需要一份内存空间，这就是我们常说的<strong>零
+拷贝</strong>。</p>
+<p>用 ByteBuffer 这个类来分配直接存储空间的方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ByteBuffer <span style="color:#a6e22e">allocateDirect</span>(<span style="color:#66d9ef">int</span> capacity);
+</span></span></code></pre></div><p>第一个缺陷是没有资源释放的接口。
+第二个缺陷是存储空间尺寸的限制。</p>
+</li>
+<li>
+<p>外部内存接口</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (ResourceScope scope <span style="color:#f92672">=</span> ResourceScope.<span style="color:#a6e22e">newConfinedScope</span>()) {
+</span></span><span style="display:flex;"><span>    MemorySegment segment <span style="color:#f92672">=</span> MemorySegment.<span style="color:#a6e22e">allocateNative</span>(4, scope);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> 4; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    	MemoryAccess.<span style="color:#a6e22e">setByteAtOffset</span>(segment, i, (<span style="color:#66d9ef">byte</span>)<span style="color:#e6db74">&#39;A&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="外部函数接口取代java本地接口---jdk-17-">
+  外部函数接口[取代Java本地接口] |  JDK 17-?
+  <a class="anchor" href="#%e5%a4%96%e9%83%a8%e5%87%bd%e6%95%b0%e6%8e%a5%e5%8f%a3%e5%8f%96%e4%bb%a3java%e6%9c%ac%e5%9c%b0%e6%8e%a5%e5%8f%a3---jdk-17-">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Java" data-lang="Java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) <span style="color:#66d9ef">throws</span> Throwable {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> (ResourceScope scope <span style="color:#f92672">=</span> ResourceScope.<span style="color:#a6e22e">newConfinedScope</span>()) {
+</span></span><span style="display:flex;"><span>            CLinker cLinker <span style="color:#f92672">=</span> CLinker.<span style="color:#a6e22e">getInstance</span>();
+</span></span><span style="display:flex;"><span>            MemorySegment helloWorld <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>            		CLinker.<span style="color:#a6e22e">toCString</span>(<span style="color:#e6db74">&#34;Hello, world!\n&#34;</span>, scope);
+</span></span><span style="display:flex;"><span>            MethodHandle cPrintf <span style="color:#f92672">=</span> cLinker.<span style="color:#a6e22e">downcallHandle</span>(
+</span></span><span style="display:flex;"><span>            		CLinker.<span style="color:#a6e22e">systemLookup</span>().<span style="color:#a6e22e">lookup</span>(<span style="color:#e6db74">&#34;printf&#34;</span>).<span style="color:#a6e22e">get</span>(),
+</span></span><span style="display:flex;"><span>            		MethodType.<span style="color:#a6e22e">methodType</span>(<span style="color:#66d9ef">int</span>.<span style="color:#a6e22e">class</span>, MemoryAddress.<span style="color:#a6e22e">class</span>),
+</span></span><span style="display:flex;"><span>            		FunctionDescriptor.<span style="color:#a6e22e">of</span>(CLinker.<span style="color:#a6e22e">C_INT</span>, CLinker.<span style="color:#a6e22e">C_POINTER</span>));
+</span></span><span style="display:flex;"><span>            cPrintf.<span style="color:#a6e22e">invoke</span>(helloWorld.<span style="color:#a6e22e">address</span>());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="gc">
+  GC
+  <a class="anchor" href="#gc">#</a>
+</h3>
+<p>G1,
+ZGC, 分代式 ZGC</p>
+<h1 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h1>
+<ol>
+<li><a href="http://justzqq.com/2023/03/23/java%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7%E6%95%B4%E7%90%86%EF%BC%81/">Java各个版本发布时间和主要特性整理！</a>
+<a href="https://blog.csdn.net/wcdunf/article/details/129861244">Java 历史大版本及其详细特性介绍:</a></li>
+<li><a href="https://www.bilibili.com/read/cv16596828">Java 18 的新特性</a></li>
+<li><a href="https://openjdk.org/projects/jdk/19/">JDK 19</a></li>
+<li><a href="https://openjdk.org/projects/jdk/20/">JDK 20</a></li>
+<li><a href="https://openjdk.org/projects/jdk/21/">JDK 21</a></li>
+<li><a href="https://blog.csdn.net/lewyu521/article/details/127649776">Java19 虚拟线程原理介绍及实现</a> ***</li>
+<li><a href="https://www.jdon.com/63445.html">Java虚拟线程：异步编程之死</a></li>
+<li>《深入剖析 Java 新特性》  范学雷
+02,03,04,05,06,07,08,09,12, 13</li>
+<li><a href="https://www.bilibili.com/read/cv13542498">从Java 11升级到Java 17 </a> V 未</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#版本">版本</a></li>
+    <li><a href="#版本特性-1">版本+特性 [1]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#java-14">Java 1.4</a></li>
+            <li><a href="#java-5java-15">Java 5（Java 1.5）</a></li>
+            <li><a href="#java-7">Java 7</a></li>
+            <li><a href="#java-se-8java-8--lts长期支持版本">Java SE 8（Java 8）- LTS长期支持版本</a></li>
+            <li><a href="#java-se-9java-9">Java SE 9（Java 9）</a></li>
+            <li><a href="#java-se-10java-10">Java SE 10（Java 10）</a></li>
+            <li><a href="#java-se-11java-11-lts长期支持版本">Java SE 11（Java 11）-LTS长期支持版本</a></li>
+            <li><a href="#java-se-12java-12">Java SE 12（Java 12）</a></li>
+            <li><a href="#java-se-13-java-13">Java SE 13 （Java 13）</a></li>
+            <li><a href="#java-se-14-java-14">Java SE 14 （Java 14）</a></li>
+            <li><a href="#java-se-15-java-15">Java SE 15 （Java 15）</a></li>
+            <li><a href="#java-se-16-java-16">Java SE 16 （Java 16）</a></li>
+            <li><a href="#java-se-17java-17-lts长期支持版本">Java SE 17（Java 17）-LTS长期支持版本</a></li>
+            <li><a href="#java-se-18java-182">Java SE 18（Java 18）[2]</a></li>
+            <li><a href="#java-se-19java-19-3">Java SE 19（Java 19） [3]</a></li>
+            <li><a href="#java-se-20java-20-4">Java SE 20（Java 20） [4]</a></li>
+            <li><a href="#java-se-21java-21-5">Java SE 21（Java 21） [5]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#特性-8">特性 [8]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#文字块-text-blocks---jdk-13-jdk-15">文字块 text blocks |  JDK 13-JDK 15</a></li>
+            <li><a href="#record--档案类-不可变---jdk14-jdk16">record  档案类 [不可变] |  JDK14-JDK16</a></li>
+            <li><a href="#sealed-classes-封闭类---扩展性----jdk-15-jdk-17">sealed classes 封闭类   [扩展性] |   JDK 15-JDK 17</a></li>
+            <li><a href="#类型匹配-切除臃肿的强制转换--jdk-14-jdk-16">类型匹配 [切除臃肿的强制转换] | JDK 14-JDK 16</a></li>
+            <li><a href="#switch-表达式-简化多情景操作---jdk-12-jdk-14">switch 表达式 [简化多情景操作] |  JDK 12-JDK 14</a></li>
+            <li><a href="#switch匹配-适配不同的类型----jdk-17-21">switch匹配 [适配不同的类型]  |  JDK 17-21</a></li>
+            <li><a href="#外部内存接口--jdk18-">外部内存接口 | JDK18-?</a></li>
+            <li><a href="#外部函数接口取代java本地接口---jdk-17-">外部函数接口[取代Java本地接口] |  JDK 17-?</a></li>
+            <li><a href="#gc">GC</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

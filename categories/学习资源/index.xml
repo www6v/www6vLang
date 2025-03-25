@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习资源 on Language</title>
+    <link>http://localhost:1313/Lang/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
+    <description>Recent content in 学习资源 on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Sep 2022 10:57:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Lang/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 学习资源</title>
+      <link>http://localhost:1313/Lang/docs/Golang/other/golangStudy/</link>
+      <pubDate>Fri, 09 Sep 2022 10:57:25 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/other/golangStudy/</guid>
+      <description>Golang # 基础&#xA;极客时间 《Go 并发编程实战课》 鸟窝 *** 极客时间 《Go语言从入门到实战》 好像看过 *** 极客时间 《Go 语言核心 36 讲》 郝林 ** 《Effective Go》 Effective Go 英文 高效的 Go 编程 Effective Go 中文 golang 编程规范 - Effective Go 中文 中文 50 Shades of Go 50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs&#xA;Golang 新手可能会踩的 50 个坑 项目&amp;amp;进阶&#xA;极客时间 《Go 语言项目开发实战》 孔令飞@腾讯 *** 极客训练营 《go进阶训练营 第4期》 bili V 毛剑 *** gotalk</description>
+    </item>
+  </channel>
+</rss>

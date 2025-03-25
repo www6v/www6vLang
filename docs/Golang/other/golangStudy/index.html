@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Golang # 基础
+极客时间 《Go 并发编程实战课》 鸟窝 *** 极客时间 《Go语言从入门到实战》 好像看过 *** 极客时间 《Go 语言核心 36 讲》 郝林 ** 《Effective Go》 Effective Go 英文 高效的 Go 编程 Effective Go 中文 golang 编程规范 - Effective Go 中文 中文 50 Shades of Go 50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs
+Golang 新手可能会踩的 50 个坑 项目&amp;进阶
+极客时间 《Go 语言项目开发实战》 孔令飞@腾讯 *** 极客训练营 《go进阶训练营 第4期》 bili V 毛剑 *** gotalk">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Golang/other/golangStudy/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="Golang 学习资源">
+  <meta property="og:description" content="Golang # 基础
+极客时间 《Go 并发编程实战课》 鸟窝 *** 极客时间 《Go语言从入门到实战》 好像看过 *** 极客时间 《Go 语言核心 36 讲》 郝林 ** 《Effective Go》 Effective Go 英文 高效的 Go 编程 Effective Go 中文 golang 编程规范 - Effective Go 中文 中文 50 Shades of Go 50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs
+Golang 新手可能会踩的 50 个坑 项目&amp;进阶
+极客时间 《Go 语言项目开发实战》 孔令飞@腾讯 *** 极客训练营 《go进阶训练营 第4期》 bili V 毛剑 *** gotalk">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>Golang 学习资源 | Language</title>
+<link rel="icon" href="/Lang/favicon.png" >
+<link rel="manifest" href="/Lang/manifest.json">
+<link rel="canonical" href="http://localhost:1313/Lang/docs/Golang/other/golangStudy/">
+<link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/Lang/fuse.min.js"></script>
+  <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Golang/other/golangStudy/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/Lang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle"  />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaFeature/" class="">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>并发</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/cancelAndShutdown/" class="">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle" checked />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangSlice/" class="">Golang基础-Slice</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMemoryModel/" class="">Golang Rumtime-内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasic/" class="">Golang 基础</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangGMP/" class="">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>concurrent</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangStudy/" class="active">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/Lang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Golang 学习资源</h3>
+
+  <label for="toc-control">
+    
+    <img src="/Lang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#golang">Golang</a></li>
+        <li><a href="#golang-个人blog">Golang 个人blog</a></li>
+        <li><a href="#学习路线">学习路线</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<h2 id="golang">
+  Golang
+  <a class="anchor" href="#golang">#</a>
+</h2>
+<ul>
+<li>
+<p>基础</p>
+<ul>
+<li>极客时间 《Go 并发编程实战课》  鸟窝  ***</li>
+<li>极客时间 《Go语言从入门到实战》 好像看过 ***</li>
+<li>极客时间 《Go 语言核心 36 讲》 郝林 **</li>
+<li>《Effective Go》
+<a href="https://golang.google.cn/doc/effective_go">Effective Go</a>  英文
+<a href="https://learnku.com/docs/effective-go/2020">高效的 Go 编程 Effective Go</a> 中文
+<a href="https://makeoptim.com/golang/effective-go">golang 编程规范 - Effective Go 中文</a> 中文</li>
+<li>50 Shades of Go
+<a href="http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/">50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs</a><br>
+<a href="https://github.com/wuYin/blog/blob/master/golang/50-shades-of-golang-traps-gotchas-mistakes.md">Golang 新手可能会踩的 50 个坑</a></li>
+</ul>
+</li>
+<li>
+<p>项目&amp;进阶</p>
+<ul>
+<li>极客时间 《Go 语言项目开发实战》  孔令飞@腾讯  ***</li>
+<li>极客训练营 《go进阶训练营 第4期》 bili V 毛剑  ***</li>
+</ul>
+</li>
+<li>
+<p><a href="https://talkgo.org/">gotalk</a></p>
+<ul>
+<li><a href="https://github.com/talkgo/night">talkgo @github</a></li>
+</ul>
+</li>
+<li>
+<p>Mix
+<a href="https://github.com/0voice/Introduction-to-Golang/tree/main/Golang%20PPT">0voice/Introduction-to-Golang</a>  ***</p>
+</li>
+<li>
+<p>Go 源码分析
+<a href="https://github.com/cch123/golang-notes">Go source code analysis(zh-cn) </a>  曹大 滴滴 ***</p>
+</li>
+<li>
+<p>book
+<a href="https://github.com/gopl-zh/gopl-zh.github.com">Go语言圣经中文版</a>
+<a href="https://gopl-zh.github.io/">Go语言圣经（中文版）</a>
+<a href="https://chai2010.cn/advanced-go-programming-book/">Go语言高级编程(Advanced Go Programming)</a></p>
+</li>
+</ul>
+<h2 id="golang-个人blog">
+  Golang 个人blog
+  <a class="anchor" href="#golang-%e4%b8%aa%e4%ba%bablog">#</a>
+</h2>
+<ul>
+<li><a href="https://tonybai.com/">Tony Bai</a> golang大神 ***</li>
+<li><a href="">鸟窝</a> Java， golang  微博架构师 ***</li>
+<li><a href="http://luodw.cc/">罗道文</a>  golang python NSQ 有深度  * 2017 停更</li>
+<li><a href="https://www.jianshu.com/u/1381dc29fed9">张晓龙</a>  golang *</li>
+</ul>
+<h2 id="学习路线">
+  学习路线
+  <a class="anchor" href="#%e5%ad%a6%e4%b9%a0%e8%b7%af%e7%ba%bf">#</a>
+</h2>
+<ul>
+<li>学习路线
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1YY4y1g7RU?vd_source=f6e8c1128f9f264c5ab8d9411a644036">【上集】2022 年 Go 语言最全学习路线：十分钟带你过思维导图！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1DZ4y1q78E/?vd_source=f6e8c1128f9f264c5ab8d9411a644036">【下集】2022 年 Go 语言最全学习路线：十分钟带你过思维导图！爆肝几天几夜整理的超详细 Go 学习</a></li>
+<li><a href="https://maiyang.me/">作者blog</a></li>
+</ul>
+</li>
+<li><a href="https://www.golangroadmap.com/class/gointerview/">GOLANG ROADMAP</a> ***
+<a href="https://www.golangroadmap.com/">GOLANG ROADMAP</a><br>
+邀请码：caspar</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#golang">Golang</a></li>
+        <li><a href="#golang-个人blog">Golang 个人blog</a></li>
+        <li><a href="#学习路线">学习路线</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Language</title>
+    <link>http://localhost:1313/Lang/tags/Golang/</link>
+    <description>Recent content in Golang on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 22 Sep 2022 14:05:36 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Lang/tags/Golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang内置类型-Map</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangMap/</link>
+      <pubDate>Thu, 22 Sep 2022 14:05:36 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangMap/</guid>
+      <description>Map 内部实现 # map的内部结构 # hmap bucket topHash 快速定位key,以空间换时间 每个 bucket 的 tophash 区域其实是用来快速定位 key 位置的. 这是一种以空间换时间的思路。 key value Go 运行时采用了把 key 和 value 分开存储的方式，而不是采用一个 kv 接着一个 kv 的 kv 紧邻方式存储，这带来的其实是算法上的复杂性，但却减少了因内存对齐带来的内存浪费。 overflow bmap map的内部函数 [4] # mapassign 写 mapdelete 删 mapaccess 读 扩容 [2] # buckets &amp;amp;&amp;amp; oldbuckets 两种扩容方式 [渐进式扩容, 类似redis rehash] 因为 overflow bucket 过多导致的“扩容”，实际上运行时会新建一个和现有规模一样的 bucket 数组，然后在 assign 和 delete 时做排空和迁移。 因为当前数据数量超出 LoadFactor 指定水位而进行的扩容，那么运行时会建立一个两倍于现有规模的 bucket 数组，但真正的排空和迁移工作也是在 assign 和 delete 时逐步进行的。 扩容 [4] # 触发: mapassign 时机: load factor 过大 OR overflow bucket 过多 搬运过程: 渐进式</description>
+    </item>
+    <item>
+      <title>Golang 学习资源</title>
+      <link>http://localhost:1313/Lang/docs/Golang/other/golangStudy/</link>
+      <pubDate>Fri, 09 Sep 2022 10:57:25 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/other/golangStudy/</guid>
+      <description>Golang # 基础&#xA;极客时间 《Go 并发编程实战课》 鸟窝 *** 极客时间 《Go语言从入门到实战》 好像看过 *** 极客时间 《Go 语言核心 36 讲》 郝林 ** 《Effective Go》 Effective Go 英文 高效的 Go 编程 Effective Go 中文 golang 编程规范 - Effective Go 中文 中文 50 Shades of Go 50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs&#xA;Golang 新手可能会踩的 50 个坑 项目&amp;amp;进阶&#xA;极客时间 《Go 语言项目开发实战》 孔令飞@腾讯 *** 极客训练营 《go进阶训练营 第4期》 bili V 毛剑 *** gotalk</description>
+    </item>
+    <item>
+      <title>Golang基础-Slice</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangSlice/</link>
+      <pubDate>Sat, 09 Jul 2022 18:43:02 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangSlice/</guid>
+      <description>&#xA;array和slice # 数组长度是固定的， slice长度是可变的 slice底层实现 [2] # type slice struct { array unsafe.Pointer len int cap int } slice 初始化 [1] # 对于 make 来说，它可以初始化 slice 的 length 和 capacity，如果我们能确定 slice 里面会存放多少元素，从性能的角度考虑最好使用 make 初始化好，因为对于一个空的 slice append 元素进去每次达到阈值都需要进行扩容&#xA;Code Example [1] # 参考 # [长文]从《100 Go Mistakes》我总结了什么？ gExamples slice_test.go 1.Go slice的底层实现原理? </description>
+    </item>
+    <item>
+      <title>Golang 基础-Errors&amp;Bugs</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangBugs/</link>
+      <pubDate>Thu, 07 Jul 2022 11:59:53 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangBugs/</guid>
+      <description>目录 # Errors # 异常处理 [4] # Bugs # Golang 循环变量引用问题[7] 故障 [20] # CPU 用爆了？ 90%？ 内存用爆了？OOM？ Goroutine 用爆了？ 80w？ 线程数爆了？ 延迟太高？&#xA;监控指标 [20] # goroutine数，线程数 goroutine 多， 通过pprof看goroutine在干啥，等锁 GC频率 GODEBUG=&amp;#39;gctrace=1&amp;#39; go run ./cmd/main.go MemStats 结构体 常规统计信息（General statistics） 分配堆内存统计（Heap memory statistics） 栈内存统计（Stack memory statistics） 堆外内存统计信息（Off-heap memory statistics） 垃圾回收器统计信息（Garbage collector statistics） 按 per-size class 大小分配统计（BySize reports per-size class allocation statistics） 问题排查套路 [20] # 阻塞问题&#xA;排除外部问题 例如依赖的上游服务(db, redis, mq)延迟过高，在监控系统中查看 锁阻塞 减少临界区范围 降低锁粒度 Global lock -&amp;gt; sharded lock Global lock -&amp;gt; connection level lock Connection level lock -&amp;gt; request level lock 同步改异步 日志场景: 同步日志 -&amp;gt; 异步日志 Metric 上报场景: select -&amp;gt; select+default 个别场景使用双buffer 完全消灭阻塞 CPU占用过高 看CPU profile -&amp;gt; 优化占用CPU较多的部分逻辑</description>
+    </item>
+    <item>
+      <title>Golang内置类型-Channel</title>
+      <link>http://localhost:1313/Lang/docs/Golang/concurrent/golangChannel/</link>
+      <pubDate>Sun, 26 Jun 2022 10:01:07 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/concurrent/golangChannel/</guid>
+      <description>目录 # 实现 [1] # type hchan struct { qcount uint // total data in the queue dataqsiz uint // size of the circular queue buf unsafe.Pointer // points to an array of dataqsiz elements elemsize uint16 closed uint32 elemtype *_type // element type sendx uint // send index recvx uint // receive index recvq waitq // list of recv waiters sendq waitq // list of send waiters // lock protects all fields in hchan, as well as several // fields in sudogs blocked on this channel.</description>
+    </item>
+    <item>
+      <title>Golang 基础-Linter</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/</link>
+      <pubDate>Fri, 24 Jun 2022 16:58:17 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/</guid>
+      <description>linter [1] # 单个&#xA;golint go vet gocyclo 代码覆盖率 codecov 检查错误是否被处理 errcheck bodyclose sqlrows 集合&#xA;golangci-lint 标准 sonarqube deepsource golangci-lint + reviewdog [3]&#xA;给项目提pr时，自动执行linter，自动CI？ github支持, gitlab也支持 name: actions on: push: branches: - master pull_request: types: - opened - reopened - synchronize - ready_for_review jobs: golangci-lint: if: ${{ !github.event.pull_request.draft }} name: runner / golangci-lint runs-on: ubuntu-latest steps: - name: Check out code uses: actions/checkout@v3 - name: golangci-lint uses: reviewdog/action-golangci-lint@v2 if: github.</description>
+    </item>
+    <item>
+      <title>Go Framework</title>
+      <link>http://localhost:1313/Lang/docs/Golang/other/golangFramework/</link>
+      <pubDate>Tue, 21 Jun 2022 11:30:17 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/other/golangFramework/</guid>
+      <description>&#xA;Web [1] # Httprouter radix tree&#xA;chi&#xA;最简单的框架 适合作为web框架入门项目 核心代码1200行+ Gin&#xA;主要组件 router 支持分组 middleware&#xA;binding-decoder和validator logger context 老牌框架 核心代码3000行 echo&#xA;Fiber&#xA;基于fasthttp beego&#xA;微服务[1] # 组件 # config logger metrics Prometheus tracing OpenTelemetry registry MQ 依赖注入 wire，dig 框架 # GoMicro [2] + Go-Zero YOYOGO Dubbo GO Kratos[bili开源] goframe 本地缓存[3] # freecache bigcache fastcache Time &amp;amp;&amp;amp; cron[4] # 参考 # 《17 直播：社区优秀开源框架对比》 go-micro 源码解析 - server &amp;amp; client Golang 本地缓存选型对比及原理总结 一些关于时间和定时任务的库 Go 开源本地缓存组件选型对比（freecache、bigcache、fastcache 等） 未 鹅厂微创新Golang缓存组件TCache介绍 未 </description>
+    </item>
+    <item>
+      <title>Golang Rumtime-内存模型</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangMemoryModel/</link>
+      <pubDate>Tue, 21 Jun 2022 03:55:05 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangMemoryModel/</guid>
+      <description>目录 # 系统内存管理[4] # 三个角色&#xA;Mutator [App] Allocator Bump/Sequential Allocator Free List Allocator First-Fit Next-Fit Best-Fit Segregated-Fit 工业界用的多, golang是这种类型的变种 Collector #2 栈内存管理&#xA;malloc &amp;lsquo;&amp;lt;128KB&amp;rsquo;&#xA;program break &amp;lsquo;&amp;gt;=128KB&amp;rsquo; mmap Golang内存 # 内存分配 [4][5] # 三种类型 Tiny Small Large google tcmalloc 每个线程维护一个独立的内存池 多级别管理 4K， 8K， 16K &amp;hellip; 回收内存 放回预先分配的大块内存中 内存管理组件 mspan 68个规格， [8个字节&amp;hellip;32K] 双向链表 mcache 线程缓存 alloc tiny tinyoffset mcentral 管理全局的mspan供所有线程使用 noneempty mspan empty mspan mheap 管理动态分配内存, 持有的整个堆空间 arenas central 多级结构 mcache -&amp;gt; mcentral -&amp;gt; mheap 内存逃逸 [6] # 编译器会根据变量是否被外部引用来决定是否逃逸： 如果函数外部没有引用，则优先放到栈中； 如果函数外部存在引用，则必定放到堆中; 如果栈上放不下，则必定放到堆上; 内存泄漏 # 根因 [7][8]</description>
+    </item>
+    <item>
+      <title>Golang 并发Bug</title>
+      <link>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrencyBug/</link>
+      <pubDate>Mon, 20 Jun 2022 13:50:38 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrencyBug/</guid>
+      <description>目录 # 死锁 [1] # 通过pprof进入goroutine页面查看 [gpt] 在Golang中，互斥锁（Mutex）是不支持重入的，如果在一个goroutine中已经获得了互斥锁的锁并且没有释放，那么在同一个goroutine中再次尝试获取该锁时会导致死锁。&#xA;这是因为互斥锁是一个排他锁，当一个goroutine获取了互斥锁的锁之后，其他的goroutine就不能再获取该锁，直到该goroutine释放该锁。如果同一个goroutine再次获取该锁，就会导致死锁。&#xA;不过，在Golang中也提供了另外一种锁——读写锁（RWMutex），它是支持重入的。读写锁允许多个goroutine同时读取共享资源，但在写入时必须独占访问。读写锁内部有一个计数器，用于记录已经获取读锁的goroutine数量，因此同一个goroutine获取读锁是可以重入的。但是，当一个goroutine获取了写锁时，它不能再获取读锁，否则也会导致死锁。&#xA;总之，互斥锁不支持重入，而读写锁支持重入。在使用锁的时候应该根据实际情况选择合适的锁来避免死锁的发生。 [/gpt]&#xA;example1 [1] # func m() { b.Lock() c.Lock() } func n() { c.Lock() b.Lock() } example2 # [gpt] 以下是一个可能导致死锁的Golang代码示例：&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;sync&amp;#34; ) func main() { var mu sync.Mutex c1 := make(chan int) go func() { mu.Lock() defer mu.Unlock() c1 &amp;lt;- 1 }() &amp;lt;-c1 mu.Lock() // 这里会导致死锁 defer mu.Unlock() fmt.Println(&amp;#34;Done&amp;#34;) } 在这个例子中，我们创建了一个互斥锁（Mutex）mu 和一个整数类型的无缓冲通道c1。接下来，我们在一个goroutine中获取了mu的锁，并在获取锁之后往c1通道中发送了一个整数1。在主goroutine中，我们从c1通道中接收1，然后再次试图获取mu的锁。但是，由于在此之前该锁已经在另一个goroutine中被获取并没有释放，因此会导致主goroutine被阻塞，从而导致死锁。&#xA;解决这个问题的方法是在goroutine中释放锁，然后在主goroutine中再获取锁，如下所示：</description>
+    </item>
+    <item>
+      <title>Golang Concurrency</title>
+      <link>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrency/</link>
+      <pubDate>Sun, 19 Jun 2022 12:22:27 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrency/</guid>
+      <description>目录 # 并发 [2][1] # 并发原语 # sync.Once [3]&#xA;保证在 Go 程序运行期间的某段代码只会执行一次 sync.Pool [3]&#xA;两种场景中可以使用Pool做优化 进程中的inuse-objects数过多, gc mark 消耗大量CPU 进程中的inuse-objects数过多, 进程RSS占用过高 最佳实践 请求生命周期开始时，pool.Get, 请求结束时, pool.Put semaphore 信号量 [3]&#xA;是锁的实现基础, 所有同步原语的基础设施 内部结构 treap tree+heap 二插搜索树 树上的每个节点都是一个链表 小顶堆 sync.Mutex 互斥锁 [3]&#xA;内部结构 state 饥饿模式: 最新进自旋的goroutine优先级最高 非饥饿模式: 排队 sema 信号量 sync.RWMutex 读写锁 [3]&#xA;内部结构 w writerSem readerSem readerCount readerWait sync.Map [3]&#xA;线程安全的Map 内部结构 mu read dirty misses 设计 map+lock 多核扩展性差一点 sync.Map 在读多写少的情况下，基本上不需要加锁 sync.</description>
+    </item>
+    <item>
+      <title>Golang 基础</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangBasic/</link>
+      <pubDate>Tue, 08 Mar 2022 23:07:50 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangBasic/</guid>
+      <description>目录 # Rumtime [3] # Scheduler # GMP&#xA;Netpoll # Memory # GC # 基础 # 内建函数 # init make() new() slice append() 用于切片(slice) 追加元素 copy() 只能用于数组切片内容赋值 size len() 计算数组(包括数组指针)、切片(slice)、map、channel、字符串等数据类型的长度 cap() 返回指定类型的容量 print() &amp;amp; println() resource reclaim close() delete() num complex() real() &amp;amp; imag() error handle panic() recover() others [6] clear()&#xA;对于map对象: clear函数清空map对象的所有的元素 对于slice对象： clear函数将所有的元素设置为元素类型的零值，长度不变，容量不变 min() &amp;amp;&amp;amp; max() New vs Make # new和make是内置函数,主要用来分配内存空间 make make 仅用于 slice、map和 channel 的初始化，返回值为类型本身，而不是指针 new 只用于内存分配，且把内存清零 返回一个指向对应类型零值的指针 new() 一般 显示返回指针 func make(t Type, size .</description>
+    </item>
+    <item>
+      <title>Golang Rumtime-GMP</title>
+      <link>http://localhost:1313/Lang/docs/Golang/core/golangGMP/</link>
+      <pubDate>Tue, 08 Mar 2022 12:15:08 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/core/golangGMP/</guid>
+      <description>Goroutine的调度 # Overview System Thread : kernel entity Processor : go实现的协程处理器 Goroutine : 协程&#xA;组件 # 组件 G: goroutine, 一个计算任务。 由需要执行的代码和其上下文组成, 上下文包括: 当前代码位置, 栈顶、 栈底地址，状态等。 M: machine, 系统线程, 执行实体, 想要在CPU上执行代码, 必须有线程 P: processor, 虚拟处理器, M必须获得P才能执行代码, 否则必须陷入休眠(后台监控线程除外).&#xA;组件之间的关系 Processor在不同的系统线程里, 每个Processor挂载着一个协程队列，Processor依次调用Gorouine， 只有一个Gorouine是正在运行状态的。&#xA;P 和 M 的个数问题 [1]&#xA;P 的数量 在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine 在同时运行 M 的数量 go 程序启动时，会设置 M 的最大数量，默认 10000 一个 M 阻塞了，会创建新的 M。 M 与 P 的数量没有绝对关系，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。</description>
+    </item>
+  </channel>
+</rss>

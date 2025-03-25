@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Goroutine的调度 # Overview System Thread : kernel entity Processor : go实现的协程处理器 Goroutine : 协程
+组件 # 组件 G: goroutine, 一个计算任务。 由需要执行的代码和其上下文组成, 上下文包括: 当前代码位置, 栈顶、 栈底地址，状态等。 M: machine, 系统线程, 执行实体, 想要在CPU上执行代码, 必须有线程 P: processor, 虚拟处理器, M必须获得P才能执行代码, 否则必须陷入休眠(后台监控线程除外).
+组件之间的关系 Processor在不同的系统线程里, 每个Processor挂载着一个协程队列，Processor依次调用Gorouine， 只有一个Gorouine是正在运行状态的。
+P 和 M 的个数问题 [1]
+P 的数量 在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine 在同时运行 M 的数量 go 程序启动时，会设置 M 的最大数量，默认 10000 一个 M 阻塞了，会创建新的 M。 M 与 P 的数量没有绝对关系，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Golang/golangGMP/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="Golang Rumtime-GMP">
+  <meta property="og:description" content="Goroutine的调度 # Overview System Thread : kernel entity Processor : go实现的协程处理器 Goroutine : 协程
+组件 # 组件 G: goroutine, 一个计算任务。 由需要执行的代码和其上下文组成, 上下文包括: 当前代码位置, 栈顶、 栈底地址，状态等。 M: machine, 系统线程, 执行实体, 想要在CPU上执行代码, 必须有线程 P: processor, 虚拟处理器, M必须获得P才能执行代码, 否则必须陷入休眠(后台监控线程除外).
+组件之间的关系 Processor在不同的系统线程里, 每个Processor挂载着一个协程队列，Processor依次调用Gorouine， 只有一个Gorouine是正在运行状态的。
+P 和 M 的个数问题 [1]
+P 的数量 在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine 在同时运行 M 的数量 go 程序启动时，会设置 M 的最大数量，默认 10000 一个 M 阻塞了，会创建新的 M。 M 与 P 的数量没有绝对关系，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>Golang Rumtime-GMP | Language</title>
+<link rel="icon" href="/Lang/favicon.png" >
+<link rel="manifest" href="/Lang/manifest.json">
+<link rel="canonical" href="http://localhost:1313/Lang/docs/Golang/golangGMP/">
+<link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/Lang/fuse.min.js"></script>
+  <script defer src="/Lang/en.search.min.47a39e8e9df4f3cac642649bb702b2f02cc4f881ad0f6eefb37670e3ffd0e4b6.js" integrity="sha256-R6Oejp3088rGQmSbtwKy8CzE&#43;IGtD27vs3Zw4//Q5LY=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Golang/golangGMP/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/Lang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle"  />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4dbd9973c314c925060bb22db712a12c" class="toggle"  />
+    <label for="section-4dbd9973c314c925060bb22db712a12c" class="flex justify-between">
+      <a role="button" class="">Core</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaFeature/" class="">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0f6298b2a160495a65e02125b7bede8" class="toggle"  />
+    <label for="section-f0f6298b2a160495a65e02125b7bede8" class="flex justify-between">
+      <a role="button" class="">并发</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/cancelAndShutdown/" class="">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fcbc45d62c50e38c77722e909500d5db" class="toggle"  />
+    <label for="section-fcbc45d62c50e38c77722e909500d5db" class="flex justify-between">
+      <a role="button" class="">Other</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle" checked />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangStudy/" class="">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/golangGMP/" class="active">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/Lang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Golang Rumtime-GMP</h3>
+
+  <label for="toc-control">
+    
+    <img src="/Lang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#goroutine的调度">Goroutine的调度</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#组件">组件</a></li>
+            <li><a href="#场景">场景</a></li>
+            <li><a href="#生产端-2">生产端 [2]</a></li>
+            <li><a href="#消费端-2">消费端 [2]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<h1 id="goroutine的调度">
+  Goroutine的调度
+  <a class="anchor" href="#goroutine%e7%9a%84%e8%b0%83%e5%ba%a6">#</a>
+</h1>
+<ul>
+<li>Overview
+<img src="./images/goroutine.JPG" alt="goroutine的调度" /></li>
+</ul>
+<p><strong>System Thread</strong> : kernel entity
+<strong>Processor</strong> : go实现的协程处理器
+<strong>Goroutine</strong> : 协程</p>
+<h3 id="组件">
+  组件
+  <a class="anchor" href="#%e7%bb%84%e4%bb%b6">#</a>
+</h3>
+<ul>
+<li>
+<p>组件
+G:  goroutine, 一个计算任务。 由需要<strong>执行的代码和其上下文组成</strong>, 上下文包括:  当前代码位置,  栈顶、 栈底地址，状态等。
+M: machine,  <strong>系统线程</strong>, 执行实体,  想要在CPU上执行代码, 必须有线程
+P:  processor, <strong>虚拟处理器</strong>,  <strong>M必须获得P才能执行代码</strong>, 否则必须陷入休眠(后台监控线程除外).</p>
+</li>
+<li>
+<p>组件之间的关系
+Processor在不同的系统线程里, 每个Processor挂载着一个协程队列，Processor依次调用Gorouine，
+只有一个Gorouine是正在运行状态的。</p>
+</li>
+<li>
+<p>P 和 M 的个数问题  [1]</p>
+<ul>
+<li>P 的数量
+在程序执行的<strong>任意时刻</strong>都只有 <strong>$GOMAXPROCS 个</strong> goroutine 在同时运行</li>
+<li>M 的数量
+go 程序启动时，会设置 M 的最大数量，默认 10000
+<strong>一个 M 阻塞了，会创建新的 M。</strong></li>
+</ul>
+<p>M 与 P 的数量没有绝对关系，<strong>一个 M 阻塞，P 就会去创建或者切换另一个 M</strong>，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。</p>
+</li>
+<li>
+<p>P 和 M 何时会被创建  [1]</p>
+<ul>
+<li>P 何时创建
+在确定了 P 的最大数量 n 后，运行时系统会根据这个数量创建 n 个 P。</li>
+<li>M 何时创建
+<strong>没有足够的 M 来关联 P 并运行其中的可运行的 G。</strong> 比如所有的 M 此时都阻塞住了，而 P 中还有很多就绪任务，就会去寻找空闲的 M，而没有空闲的，就会去创建新的 M</li>
+</ul>
+</li>
+<li>
+<p>看参考文档里的图
+<img src="./images/GMP.jpg" alt="GMP" /></p>
+</li>
+<li>
+<p>协程跟线程是有区别的，线程由 CPU 调度是抢占式的，协程由用户态调度是协作式的，一个协程让出 CPU 后，才执行下一个协程。</p>
+</li>
+</ul>
+<h3 id="场景">
+  场景
+  <a class="anchor" href="#%e5%9c%ba%e6%99%af">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>处理阻塞[能被runtime拦截到的阻塞-非阻塞]</strong>  [2]</p>
+<ul>
+<li>在线程发生阻塞的时候，不会无限制的创建线程</li>
+<li>以下这些情况,  会把goroutine挂起，让g先进某个数据结构，待ready后再继续执行
+不会占用线程， 线程会进入schedule，继续消费队列，执行其他的g   <br>
+<img src="./images/feizusai.jpg" alt="feizusai.jpg" /></li>
+</ul>
+</li>
+<li>
+<p><strong>处理阻塞[不能被runtime拦截到的阻塞-阻塞]</strong>  [2]</p>
+<ul>
+<li>两种情况
+<ul>
+<li>CGO</li>
+<li>阻塞在syscall上时,  必须占用一个线程</li>
+</ul>
+</li>
+<li><strong>sysmon</strong>,  在专有线程中执行, 不需要绑定P就可以执行
+<ul>
+<li>checkdead
+常见误解 这个可以检查死锁</li>
+<li>netpoll
+inject g list to global runqueue</li>
+<li>retake
+如果syscall卡了很久，就把p剥离(<strong>handoffp</strong>)  #1
+如果用户g运行了很久, 就发信号SIGURG抢占</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>case</p>
+<ul>
+<li>case1
+<strong>一个协程运行时间运行的特别长</strong>。 守护线程计数， 如果processor完成的goroutine数量一直不变。在这个协程的任务栈里插入一个中断的标记，读到这个中断标记后，goroutine会把自己中断下来插入到等待队列的队尾。</li>
+<li>case2
+<strong>某个协程被io中断后</strong>， Processer会把自己移动到另一个可用的系统线程当中， 执行队列里的任务。
+当这个协程io中断被唤醒后，会把自己加入到某个Processor的队列里， 或者加入到全局的等待队列里。</li>
+</ul>
+</li>
+<li>
+<p>调度器的设计策略 [1]</p>
+<ul>
+<li>work stealing 机制</li>
+<li>hand off 机制  #1</li>
+</ul>
+</li>
+</ul>
+<h3 id="生产端-2">
+  生产端 [2]
+  <a class="anchor" href="#%e7%94%9f%e4%ba%a7%e7%ab%af-2">#</a>
+</h3>
+<p><img src="./images/producer.JPG" alt="producer.JPG" /></p>
+<h3 id="消费端-2">
+  消费端 [2]
+  <a class="anchor" href="#%e6%b6%88%e8%b4%b9%e7%ab%af-2">#</a>
+</h3>
+<p><img src="./images/consumer.JPG" alt="consumer.JPG" /></p>
+<h1 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h1>
+<ol>
+<li><a href="https://blog.csdn.net/qq_44205272/article/details/111565957">Golang的GMP原理与调度</a> ***</li>
+<li>《04 Go 程序是怎么跑起来的》  ***</li>
+<li><a href="https://www.bilibili.com/video/BV1oE411y7qG/">#64 深入浅出 Golang Runtime 【 Go 夜读 】</a>  goroutine ,  go network , gc *** 未</li>
+<li><a href="https://www.bilibili.com/video/BV19r4y1w7Nx?spm_id_from=333.880.my_history.page.click">Golang深入理解GPM模型</a>  *** 未</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#goroutine的调度">Goroutine的调度</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#组件">组件</a></li>
+            <li><a href="#场景">场景</a></li>
+            <li><a href="#生产端-2">生产端 [2]</a></li>
+            <li><a href="#消费端-2">消费端 [2]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

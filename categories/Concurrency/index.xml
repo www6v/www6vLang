@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on Language</title>
+    <link>http://localhost:1313/Lang/categories/Concurrency/</link>
+    <description>Recent content in Concurrency on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Jun 2022 13:50:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/Lang/categories/Concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 并发Bug</title>
+      <link>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrencyBug/</link>
+      <pubDate>Mon, 20 Jun 2022 13:50:38 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrencyBug/</guid>
+      <description>目录 # 死锁 [1] # 通过pprof进入goroutine页面查看 [gpt] 在Golang中，互斥锁（Mutex）是不支持重入的，如果在一个goroutine中已经获得了互斥锁的锁并且没有释放，那么在同一个goroutine中再次尝试获取该锁时会导致死锁。&#xA;这是因为互斥锁是一个排他锁，当一个goroutine获取了互斥锁的锁之后，其他的goroutine就不能再获取该锁，直到该goroutine释放该锁。如果同一个goroutine再次获取该锁，就会导致死锁。&#xA;不过，在Golang中也提供了另外一种锁——读写锁（RWMutex），它是支持重入的。读写锁允许多个goroutine同时读取共享资源，但在写入时必须独占访问。读写锁内部有一个计数器，用于记录已经获取读锁的goroutine数量，因此同一个goroutine获取读锁是可以重入的。但是，当一个goroutine获取了写锁时，它不能再获取读锁，否则也会导致死锁。&#xA;总之，互斥锁不支持重入，而读写锁支持重入。在使用锁的时候应该根据实际情况选择合适的锁来避免死锁的发生。 [/gpt]&#xA;example1 [1] # func m() { b.Lock() c.Lock() } func n() { c.Lock() b.Lock() } example2 # [gpt] 以下是一个可能导致死锁的Golang代码示例：&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;sync&amp;#34; ) func main() { var mu sync.Mutex c1 := make(chan int) go func() { mu.Lock() defer mu.Unlock() c1 &amp;lt;- 1 }() &amp;lt;-c1 mu.Lock() // 这里会导致死锁 defer mu.Unlock() fmt.Println(&amp;#34;Done&amp;#34;) } 在这个例子中，我们创建了一个互斥锁（Mutex）mu 和一个整数类型的无缓冲通道c1。接下来，我们在一个goroutine中获取了mu的锁，并在获取锁之后往c1通道中发送了一个整数1。在主goroutine中，我们从c1通道中接收1，然后再次试图获取mu的锁。但是，由于在此之前该锁已经在另一个goroutine中被获取并没有释放，因此会导致主goroutine被阻塞，从而导致死锁。&#xA;解决这个问题的方法是在goroutine中释放锁，然后在主goroutine中再获取锁，如下所示：</description>
+    </item>
+    <item>
+      <title>Golang Concurrency</title>
+      <link>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrency/</link>
+      <pubDate>Sun, 19 Jun 2022 12:22:27 +0000</pubDate>
+      <guid>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrency/</guid>
+      <description>目录 # 并发 [2][1] # 并发原语 # sync.Once [3]&#xA;保证在 Go 程序运行期间的某段代码只会执行一次 sync.Pool [3]&#xA;两种场景中可以使用Pool做优化 进程中的inuse-objects数过多, gc mark 消耗大量CPU 进程中的inuse-objects数过多, 进程RSS占用过高 最佳实践 请求生命周期开始时，pool.Get, 请求结束时, pool.Put semaphore 信号量 [3]&#xA;是锁的实现基础, 所有同步原语的基础设施 内部结构 treap tree+heap 二插搜索树 树上的每个节点都是一个链表 小顶堆 sync.Mutex 互斥锁 [3]&#xA;内部结构 state 饥饿模式: 最新进自旋的goroutine优先级最高 非饥饿模式: 排队 sema 信号量 sync.RWMutex 读写锁 [3]&#xA;内部结构 w writerSem readerSem readerCount readerWait sync.Map [3]&#xA;线程安全的Map 内部结构 mu read dirty misses 设计 map+lock 多核扩展性差一点 sync.Map 在读多写少的情况下，基本上不需要加锁 sync.</description>
+    </item>
+  </channel>
+</rss>

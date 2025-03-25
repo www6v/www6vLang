@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+取消和关闭 基础 中断状态 中断请求 取消点 任务取消 取消策略（how/when/what） how/when volatile的取消状态&#43;非阻塞方法(正确) volatile的取消状态&#43;阻塞方法(错误) 中断的状态显示的检查（正确）.Thread.currentThread().isInterrupted() what, 中断策略（如何响应中断请求） InterruptedException传递给调用者，捕获后恢复中断的状态，Thread.currentThread().interrupted(). 封装成shutdown方法 通过Future.cancel来取消任务 中断当前线程 阻塞函数 抛出InterruptedException Thread.isInterrupted()返回false eg. Object的wait(),Thread的join(),sleep() IO上的阻塞 BIO Socket读写网络 JDBC驱动MySQL-connector-java nio InterruptibleChannel InterruptibleChannel将被关闭 抛出ClosedByInterruptException Thread.isInterrupted()返回true Selector Selector#select()方法将立即返回 不会抛出异常 Thread.isInterrupted()返回true 服务取消 生命周期方法 start() stop() ExceuteService.shutDown()/shutDownNow() 致命药丸(akka的Poison Pill) 锁中断 不可中断 内部锁synchronized, ReentrantLock.lock() 可中断 显示锁ReentrantLock.tryLock()，.lockInterruptibly() ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="Java多线程中的取消和关闭">
+  <meta property="og:description" content="
+取消和关闭 基础 中断状态 中断请求 取消点 任务取消 取消策略（how/when/what） how/when volatile的取消状态&#43;非阻塞方法(正确) volatile的取消状态&#43;阻塞方法(错误) 中断的状态显示的检查（正确）.Thread.currentThread().isInterrupted() what, 中断策略（如何响应中断请求） InterruptedException传递给调用者，捕获后恢复中断的状态，Thread.currentThread().interrupted(). 封装成shutdown方法 通过Future.cancel来取消任务 中断当前线程 阻塞函数 抛出InterruptedException Thread.isInterrupted()返回false eg. Object的wait(),Thread的join(),sleep() IO上的阻塞 BIO Socket读写网络 JDBC驱动MySQL-connector-java nio InterruptibleChannel InterruptibleChannel将被关闭 抛出ClosedByInterruptException Thread.isInterrupted()返回true Selector Selector#select()方法将立即返回 不会抛出异常 Thread.isInterrupted()返回true 服务取消 生命周期方法 start() stop() ExceuteService.shutDown()/shutDownNow() 致命药丸(akka的Poison Pill) 锁中断 不可中断 内部锁synchronized, ReentrantLock.lock() 可中断 显示锁ReentrantLock.tryLock()，.lockInterruptibly() ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>Java多线程中的取消和关闭 | Language</title>
+<link rel="icon" href="/Lang/favicon.png" >
+<link rel="manifest" href="/Lang/manifest.json">
+<link rel="canonical" href="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/">
+<link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/Lang/fuse.min.js"></script>
+  <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/Lang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Java</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaFeature/" class="">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>并发</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/cancelAndShutdown/" class="active">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Golang</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c51d7ffcbee6c551be5d1081f7c98c33" class="toggle"  />
+    <label for="section-c51d7ffcbee6c551be5d1081f7c98c33" class="flex justify-between">
+      <a role="button" class="">core</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangSlice/" class="">Golang基础-Slice</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangMemoryModel/" class="">Golang Rumtime-内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangBasic/" class="">Golang 基础</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/core/golangGMP/" class="">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>concurrent</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/concurrent/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5f3da7ad15a95228049ca7a82a276e15" class="toggle"  />
+    <label for="section-5f3da7ad15a95228049ca7a82a276e15" class="flex justify-between">
+      <a role="button" class="">other</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangStudy/" class="">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/Lang/docs/Golang/other/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/Lang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Java多线程中的取消和关闭</h3>
+
+  <label for="toc-control">
+    
+    <img src="/Lang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<ul>
+<li>取消和关闭
+<ul>
+<li>基础
+<ul>
+<li>中断状态</li>
+<li>中断请求</li>
+<li>取消点</li>
+</ul>
+</li>
+<li>任务取消
+<ul>
+<li>取消策略（how/when/what）
+<ul>
+<li>how/when
+<ul>
+<li>volatile的取消状态+非阻塞方法(正确)</li>
+<li>volatile的取消状态+阻塞方法(错误)</li>
+<li>中断的状态显示的检查（正确）.Thread.currentThread().isInterrupted()</li>
+</ul>
+</li>
+<li>what, 中断策略（如何响应中断请求）
+<ul>
+<li>InterruptedException传递给调用者，捕获后恢复中断的状态，Thread.currentThread().interrupted().</li>
+<li>封装成shutdown方法</li>
+<li>通过Future.cancel来取消任务
+<ul>
+<li>中断当前线程</li>
+</ul>
+</li>
+<li>阻塞函数
+<ul>
+<li>抛出InterruptedException</li>
+<li>Thread.isInterrupted()返回false</li>
+<li>eg. Object的wait(),Thread的join(),sleep()</li>
+</ul>
+</li>
+<li>IO上的阻塞
+<ul>
+<li>BIO
+<ul>
+<li>Socket读写网络</li>
+<li>JDBC驱动MySQL-connector-java</li>
+</ul>
+</li>
+<li>nio
+<ul>
+<li>InterruptibleChannel
+<ul>
+<li>InterruptibleChannel将被关闭</li>
+<li>抛出ClosedByInterruptException</li>
+<li>Thread.isInterrupted()返回true</li>
+</ul>
+</li>
+<li>Selector
+<ul>
+<li>Selector#select()方法将立即返回</li>
+<li>不会抛出异常</li>
+<li>Thread.isInterrupted()返回true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>服务取消
+<ul>
+<li>生命周期方法
+<ul>
+<li>start()</li>
+<li>stop()</li>
+</ul>
+</li>
+<li>ExceuteService.shutDown()/shutDownNow()</li>
+<li>致命药丸(akka的Poison Pill)</li>
+</ul>
+</li>
+<li>锁中断
+<ul>
+<li>不可中断
+<ul>
+<li>内部锁synchronized, ReentrantLock.lock()</li>
+</ul>
+</li>
+<li>可中断
+<ul>
+<li>显示锁ReentrantLock.tryLock()，.lockInterruptibly()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
