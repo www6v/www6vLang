@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>并发 on Language</title>
-    <link>http://localhost:1313/Lang/tags/%E5%B9%B6%E5%8F%91/</link>
+    <link>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91/</link>
     <description>Recent content in 并发 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 21 Apr 2014 12:11:33 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/Lang/tags/%E5%B9%B6%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java多线程总结</title>
-      <link>http://localhost:1313/Lang/docs/Java/concurrent/thread/</link>
+      <link>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</link>
       <pubDate>Mon, 21 Apr 2014 12:11:33 +0000</pubDate>
-      <guid>http://localhost:1313/Lang/docs/Java/concurrent/thread/</guid>
+      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</guid>
       <description>&#xA;参考： # 非阻塞同步算法与CAS(Compare and Swap)无锁算法 高性能队列——Disruptor java多线程体系 东隼 《并发编程实践》 Brian Goetz 第3章 Java并发之AQS详解 waterystone 面试官：线程顺序执行,这么多答案你都答不上来？ Join, wait, Condition, 线程池 </description>
     </item>
   </channel>

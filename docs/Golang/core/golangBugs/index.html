@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Errors # 异常处理 [4] # Bugs # Golang 循环变量引用问题[7] 故障 [20] # CPU 用爆了？ 90%？ 内存用爆了？OOM？ Goroutine 用爆了？ 80w？ 线程数爆了？ 延迟太高？
@@ -8,7 +8,7 @@
 排除外部问题 例如依赖的上游服务(db, redis, mq)延迟过高，在监控系统中查看 锁阻塞 减少临界区范围 降低锁粒度 Global lock -&gt; sharded lock Global lock -&gt; connection level lock Connection level lock -&gt; request level lock 同步改异步 日志场景: 同步日志 -&gt; 异步日志 Metric 上报场景: select -&gt; select&#43;default 个别场景使用双buffer 完全消灭阻塞 CPU占用过高 看CPU profile -&gt; 优化占用CPU较多的部分逻辑">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Golang/core/golangBugs/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Golang/core/golangBugs/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="Golang 基础-Errors&Bugs">
   <meta property="og:description" content="Errors # 异常处理 [4] # Bugs # Golang 循环变量引用问题[7] 故障 [20] # CPU 用爆了？ 90%？ 内存用爆了？OOM？ Goroutine 用爆了？ 80w？ 线程数爆了？ 延迟太高？
@@ -19,14 +19,14 @@
 <title>Golang 基础-Errors&amp;Bugs | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Golang/core/golangBugs/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Golang/core/golangBugs/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Golang/core/golangBugs/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Golang/core/golangBugs/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

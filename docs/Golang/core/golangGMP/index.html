@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Goroutine的调度 # Overview System Thread : kernel entity Processor : go实现的协程处理器 Goroutine : 协程
@@ -10,7 +10,7 @@ P 和 M 的个数问题 [1]
 P 的数量 在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine 在同时运行 M 的数量 go 程序启动时，会设置 M 的最大数量，默认 10000 一个 M 阻塞了，会创建新的 M。 M 与 P 的数量没有绝对关系，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Golang/core/golangGMP/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Golang/core/golangGMP/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="Golang Rumtime-GMP">
   <meta property="og:description" content="Goroutine的调度 # Overview System Thread : kernel entity Processor : go实现的协程处理器 Goroutine : 协程
@@ -23,14 +23,14 @@ P 的数量 在程序执行的任意时刻都只有 $GOMAXPROCS 个 goroutine �
 <title>Golang Rumtime-GMP | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Golang/core/golangGMP/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Golang/core/golangGMP/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Golang/core/golangGMP/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Golang/core/golangGMP/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
 参考: # 关于Java集合的小抄 白衣 谈谈ConcurrentHashMap1.7和1.8的不同实现 占小狼 高性能队列——Disruptor 非阻塞算法在并发容器中的实现 程晓明 从volatile解读ConcurrentHashMap（jdk1.6.0）无锁读 绫萱 JAVA并发容器代码随读 BucketLi 聊聊并发（四）深入分析ConcurrentHashMap 方 腾飞 Java8 新特性之流式数据处理 深蓝至尊 不止JDK7的HashMap，JDK8的ConcurrentHashMap也会造成CPU 100% 朱小厮 朱忠华 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="Java并发容器总结">
   <meta property="og:description" content="
@@ -17,14 +17,14 @@
 <title>Java并发容器总结 | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -70,13 +70,16 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        <li>
+        <li class="book-section-flat" >
           
   
   
 
   
-    <span>Java</span>
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
   
 
           
@@ -430,13 +433,16 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li>
+        <li class="book-section-flat" >
           
   
   
 
   
-    <span>Golang</span>
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
   
 
           
@@ -659,16 +665,13 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li class="book-section-flat" >
+        <li>
           
   
   
 
   
-    <input type="checkbox" id="section-5f3da7ad15a95228049ca7a82a276e15" class="toggle"  />
-    <label for="section-5f3da7ad15a95228049ca7a82a276e15" class="flex justify-between">
-      <a role="button" class="">other</a>
-    </label>
+    <span>other</span>
   
 
           

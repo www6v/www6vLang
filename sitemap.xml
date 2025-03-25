@@ -2,231 +2,240 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/</loc>
+    <loc>https://www6v.github.io/Lang/docs/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/</loc>
     <lastmod>2022-09-22T14:05:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/</loc>
+    <lastmod>2022-09-22T14:05:36+00:00</lastmod>
+  </url><url>
+    <loc>https://www6v.github.io/Lang/docs/Golang/concurrent/</loc>
+    <lastmod>2022-06-26T10:01:07+00:00</lastmod>
+  </url><url>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/</loc>
     <lastmod>2014-07-02T12:35:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/other/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/other/</loc>
+    <lastmod>2022-09-09T10:57:25+00:00</lastmod>
+  </url><url>
+    <loc>https://www6v.github.io/Lang/docs/Java/other/</loc>
     <lastmod>2019-09-10T20:26:54+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/</loc>
+    <loc>https://www6v.github.io/Lang/categories/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Feature/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Feature/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/javaFeature/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/javaFeature/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/Java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://www6v.github.io/Lang/tags/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Java%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Java%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/</loc>
+    <loc>https://www6v.github.io/Lang/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/</loc>
+    <loc>https://www6v.github.io/Lang/tags/</loc>
     <lastmod>2023-06-10T10:14:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/Golang/</loc>
+    <loc>https://www6v.github.io/Lang/tags/Golang/</loc>
     <lastmod>2022-09-22T14:05:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Golang/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Golang/</loc>
     <lastmod>2022-09-22T14:05:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangMap/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangMap/</loc>
     <lastmod>2022-09-22T14:05:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-09-22T14:05:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/other/golangStudy/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/other/golangStudy/</loc>
     <lastmod>2022-09-09T10:57:25+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2022-09-09T10:57:25+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangSlice/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangSlice/</loc>
     <lastmod>2022-07-09T18:43:02+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangBugs/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangBugs/</loc>
     <lastmod>2022-07-07T11:59:53+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/concurrent/golangChannel/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/concurrent/golangChannel/</loc>
     <lastmod>2022-06-26T10:01:07+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2022-06-26T10:01:07+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/</loc>
     <lastmod>2022-06-24T16:58:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Linter/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Linter/</loc>
     <lastmod>2022-06-24T16:58:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Framework/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Framework/</loc>
     <lastmod>2022-06-21T11:30:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/other/golangFramework/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/other/golangFramework/</loc>
     <lastmod>2022-06-21T11:30:17+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangMemoryModel/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangMemoryModel/</loc>
     <lastmod>2022-06-21T03:55:05+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2022-06-21T03:55:05+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Concurrency/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Concurrency/</loc>
     <lastmod>2022-06-20T13:50:38+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrencyBug/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/concurrent/golangConcurrencyBug/</loc>
     <lastmod>2022-06-20T13:50:38+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/concurrent/golangConcurrency/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/concurrent/golangConcurrency/</loc>
     <lastmod>2022-06-19T12:22:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangBasic/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangBasic/</loc>
     <lastmod>2022-03-08T23:07:50+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/GMP/</loc>
+    <loc>https://www6v.github.io/Lang/categories/GMP/</loc>
     <lastmod>2022-03-08T12:15:08+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Golang/core/golangGMP/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Golang/core/golangGMP/</loc>
     <lastmod>2022-03-08T12:15:08+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/other/designPatternsInJava/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/other/designPatternsInJava/</loc>
     <lastmod>2019-09-10T20:26:54+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2019-09-10T20:26:54+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-09-10T20:26:54+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-09-10T20:26:54+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/gc/</loc>
+    <loc>https://www6v.github.io/Lang/tags/gc/</loc>
     <lastmod>2017-11-27T09:58:10+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/jvm/</loc>
+    <loc>https://www6v.github.io/Lang/categories/jvm/</loc>
     <lastmod>2017-11-27T09:58:10+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/other/optimize/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/other/optimize/</loc>
     <lastmod>2017-11-27T09:58:10+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E6%80%A7%E8%83%BD/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E6%80%A7%E8%83%BD/</loc>
     <lastmod>2017-11-27T09:58:10+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/collection/</loc>
+    <loc>https://www6v.github.io/Lang/tags/collection/</loc>
     <lastmod>2014-12-03T14:32:20+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/collection/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/collection/</loc>
     <lastmod>2014-12-03T14:32:20+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E9%9B%86%E5%90%88/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E9%9B%86%E5%90%88/</loc>
     <lastmod>2014-12-03T14:32:20+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E9%9B%86%E5%90%88/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E9%9B%86%E5%90%88/</loc>
     <lastmod>2014-12-03T14:32:20+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/AOP/</loc>
+    <loc>https://www6v.github.io/Lang/tags/AOP/</loc>
     <lastmod>2014-11-21T14:25:58+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/AOP/</loc>
+    <loc>https://www6v.github.io/Lang/categories/AOP/</loc>
     <lastmod>2014-11-21T14:25:58+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/aop/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/aop/</loc>
     <lastmod>2014-11-21T14:25:58+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/classloader/</loc>
+    <loc>https://www6v.github.io/Lang/tags/classloader/</loc>
     <lastmod>2014-08-12T14:11:26+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/classloader/</loc>
+    <loc>https://www6v.github.io/Lang/categories/classloader/</loc>
     <lastmod>2014-08-12T14:11:26+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/classloaderSummarize/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/classloaderSummarize/</loc>
     <lastmod>2014-08-12T14:11:26+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/jvm/</loc>
+    <loc>https://www6v.github.io/Lang/tags/jvm/</loc>
     <lastmod>2014-08-12T14:11:26+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/gc/</loc>
+    <loc>https://www6v.github.io/Lang/categories/gc/</loc>
     <lastmod>2014-07-16T14:05:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%86%85%E5%AD%98/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%86%85%E5%AD%98/</loc>
     <lastmod>2014-07-16T14:05:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/gc/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/gc/</loc>
     <lastmod>2014-07-16T14:05:43+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2014-07-02T12:35:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2014-07-02T12:35:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/threadNum/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/</loc>
     <lastmod>2014-07-02T12:35:36+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/volatile-CAS/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/volatile-CAS/</loc>
     <lastmod>2014-06-02T12:24:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/lock/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/lock/</loc>
     <lastmod>2014-05-27T12:20:45+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/thread/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</loc>
     <lastmod>2014-04-21T12:11:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E5%B9%B6%E5%8F%91/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91/</loc>
     <lastmod>2014-04-21T12:11:33+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/</loc>
     <lastmod>2014-04-09T11:20:13+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/Java%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</loc>
+    <loc>https://www6v.github.io/Lang/categories/Java%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</loc>
     <lastmod>2014-02-02T10:26:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/javaMemoryLeak/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/javaMemoryLeak/</loc>
     <lastmod>2014-02-02T10:26:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E5%86%85%E5%AD%98/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E5%86%85%E5%AD%98/</loc>
     <lastmod>2014-02-02T10:26:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/</loc>
     <lastmod>2014-02-02T10:26:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E7%A8%B3%E5%AE%9A%E6%80%A7/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E7%A8%B3%E5%AE%9A%E6%80%A7/</loc>
     <lastmod>2014-02-02T10:26:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/javaString/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/javaString/</loc>
     <lastmod>2014-01-20T19:50:41+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/String/</loc>
+    <loc>https://www6v.github.io/Lang/categories/String/</loc>
     <lastmod>2014-01-20T19:50:41+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/core/javaMemoryModel/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/core/javaMemoryModel/</loc>
     <lastmod>2014-01-03T22:14:27+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/concurrentCollection/</loc>
+    <loc>https://www6v.github.io/Lang/tags/concurrentCollection/</loc>
   </url><url>
-    <loc>http://localhost:1313/Lang/docs/Java/concurrent/concurrentCollection/</loc>
+    <loc>https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/</loc>
   </url><url>
-    <loc>http://localhost:1313/Lang/categories/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/</loc>
+    <loc>https://www6v.github.io/Lang/categories/%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/</loc>
   </url><url>
-    <loc>http://localhost:1313/Lang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</loc>
+    <loc>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</loc>
   </url>
 </urlset>

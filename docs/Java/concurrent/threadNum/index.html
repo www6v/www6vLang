@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="最佳实践: 曾经遇到过任务被丢给线程池之后，长时间都没有被执行的诡异问题。最初，我认为这是代码的 Bug 导致的，后来经过排查发现，是因为线程池的coreThreadCount 和 maxThreadCount 设置的比较小，导致任务在线程池里面大量的堆积，在调大了这两个参数之后问题就解决了.
 参考: # 工作线程数究竟要设置为多少 架构师之路 蚂蚁金服技术专家总结：性能优化的常见招式 jurassic_1 《Java 并发编程实践》 8.2定制线程池的大小 Brian Goetz 高并发系统设计40问 - 07 | 池化技术：如何减少频繁创建数据库连接的性能损耗？ 唐扬 ​">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Java/concurrent/threadNum/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="线程池最佳线程数">
   <meta property="og:description" content="最佳实践: 曾经遇到过任务被丢给线程池之后，长时间都没有被执行的诡异问题。最初，我认为这是代码的 Bug 导致的，后来经过排查发现，是因为线程池的coreThreadCount 和 maxThreadCount 设置的比较小，导致任务在线程池里面大量的堆积，在调大了这两个参数之后问题就解决了.
@@ -17,14 +17,14 @@
 <title>线程池最佳线程数 | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Java/concurrent/threadNum/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Java/concurrent/threadNum/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -70,13 +70,16 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        <li>
+        <li class="book-section-flat" >
           
   
   
 
   
-    <span>Java</span>
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
   
 
           
@@ -430,13 +433,16 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li>
+        <li class="book-section-flat" >
           
   
   
 
   
-    <span>Golang</span>
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
   
 
           

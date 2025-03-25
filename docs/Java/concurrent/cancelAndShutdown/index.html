@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
 取消和关闭 基础 中断状态 中断请求 取消点 任务取消 取消策略（how/when/what） how/when volatile的取消状态&#43;非阻塞方法(正确) volatile的取消状态&#43;阻塞方法(错误) 中断的状态显示的检查（正确）.Thread.currentThread().isInterrupted() what, 中断策略（如何响应中断请求） InterruptedException传递给调用者，捕获后恢复中断的状态，Thread.currentThread().interrupted(). 封装成shutdown方法 通过Future.cancel来取消任务 中断当前线程 阻塞函数 抛出InterruptedException Thread.isInterrupted()返回false eg. Object的wait(),Thread的join(),sleep() IO上的阻塞 BIO Socket读写网络 JDBC驱动MySQL-connector-java nio InterruptibleChannel InterruptibleChannel将被关闭 抛出ClosedByInterruptException Thread.isInterrupted()返回true Selector Selector#select()方法将立即返回 不会抛出异常 Thread.isInterrupted()返回true 服务取消 生命周期方法 start() stop() ExceuteService.shutDown()/shutDownNow() 致命药丸(akka的Poison Pill) 锁中断 不可中断 内部锁synchronized, ReentrantLock.lock() 可中断 显示锁ReentrantLock.tryLock()，.lockInterruptibly() ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="Java多线程中的取消和关闭">
   <meta property="og:description" content="
@@ -17,14 +17,14 @@
 <title>Java多线程中的取消和关闭 | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Java/concurrent/cancelAndShutdown/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -70,13 +70,16 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        <li>
+        <li class="book-section-flat" >
           
   
   
 
   
-    <span>Java</span>
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
   
 
           
@@ -430,29 +433,29 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li>
-          
-  
-  
-
-  
-    <span>Golang</span>
-  
-
-          
-  <ul>
-    
-      
         <li class="book-section-flat" >
           
   
   
 
   
-    <input type="checkbox" id="section-c51d7ffcbee6c551be5d1081f7c98c33" class="toggle"  />
-    <label for="section-c51d7ffcbee6c551be5d1081f7c98c33" class="flex justify-between">
-      <a role="button" class="">core</a>
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
     </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>core</span>
   
 
           
@@ -662,16 +665,13 @@ https://github.com/alex-shpak/hugo-book
       
     
       
-        <li class="book-section-flat" >
+        <li>
           
   
   
 
   
-    <input type="checkbox" id="section-5f3da7ad15a95228049ca7a82a276e15" class="toggle"  />
-    <label for="section-5f3da7ad15a95228049ca7a82a276e15" class="flex justify-between">
-      <a role="button" class="">other</a>
-    </label>
+    <span>other</span>
   
 
           

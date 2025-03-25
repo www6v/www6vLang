@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head><script src="/Lang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Lang/livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="linter [1] # 单个
@@ -9,7 +9,7 @@ golangci-lint 标准 sonarqube deepsource golangci-lint &#43; reviewdog [3]
 给项目提pr时，自动执行linter，自动CI？ github支持, gitlab也支持 name: actions on: push: branches: - master pull_request: types: - opened - reopened - synchronize - ready_for_review jobs: golangci-lint: if: ${{ !github.event.pull_request.draft }} name: runner / golangci-lint runs-on: ubuntu-latest steps: - name: Check out code uses: actions/checkout@v3 - name: golangci-lint uses: reviewdog/action-golangci-lint@v2 if: github.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="Golang 基础-Linter">
   <meta property="og:description" content="linter [1] # 单个
@@ -21,14 +21,14 @@ golangci-lint 标准 sonarqube deepsource golangci-lint &#43; reviewdog [3]
 <title>Golang 基础-Linter | Language</title>
 <link rel="icon" href="/Lang/favicon.png" >
 <link rel="manifest" href="/Lang/manifest.json">
-<link rel="canonical" href="http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/">
+<link rel="canonical" href="https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/">
 <link rel="stylesheet" href="/Lang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/Lang/fuse.min.js"></script>
   <script defer src="/Lang/en.search.min.13d33397832c01d67db69eb1dd21034ecee44bd704ef9b13d2a157be876ec4cc.js" integrity="sha256-E9Mzl4MsAdZ9tp6x3SEDTs7kS9cE75sT0qFXvoduxMw=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/Lang/docs/Golang/core/golangBasicLinter/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

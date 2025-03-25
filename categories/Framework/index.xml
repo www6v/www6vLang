@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Framework on Language</title>
-    <link>http://localhost:1313/Lang/categories/Framework/</link>
+    <link>https://www6v.github.io/Lang/categories/Framework/</link>
     <description>Recent content in Framework on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 21 Jun 2022 11:30:17 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/Lang/categories/Framework/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/Lang/categories/Framework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Framework</title>
-      <link>http://localhost:1313/Lang/docs/Golang/other/golangFramework/</link>
+      <link>https://www6v.github.io/Lang/docs/Golang/other/golangFramework/</link>
       <pubDate>Tue, 21 Jun 2022 11:30:17 +0000</pubDate>
-      <guid>http://localhost:1313/Lang/docs/Golang/other/golangFramework/</guid>
+      <guid>https://www6v.github.io/Lang/docs/Golang/other/golangFramework/</guid>
       <description>&#xA;Web [1] # Httprouter radix tree&#xA;chi&#xA;最简单的框架 适合作为web框架入门项目 核心代码1200行+ Gin&#xA;主要组件 router 支持分组 middleware&#xA;binding-decoder和validator logger context 老牌框架 核心代码3000行 echo&#xA;Fiber&#xA;基于fasthttp beego&#xA;微服务[1] # 组件 # config logger metrics Prometheus tracing OpenTelemetry registry MQ 依赖注入 wire，dig 框架 # GoMicro [2] + Go-Zero YOYOGO Dubbo GO Kratos[bili开源] goframe 本地缓存[3] # freecache bigcache fastcache Time &amp;amp;&amp;amp; cron[4] # 参考 # 《17 直播：社区优秀开源框架对比》 go-micro 源码解析 - server &amp;amp; client Golang 本地缓存选型对比及原理总结 一些关于时间和定时任务的库 Go 开源本地缓存组件选型对比（freecache、bigcache、fastcache 等） 未 鹅厂微创新Golang缓存组件TCache介绍 未 </description>
     </item>
   </channel>
