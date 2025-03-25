@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Language</title>
-    <link>https://www6v.github.io/Lang/tags/</link>
+    <link>https://www6v.github.io/www6vLang/tags/</link>
     <description>Recent content in Tags on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 10 Jun 2023 10:14:03 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java基础</title>
-      <link>https://www6v.github.io/Lang/tags/Java%E5%9F%BA%E7%A1%80/</link>
+      <link>https://www6v.github.io/www6vLang/tags/Java%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 10 Jun 2023 10:14:03 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/Java%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/Java%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>https://www6v.github.io/Lang/tags/Golang/</link>
+      <link>https://www6v.github.io/www6vLang/tags/Golang/</link>
       <pubDate>Thu, 22 Sep 2022 14:05:36 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/Golang/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/Golang/</guid>
       <description></description>
     </item>
     <item>
       <title>设计模式</title>
-      <link>https://www6v.github.io/Lang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Tue, 10 Sep 2019 20:26:54 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>Gc</title>
-      <link>https://www6v.github.io/Lang/tags/gc/</link>
+      <link>https://www6v.github.io/www6vLang/tags/gc/</link>
       <pubDate>Mon, 27 Nov 2017 09:58:10 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/gc/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/gc/</guid>
       <description></description>
     </item>
     <item>
       <title>Collection</title>
-      <link>https://www6v.github.io/Lang/tags/collection/</link>
+      <link>https://www6v.github.io/www6vLang/tags/collection/</link>
       <pubDate>Wed, 03 Dec 2014 14:32:20 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/collection/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/collection/</guid>
       <description></description>
     </item>
     <item>
       <title>集合</title>
-      <link>https://www6v.github.io/Lang/tags/%E9%9B%86%E5%90%88/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E9%9B%86%E5%90%88/</link>
       <pubDate>Wed, 03 Dec 2014 14:32:20 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E9%9B%86%E5%90%88/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E9%9B%86%E5%90%88/</guid>
       <description></description>
     </item>
     <item>
       <title>AOP</title>
-      <link>https://www6v.github.io/Lang/tags/AOP/</link>
+      <link>https://www6v.github.io/www6vLang/tags/AOP/</link>
       <pubDate>Fri, 21 Nov 2014 14:25:58 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/AOP/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/AOP/</guid>
       <description></description>
     </item>
     <item>
       <title>Classloader</title>
-      <link>https://www6v.github.io/Lang/tags/classloader/</link>
+      <link>https://www6v.github.io/www6vLang/tags/classloader/</link>
       <pubDate>Tue, 12 Aug 2014 14:11:26 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/classloader/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/classloader/</guid>
       <description></description>
     </item>
     <item>
       <title>Jvm</title>
-      <link>https://www6v.github.io/Lang/tags/jvm/</link>
+      <link>https://www6v.github.io/www6vLang/tags/jvm/</link>
       <pubDate>Tue, 12 Aug 2014 14:11:26 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/jvm/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/jvm/</guid>
       <description></description>
     </item>
     <item>
       <title>多线程</title>
-      <link>https://www6v.github.io/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
       <pubDate>Wed, 02 Jul 2014 12:35:36 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>并发</title>
-      <link>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E5%B9%B6%E5%8F%91/</link>
       <pubDate>Mon, 21 Apr 2014 12:11:33 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E5%B9%B6%E5%8F%91/</guid>
       <description></description>
     </item>
     <item>
       <title>内存</title>
-      <link>https://www6v.github.io/Lang/tags/%E5%86%85%E5%AD%98/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E5%86%85%E5%AD%98/</link>
       <pubDate>Sun, 02 Feb 2014 10:26:27 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E5%86%85%E5%AD%98/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E5%86%85%E5%AD%98/</guid>
       <description></description>
     </item>
     <item>
       <title>ConcurrentCollection</title>
-      <link>https://www6v.github.io/Lang/tags/concurrentCollection/</link>
+      <link>https://www6v.github.io/www6vLang/tags/concurrentCollection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/concurrentCollection/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/concurrentCollection/</guid>
       <description></description>
     </item>
     <item>
       <title>并发集合</title>
-      <link>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</link>
+      <link>https://www6v.github.io/www6vLang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</guid>
+      <guid>https://www6v.github.io/www6vLang/tags/%E5%B9%B6%E5%8F%91%E9%9B%86%E5%90%88/</guid>
       <description></description>
     </item>
   </channel>

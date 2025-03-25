@@ -1,14 +1,14 @@
 {
   "name": "Language",
   "short_name": "Language",
-  "start_url": "/Lang/",
-  "scope": "/Lang/",
+  "start_url": "/www6vLang/",
+  "scope": "/www6vLang/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/Lang/favicon.svg",
+      "src": "/www6vLang/favicon.svg",
       "sizes": "512x512"
     }
   ]

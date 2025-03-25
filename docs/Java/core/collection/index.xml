@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java集合总结 on Language</title>
-    <link>https://www6v.github.io/Lang/docs/Java/core/collection/</link>
+    <link>https://www6v.github.io/www6vLang/docs/Java/core/collection/</link>
     <description>Recent content in Java集合总结 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/docs/Java/core/collection/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/docs/Java/core/collection/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

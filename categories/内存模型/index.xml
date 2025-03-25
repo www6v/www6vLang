@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>内存模型 on Language</title>
-    <link>https://www6v.github.io/Lang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
+    <link>https://www6v.github.io/www6vLang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
     <description>Recent content in 内存模型 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 21 Jun 2022 03:55:05 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/categories/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang Rumtime-内存模型</title>
-      <link>https://www6v.github.io/Lang/docs/Golang/core/golangMemoryModel/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Golang/core/golangMemoryModel/</link>
       <pubDate>Tue, 21 Jun 2022 03:55:05 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Golang/core/golangMemoryModel/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Golang/core/golangMemoryModel/</guid>
       <description>系统内存管理[4] # 三个角色&#xA;Mutator [App] Allocator Bump/Sequential Allocator Free List Allocator First-Fit Next-Fit Best-Fit Segregated-Fit 工业界用的多, golang是这种类型的变种 Collector #2 栈内存管理&#xA;malloc &amp;lsquo;&amp;lt;128KB&amp;rsquo;&#xA;program break &amp;lsquo;&amp;gt;=128KB&amp;rsquo; mmap Golang内存 # 内存分配 [4][5] # 三种类型 Tiny Small Large google tcmalloc 每个线程维护一个独立的内存池 多级别管理 4K， 8K， 16K &amp;hellip; 回收内存 放回预先分配的大块内存中 内存管理组件 mspan 68个规格， [8个字节&amp;hellip;32K] 双向链表 mcache 线程缓存 alloc tiny tinyoffset mcentral 管理全局的mspan供所有线程使用 noneempty mspan empty mspan mheap 管理动态分配内存, 持有的整个堆空间 arenas central 多级结构 mcache -&amp;gt; mcentral -&amp;gt; mheap 内存逃逸 [6] # 编译器会根据变量是否被外部引用来决定是否逃逸： 如果函数外部没有引用，则优先放到栈中； 如果函数外部存在引用，则必定放到堆中; 如果栈上放不下，则必定放到堆上; 内存泄漏 # 根因 [7][8]</description>
     </item>
     <item>
       <title>Java内存模型</title>
-      <link>https://www6v.github.io/Lang/docs/Java/core/javaMemoryModel/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/core/javaMemoryModel/</link>
       <pubDate>Fri, 03 Jan 2014 22:14:27 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/core/javaMemoryModel/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/core/javaMemoryModel/</guid>
       <description>&#xA;参考: # JVM内部原理 原文作者：James D Bloom 翻译：梅小西 浅谈HotSpot逃逸分析 占小狼 class卸载、热替换和Tomcat的热部署的分析 heavensay java自定义classloader引发的思考 editice 《深入理解java虚拟机》 第二章 周志明 浅谈Java String内幕 占小狼 JMM和底层实现原理 王侦 *** 未 </description>
     </item>
   </channel>

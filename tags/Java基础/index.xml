@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java基础 on Language</title>
-    <link>https://www6v.github.io/Lang/tags/Java%E5%9F%BA%E7%A1%80/</link>
+    <link>https://www6v.github.io/www6vLang/tags/Java%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in Java基础 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 10 Jun 2023 10:14:03 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/tags/Java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java Feature</title>
-      <link>https://www6v.github.io/Lang/docs/Java/core/javaFeature/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/core/javaFeature/</link>
       <pubDate>Sat, 10 Jun 2023 10:14:03 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/core/javaFeature/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/core/javaFeature/</guid>
       <description>版本 # 版本 发布日期 JDK 19 2022/09/20 JDK 20 2023/03/21 版本+特性 [1] # Java 1.4 # NIO（New I/O） Java 5（Java 1.5） # 泛型 自动装箱/拆箱 枚举类型 Java 7 # Try-with-resources Java SE 8（Java 8）- LTS长期支持版本 # Lambda 表达式：简化函数式编程。允许以更简洁的语法编写函数式接口的实例，使代码更加简洁。 Stream API：用于处理集合，支持函数式操作，如过滤、映射和聚合。 方法引用：允许直接引用现有方法或构造函数，避免了重复编写类似的代码。 接口的默认方法：在接口中提供默认实现，提高接口的灵活性。 时间 API：提供了一组强大的时间操作类，简化了日期和时间的操作。 重复注解：允许在同一个地方多次声明同一个注解，提高了代码的可读性。 CompletableFuture 类：简化异步编程，提供更好的错误处理和异常处理机制。 Nashorn 引擎：提供了一种基于 JavaScript 的解决方案，允许将 JavaScript 代码嵌入到 Java 应用程序中。 Optional 类：减少空指针异常，提高代码可读性。 Java SE 9（Java 9） # 模块系统（Project Jigsaw）：将 Java 的庞大代码库划分为可重用的模块，简化大型应用的构建和维护。 JShell：Java 的交互式命令行工具，用于快速尝试和测试 Java 代码片段。 新的集合工厂方法：方便地创建不可变集合，如 List.</description>
     </item>
     <item>
       <title>Java集合总结</title>
-      <link>https://www6v.github.io/Lang/docs/Java/core/collection/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/core/collection/</link>
       <pubDate>Wed, 03 Dec 2014 14:32:20 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/core/collection/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/core/collection/</guid>
       <description>&#xA;参考： # JDK Collection 源代码 关于Java集合的小抄 白衣 限流系统如何发现系统的热点 阿里中间件团队博客 不正当使用HashMap导致cpu 100%的问题追究 王宏江 并发环境下HashMap引起的full gc排查 ol_beta 不止JDK7的HashMap，JDK8的ConcurrentHashMap也会造成CPU 100% 朱小厮 朱忠华 </description>
     </item>
     <item>
       <title>Classloader总结</title>
-      <link>https://www6v.github.io/Lang/docs/Java/core/classloaderSummarize/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/core/classloaderSummarize/</link>
       <pubDate>Tue, 12 Aug 2014 14:11:26 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/core/classloaderSummarize/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/core/classloaderSummarize/</guid>
       <description>&#xA;参考: # 深入浅出ClassLoader 你真的了解ClassLoader吗？ 魏 鹏 class卸载、热替换和Tomcat的热部署的分析 heavensay 《实战Java虚拟机》 第10章 </description>
     </item>
     <item>
       <title>线程池最佳线程数</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/threadNum/</link>
       <pubDate>Wed, 02 Jul 2014 12:35:36 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/threadNum/</guid>
       <description>最佳实践: 曾经遇到过任务被丢给线程池之后，长时间都没有被执行的诡异问题。最初，我认为这是代码的 Bug 导致的，后来经过排查发现，是因为线程池的coreThreadCount 和 maxThreadCount 设置的比较小，导致任务在线程池里面大量的堆积，在调大了这两个参数之后问题就解决了.&#xA;参考: # 工作线程数究竟要设置为多少 架构师之路 蚂蚁金服技术专家总结：性能优化的常见招式 jurassic_1 《Java 并发编程实践》 8.2定制线程池的大小 Brian Goetz 高并发系统设计40问 - 07 | 池化技术：如何减少频繁创建数据库连接的性能损耗？ 唐扬 ​</description>
     </item>
     <item>
       <title>多线程中的volatile和CAS</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/volatile-CAS/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/volatile-CAS/</link>
       <pubDate>Mon, 02 Jun 2014 12:24:27 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/volatile-CAS/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/volatile-CAS/</guid>
       <description>&#xA;参考: # Java 理论与实践: 正确使用 Volatile 变量 从volatile解读ConcurrentHashMap（jdk1.6.0）无锁读 为什么volatile不能保证原子性而Atomic可以 阿里巴巴Java开发手册 非阻塞同步算法与CAS(Compare and Swap)无锁算法 非阻塞算法在并发容器中的实现 程晓明 </description>
     </item>
     <item>
       <title>多线程中的锁</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/lock/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/lock/</link>
       <pubDate>Tue, 27 May 2014 12:20:45 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/lock/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/lock/</guid>
       <description>&#xA;参考 # 《java并发编程实践》 13章 显示锁 ,13.5 读-写锁 轻松学习java可重入锁(ReentrantLock)的实现原理 锁模式 -&amp;gt; 共享锁，排他锁 轻松掌握java读写锁(ReentrantReadWriteLock)的实现原理 Java中的读/写锁 作者:Jakob Jenkov Java同步块 作者:Jakob Jenkov 《Java并发编程的艺术》-Java并发包中的读写锁及其实现分析 怎么理解Condition 码梦为生|刘锟洋 多线程之：偏向锁，轻量级锁，重量级锁 无信不立 </description>
     </item>
     <item>
       <title>Java多线程总结</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/thread/</link>
       <pubDate>Mon, 21 Apr 2014 12:11:33 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/thread/</guid>
       <description>&#xA;参考： # 非阻塞同步算法与CAS(Compare and Swap)无锁算法 高性能队列——Disruptor java多线程体系 东隼 《并发编程实践》 Brian Goetz 第3章 Java并发之AQS详解 waterystone 面试官：线程顺序执行,这么多答案你都答不上来？ Join, wait, Condition, 线程池 </description>
     </item>
     <item>
       <title>Java并发容器总结</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/concurrentCollection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/concurrentCollection/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/concurrentCollection/</guid>
       <description>&#xA;参考: # 关于Java集合的小抄 白衣 谈谈ConcurrentHashMap1.7和1.8的不同实现 占小狼 高性能队列——Disruptor 非阻塞算法在并发容器中的实现 程晓明 从volatile解读ConcurrentHashMap（jdk1.6.0）无锁读 绫萱 JAVA并发容器代码随读 BucketLi 聊聊并发（四）深入分析ConcurrentHashMap 方 腾飞 Java8 新特性之流式数据处理 深蓝至尊 不止JDK7的HashMap，JDK8的ConcurrentHashMap也会造成CPU 100% 朱小厮 朱忠华 </description>
     </item>
   </channel>

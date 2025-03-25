@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>多线程 on Language</title>
-    <link>https://www6v.github.io/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <link>https://www6v.github.io/www6vLang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
     <description>Recent content in 多线程 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 02 Jul 2014 12:35:36 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>线程池最佳线程数</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/threadNum/</link>
       <pubDate>Wed, 02 Jul 2014 12:35:36 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/threadNum/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/threadNum/</guid>
       <description>最佳实践: 曾经遇到过任务被丢给线程池之后，长时间都没有被执行的诡异问题。最初，我认为这是代码的 Bug 导致的，后来经过排查发现，是因为线程池的coreThreadCount 和 maxThreadCount 设置的比较小，导致任务在线程池里面大量的堆积，在调大了这两个参数之后问题就解决了.&#xA;参考: # 工作线程数究竟要设置为多少 架构师之路 蚂蚁金服技术专家总结：性能优化的常见招式 jurassic_1 《Java 并发编程实践》 8.2定制线程池的大小 Brian Goetz 高并发系统设计40问 - 07 | 池化技术：如何减少频繁创建数据库连接的性能损耗？ 唐扬 ​</description>
     </item>
     <item>
       <title>多线程中的volatile和CAS</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/volatile-CAS/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/volatile-CAS/</link>
       <pubDate>Mon, 02 Jun 2014 12:24:27 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/volatile-CAS/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/volatile-CAS/</guid>
       <description>&#xA;参考: # Java 理论与实践: 正确使用 Volatile 变量 从volatile解读ConcurrentHashMap（jdk1.6.0）无锁读 为什么volatile不能保证原子性而Atomic可以 阿里巴巴Java开发手册 非阻塞同步算法与CAS(Compare and Swap)无锁算法 非阻塞算法在并发容器中的实现 程晓明 </description>
     </item>
     <item>
       <title>多线程中的锁</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/lock/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/lock/</link>
       <pubDate>Tue, 27 May 2014 12:20:45 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/lock/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/lock/</guid>
       <description>&#xA;参考 # 《java并发编程实践》 13章 显示锁 ,13.5 读-写锁 轻松学习java可重入锁(ReentrantLock)的实现原理 锁模式 -&amp;gt; 共享锁，排他锁 轻松掌握java读写锁(ReentrantReadWriteLock)的实现原理 Java中的读/写锁 作者:Jakob Jenkov Java同步块 作者:Jakob Jenkov 《Java并发编程的艺术》-Java并发包中的读写锁及其实现分析 怎么理解Condition 码梦为生|刘锟洋 多线程之：偏向锁，轻量级锁，重量级锁 无信不立 </description>
     </item>
     <item>
       <title>Java多线程总结</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/thread/</link>
       <pubDate>Mon, 21 Apr 2014 12:11:33 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/thread/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/thread/</guid>
       <description>&#xA;参考： # 非阻塞同步算法与CAS(Compare and Swap)无锁算法 高性能队列——Disruptor java多线程体系 东隼 《并发编程实践》 Brian Goetz 第3章 Java并发之AQS详解 waterystone 面试官：线程顺序执行,这么多答案你都答不上来？ Join, wait, Condition, 线程池 </description>
     </item>
     <item>
       <title>Java多线程中的取消和关闭</title>
-      <link>https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/cancelAndShutdown/</link>
       <pubDate>Wed, 09 Apr 2014 11:20:13 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/concurrent/cancelAndShutdown/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/cancelAndShutdown/</guid>
       <description>&#xA;取消和关闭 基础 中断状态 中断请求 取消点 任务取消 取消策略（how/when/what） how/when volatile的取消状态+非阻塞方法(正确) volatile的取消状态+阻塞方法(错误) 中断的状态显示的检查（正确）.Thread.currentThread().isInterrupted() what, 中断策略（如何响应中断请求） InterruptedException传递给调用者，捕获后恢复中断的状态，Thread.currentThread().interrupted(). 封装成shutdown方法 通过Future.cancel来取消任务 中断当前线程 阻塞函数 抛出InterruptedException Thread.isInterrupted()返回false eg. Object的wait(),Thread的join(),sleep() IO上的阻塞 BIO Socket读写网络 JDBC驱动MySQL-connector-java nio InterruptibleChannel InterruptibleChannel将被关闭 抛出ClosedByInterruptException Thread.isInterrupted()返回true Selector Selector#select()方法将立即返回 不会抛出异常 Thread.isInterrupted()返回true 服务取消 生命周期方法 start() stop() ExceuteService.shutDown()/shutDownNow() 致命药丸(akka的Poison Pill) 锁中断 不可中断 内部锁synchronized, ReentrantLock.lock() 可中断 显示锁ReentrantLock.tryLock()，.lockInterruptibly() </description>
     </item>
   </channel>

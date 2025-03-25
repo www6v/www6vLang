@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java内存泄漏的案例和解决方案 on Language</title>
-    <link>https://www6v.github.io/Lang/docs/Java/core/javaMemoryLeak/</link>
+    <link>https://www6v.github.io/www6vLang/docs/Java/core/javaMemoryLeak/</link>
     <description>Recent content in Java内存泄漏的案例和解决方案 on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/docs/Java/core/javaMemoryLeak/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/docs/Java/core/javaMemoryLeak/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

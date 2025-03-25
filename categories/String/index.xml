@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>String on Language</title>
-    <link>https://www6v.github.io/Lang/categories/String/</link>
+    <link>https://www6v.github.io/www6vLang/categories/String/</link>
     <description>Recent content in String on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 20 Jan 2014 19:50:41 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/categories/String/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/categories/String/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 字符串</title>
-      <link>https://www6v.github.io/Lang/docs/Java/core/javaString/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Java/core/javaString/</link>
       <pubDate>Mon, 20 Jan 2014 19:50:41 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Java/core/javaString/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/core/javaString/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linter on Language</title>
-    <link>https://www6v.github.io/Lang/categories/Linter/</link>
+    <link>https://www6v.github.io/www6vLang/categories/Linter/</link>
     <description>Recent content in Linter on Language</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 24 Jun 2022 16:58:17 +0000</lastBuildDate>
-    <atom:link href="https://www6v.github.io/Lang/categories/Linter/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www6v.github.io/www6vLang/categories/Linter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang 基础-Linter</title>
-      <link>https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/</link>
+      <link>https://www6v.github.io/www6vLang/docs/Golang/core/golangBasicLinter/</link>
       <pubDate>Fri, 24 Jun 2022 16:58:17 +0000</pubDate>
-      <guid>https://www6v.github.io/Lang/docs/Golang/core/golangBasicLinter/</guid>
+      <guid>https://www6v.github.io/www6vLang/docs/Golang/core/golangBasicLinter/</guid>
       <description>linter [1] # 单个&#xA;golint go vet gocyclo 代码覆盖率 codecov 检查错误是否被处理 errcheck bodyclose sqlrows 集合&#xA;golangci-lint 标准 sonarqube deepsource golangci-lint + reviewdog [3]&#xA;给项目提pr时，自动执行linter，自动CI？ github支持, gitlab也支持 name: actions on: push: branches: - master pull_request: types: - opened - reopened - synchronize - ready_for_review jobs: golangci-lint: if: ${{ !github.event.pull_request.draft }} name: runner / golangci-lint runs-on: ubuntu-latest steps: - name: Check out code uses: actions/checkout@v3 - name: golangci-lint uses: reviewdog/action-golangci-lint@v2 if: github.</description>
     </item>
   </channel>
