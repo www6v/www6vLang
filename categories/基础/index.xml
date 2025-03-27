@@ -16,6 +16,13 @@
       <description>Map 内部实现 # map的内部结构 # hmap bucket topHash 快速定位key,以空间换时间 每个 bucket 的 tophash 区域其实是用来快速定位 key 位置的. 这是一种以空间换时间的思路。 key value Go 运行时采用了把 key 和 value 分开存储的方式，而不是采用一个 kv 接着一个 kv 的 kv 紧邻方式存储，这带来的其实是算法上的复杂性，但却减少了因内存对齐带来的内存浪费。 overflow bmap map的内部函数 [4] # mapassign 写 mapdelete 删 mapaccess 读 扩容 [2] # buckets &amp;amp;&amp;amp; oldbuckets 两种扩容方式 [渐进式扩容, 类似redis rehash] 因为 overflow bucket 过多导致的“扩容”，实际上运行时会新建一个和现有规模一样的 bucket 数组，然后在 assign 和 delete 时做排空和迁移。 因为当前数据数量超出 LoadFactor 指定水位而进行的扩容，那么运行时会建立一个两倍于现有规模的 bucket 数组，但真正的排空和迁移工作也是在 assign 和 delete 时逐步进行的。 扩容 [4] # 触发: mapassign 时机: load factor 过大 OR overflow bucket 过多 搬运过程: 渐进式</description>
     </item>
     <item>
+      <title>异步化 Reactive</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</link>
+      <pubDate>Thu, 21 Jul 2022 13:31:54 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</guid>
+      <description>&#xA;Reactive # ReactiveX An API for asynchronous programming with observable streams 响应式流（Reactive Stream） 具备“异步非阻塞”特性和“流量控制”能力的数据流. RSocket 是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。 Java8、RxJava、Reactor比较[11] # 核心特性 async，back-pressure(Stream) 全异步化 # 全异步化(基于消息和事件)【7,8】 框架 Akka （Actor+mailbox） 库 RxJava (Observable+event) 协议 RSocket 参考 # Reactive，ReactiveX # The introduction to Reactive Programming 全面异步化：淘宝反应式架构升级探索 Introduction to RSocket 我为什么不再推荐RxJava 八个层面比较 Java 8, RxJava, Reactor good reactivex 官网 reactive-streams-jvm git Reactive Streams （1）什么是响应式编程——响应式Spring的道法术器 未 （2）响应式流——响应式Spring的道法术器 未 </description>
+    </item>
+    <item>
       <title>Golang基础-Slice</title>
       <link>https://www6v.github.io/www6vLang/docs/Golang/core/golangSlice/</link>
       <pubDate>Sat, 09 Jul 2022 18:43:02 +0000</pubDate>
@@ -35,6 +42,34 @@
       <pubDate>Tue, 08 Mar 2022 23:07:50 +0000</pubDate>
       <guid>https://www6v.github.io/www6vLang/docs/Golang/core/golangBasic/</guid>
       <description>Rumtime [3] # Scheduler # GMP&#xA;Netpoll # Memory # GC # 基础 # 内建函数 # init make() new() slice append() 用于切片(slice) 追加元素 copy() 只能用于数组切片内容赋值 size len() 计算数组(包括数组指针)、切片(slice)、map、channel、字符串等数据类型的长度 cap() 返回指定类型的容量 print() &amp;amp; println() resource reclaim close() delete() num complex() real() &amp;amp; imag() error handle panic() recover() others [6] clear()&#xA;对于map对象: clear函数清空map对象的所有的元素 对于slice对象： clear函数将所有的元素设置为元素类型的零值，长度不变，容量不变 min() &amp;amp;&amp;amp; max() New vs Make # new和make是内置函数,主要用来分配内存空间 make make 仅用于 slice、map和 channel 的初始化，返回值为类型本身，而不是指针 new 只用于内存分配，且把内存清零 返回一个指向对应类型零值的指针 new() 一般 显示返回指针 func make(t Type, size .</description>
+    </item>
+    <item>
+      <title>Reactive-Actor</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/reactive/</link>
+      <pubDate>Mon, 10 May 2021 10:24:41 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/reactive/</guid>
+      <description>Reactive # Akka &amp;amp;&amp;amp; Actor # / Responsive Resilient Elastic Message Driven Akka Actor and Stream Supervisor策略 Load balance and adptive routing（dispatcher） mail-box, private State， backpressure Actor 允许的操作&#xA;create Actor Send message desigate how to handle the next message Actor Message： Simple，Immutable data structures&#xA;Actor Actors process only one message at a time&#xA;Actor 类型： Local actor Remote actor&#xA;哪些系统在用Akka Flink， spark 2.0从Akka迁移到Netty play framework（web）&#xA;参考： # 5分钟理解分布式架构Actor模型 The Reactive Manifesto</description>
+    </item>
+    <item>
+      <title>算法和数据结构 - 题目</title>
+      <link>https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/</link>
+      <pubDate>Sun, 25 Aug 2019 22:32:31 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/</guid>
+      <description>一. 线性表 # 数组 # Top K问题 : 数组中最小的 k 个数 # 方法一： 堆， 时间复杂度 O(n log k) 方法二： 快排变形， （平均）时间复杂度 O(n)&#xA;数组中最小的 k 个数：Top K 问题的两种经典解法&#xA;数组的两分搜索 # LeetCode 540. Single Element in a Sorted Array [中等]&#xA;合并有序数组 [简单] # LeetCode 88&#xA;方法一：直接合并后排序 方法二：双指针 方法三：逆向双指针 Leetcode 283. 移动零 # 链表 # 单链表的反转 [简单] # 使用3个指针遍历单链表，逐个链接点进行反转。 复杂 从第2个节点到第N个节点，依次逐节点插入到第1个节点(head节点)之后，最后将第一个节点挪到新表的表尾。 容易理解 public static Node reverseList(Node node) {&#xD;Node pre = null;&#xD;Node next = null;&#xD;while (node !</description>
+    </item>
+    <item>
+      <title>算法和数据结构</title>
+      <link>https://www6v.github.io/www6vLang/docs/Algo/algorithm/</link>
+      <pubDate>Wed, 07 Aug 2019 19:41:32 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Algo/algorithm/</guid>
+      <description>一. Master Thereom 主定律 # 图1.主定律在常用算法中的应用&#xA;二. 数据结构操作 O(n) # 图2.数据结构操作&#xA;线性表: # Array, Stack, Queue, Singly-Linked List, Doubly-Linked List&#xD;Skip List &amp;amp;&amp;amp; Binary Search Tree: # + Average &amp;amp;&amp;amp; Worst 相同&#xD;+ Redis的SortedSet用Skip List实现&#xD;二叉搜索树: # + 左子树上所有结点的值均小于它的根结点的值； 右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉搜索树。&#xD;+ 最差时间复杂度的二叉搜索树是O(n)，退化成链表;&#xD;所以提出了平衡二叉搜索树， 最差时间复杂度是O(logn)。&#xD;平衡二叉搜索树: Red-Black Tree, Splay Tree, AVL Tree&#xD;B-tree: # 多路搜索树，并不是二叉的&#xD;三. 数组排序算法 O(n) # 稳定排序:有两个排序关键字的时候，稳定排序可以让第一个关键字排序的结果服务于第二个关键字排序中数值相等的那些数. [5][7]&#xA;四 = 二 + 三 # 图4.BigO总结&#xA;五. 堆实现 O(n) # 图5.</description>
+    </item>
+    <item>
+      <title>异步化 总结</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/async/</link>
+      <pubDate>Sat, 05 Dec 2015 12:11:22 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/async/</guid>
+      <description>异步编程范式-Callback [0] # Continuation == 回调函数 # 编程模式 Continuation-passing style（CPS） 把调用者 f() 还未执行的部分包成一个函数对象 cont，一同传给被调用者 g()； 正常运行 g() 函数体； g() 完成后，连同它的结果一起回调 cont，从而继续执行 f() 里剩余的代码。&#xA;Callback实现 # 而异步 IO 中，进程发起 IO 操作时也会一并输入回调（也就是 Continuation），这大大解放了生产力 —— 现场无需等待，可以立即返回去做其他事情。一旦 IO 成功后，AIO 的 Event Loop 会调用刚刚设置的回调函数，把剩下的工作完成。这种模式有时也被称为 Fire and Forget。 通过实现的 Continuation，线程不再受 IO 阻塞，可以自由自在地跑满 CPU。&#xA;Callback语法糖：Promise # Promise 是对异步调用结果的一个封装，在 Java 中它叫作 CompletableFuture 或者 ListenableFuture (Guava)。 Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些。&#xA;反应式编程(Promise 的极大增强) # 相比 Promise，反应式引入了流（Flow）的概念。&#xA;异步编程范式- Coroutine [0] # CPS 变换：Coroutine 与 async/await # 在异步函数调用时加上 await，编译器就会自动把它转化为协程（Coroutine），而非昂贵的线程。</description>
     </item>
   </channel>
 </rss>

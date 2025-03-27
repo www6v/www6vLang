@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="一. Master Thereom 主定律 # 图1.主定律在常用算法中的应用
+二. 数据结构操作 O(n) # 图2.数据结构操作
+线性表: # Array, Stack, Queue, Singly-Linked List, Doubly-Linked ListSkip List &amp;&amp; Binary Search Tree: # &#43; Average &amp;&amp; Worst 相同&#43; Redis的SortedSet用Skip List实现二叉搜索树: # &#43; 左子树上所有结点的值均小于它的根结点的值； 右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉搜索树。&#43; 最差时间复杂度的二叉搜索树是O(n)，退化成链表;所以提出了平衡二叉搜索树， 最差时间复杂度是O(logn)。平衡二叉搜索树: Red-Black Tree, Splay Tree, AVL TreeB-tree: # 多路搜索树，并不是二叉的三. 数组排序算法 O(n) # 稳定排序:有两个排序关键字的时候，稳定排序可以让第一个关键字排序的结果服务于第二个关键字排序中数值相等的那些数. [5][7]
+四 = 二 &#43; 三 # 图4.BigO总结
+五. 堆实现 O(n) # 图5.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Algo/algorithm/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="算法和数据结构">
+  <meta property="og:description" content="一. Master Thereom 主定律 # 图1.主定律在常用算法中的应用
+二. 数据结构操作 O(n) # 图2.数据结构操作
+线性表: # Array, Stack, Queue, Singly-Linked List, Doubly-Linked ListSkip List &amp;&amp; Binary Search Tree: # &#43; Average &amp;&amp; Worst 相同&#43; Redis的SortedSet用Skip List实现二叉搜索树: # &#43; 左子树上所有结点的值均小于它的根结点的值； 右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉搜索树。&#43; 最差时间复杂度的二叉搜索树是O(n)，退化成链表;所以提出了平衡二叉搜索树， 最差时间复杂度是O(logn)。平衡二叉搜索树: Red-Black Tree, Splay Tree, AVL TreeB-tree: # 多路搜索树，并不是二叉的三. 数组排序算法 O(n) # 稳定排序:有两个排序关键字的时候，稳定排序可以让第一个关键字排序的结果服务于第二个关键字排序中数值相等的那些数. [5][7]
+四 = 二 &#43; 三 # 图4.BigO总结
+五. 堆实现 O(n) # 图5.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>算法和数据结构 | Language</title>
+<link rel="icon" href="/www6vLang/favicon.png" >
+<link rel="manifest" href="/www6vLang/manifest.json">
+<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Algo/algorithm/">
+<link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/www6vLang/fuse.min.js"></script>
+  <script defer src="/www6vLang/en.search.min.af3dfe4ab4797273e80f8d18e8e18e21cc5f910e252ad68dd492c5075ef73a2e.js" integrity="sha256-rz3&#43;SrR5cnPoD40Y6OGOIcxfkQ4lKtaN1JLFB173Oi4=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Algo/algorithm/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/www6vLang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle"  />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaFeature/" class="">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>并发</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/asyncReactive/" class="">异步化 Reactive</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/reactive/" class="">Reactive-Actor</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/async/" class="">异步化 总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/cancelAndShutdown/" class="">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangSlice/" class="">Golang基础-Slice</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangMemoryModel/" class="">Golang Rumtime-内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBasic/" class="">Golang 基础</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangGMP/" class="">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>concurrent</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/other/golangStudy/" class="">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/other/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-af158b1c4e788eda7f994286b69d9b20" class="toggle"  />
+    <label for="section-af158b1c4e788eda7f994286b69d9b20" class="flex justify-between">
+      <a role="button" class="">Hybrid</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Hybrid/paradigm/" class="">范式Paradigm-语言</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Hybrid/javaAndGoConcurrent/" class="">Java和Go的并发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-598c64232d4e22bc9851876a3bd29972" class="toggle" checked />
+    <label for="section-598c64232d4e22bc9851876a3bd29972" class="flex justify-between">
+      <a role="button" class="">Algo</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Algo/algorithmSubject/" class="">算法和数据结构 - 题目</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Algo/algorithm/" class="active">算法和数据结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/www6vLang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>算法和数据结构</h3>
+
+  <label for="toc-control">
+    
+    <img src="/www6vLang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一-master-thereom--主定律">一. Master Thereom  主定律</a></li>
+        <li><a href="#二-数据结构操作-on">二. 数据结构操作 O(n)</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#三-数组排序算法-on">三. 数组排序算法 O(n)</a></li>
+        <li><a href="#四---二---三">四 =  二 +  三</a></li>
+        <li><a href="#五-堆实现-on">五. 堆实现 O(n)</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#参考">参考:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p hidden></p>
+<!-- more -->
+<p><img src="./images/algorithm.jpg" alt=" 算法和数据结构总结" /></p>
+<h2 id="一-master-thereom--主定律">
+  一. Master Thereom  主定律
+  <a class="anchor" href="#%e4%b8%80-master-thereom--%e4%b8%bb%e5%ae%9a%e5%be%8b">#</a>
+</h2>
+<div style="text-align: center;">
+<p><img src="https://user-images.githubusercontent.com/5608425/64620811-25801c80-d417-11e9-88aa-182269f0bc02.JPG" alt="图1.主定律在常用算法中的应用" />
+图1.主定律在常用算法中的应用</p>
+</div>
+<h2 id="二-数据结构操作-on">
+  二. 数据结构操作 O(n)
+  <a class="anchor" href="#%e4%ba%8c-%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e6%93%8d%e4%bd%9c-on">#</a>
+</h2>
+<div style="text-align: center;">
+<p><img src="https://user-images.githubusercontent.com/5608425/64620788-1a2cf100-d417-11e9-82d3-7ca7864f6129.JPG" alt="图2.数据结构操作" />
+图2.数据结构操作</p>
+</div>
+<blockquote>
+<h4 id="线性表">
+  线性表:
+  <a class="anchor" href="#%e7%ba%bf%e6%80%a7%e8%a1%a8">#</a>
+</h4>
+</blockquote>
+<pre><code>   Array, Stack, Queue, Singly-Linked List, Doubly-Linked List
+</code></pre>
+<blockquote>
+<h4 id="skip-list--binary-search-tree">
+  Skip List &amp;&amp; Binary Search Tree:
+  <a class="anchor" href="#skip-list--binary-search-tree">#</a>
+</h4>
+</blockquote>
+<pre><code>   + Average &amp;&amp; Worst 相同
+   + Redis的SortedSet用Skip List实现
+</code></pre>
+<blockquote>
+<h4 id="二叉搜索树">
+  二叉搜索树:
+  <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91">#</a>
+</h4>
+</blockquote>
+<pre><code>   + 左子树上所有结点的值均小于它的根结点的值； 
+     右子树上所有结点的值均大于它的根结点的值； 
+     它的左、右子树也分别为二叉搜索树。
+   + 最差时间复杂度的二叉搜索树是O(n)，退化成链表;
+     所以提出了平衡二叉搜索树， 最差时间复杂度是O(logn)。
+     平衡二叉搜索树: Red-Black Tree, Splay Tree, AVL Tree
+</code></pre>
+<blockquote>
+<h4 id="b-tree">
+  B-tree:
+  <a class="anchor" href="#b-tree">#</a>
+</h4>
+</blockquote>
+<pre><code>   多路搜索树，并不是二叉的
+</code></pre>
+<h2 id="三-数组排序算法-on">
+  三. 数组排序算法 O(n)
+  <a class="anchor" href="#%e4%b8%89-%e6%95%b0%e7%bb%84%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95-on">#</a>
+</h2>
+<p><img src="./images/arraySortAlg.JPG" alt="图3.数组排序算法" /></p>
+<p><strong>稳定排序</strong>:有两个排序关键字的时候，稳定排序可以让第一个关键字排序的结果服务于第二个关键字排序中数值相等的那些数. [5][7]</p>
+<h2 id="四---二---三">
+  四 =  二 +  三
+  <a class="anchor" href="#%e5%9b%9b---%e4%ba%8c---%e4%b8%89">#</a>
+</h2>
+<div style="text-align: center;">
+<p><img src="https://user-images.githubusercontent.com/5608425/64620785-19945a80-d417-11e9-97bf-5af847bdbd5a.png" alt="图4.BigO总结" />
+图4.BigO总结</p>
+</div>
+<h2 id="五-堆实现-on">
+  五. 堆实现 O(n)
+  <a class="anchor" href="#%e4%ba%94-%e5%a0%86%e5%ae%9e%e7%8e%b0-on">#</a>
+</h2>
+<div style="text-align: center;">
+<p><img src="https://user-images.githubusercontent.com/5608425/64620806-244eef80-d417-11e9-9b17-39538ad19573.JPG" alt="图5.堆实现" /><br>
+图5.堆实现</p>
+</div>
+<blockquote>
+<h4 id="堆实现">
+  堆实现:
+  <a class="anchor" href="#%e5%a0%86%e5%ae%9e%e7%8e%b0">#</a>
+</h4>
+</blockquote>
+<p>Binary， Binomial， Fibonacci， Strict Fibonacci（性能好，用的比较多）</p>
+<h2 id="参考">
+  参考:
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h2>
+<ol>
+<li><a href="https://github.com/julycoding/The-Art-Of-Programming-By-July">算法大牛的git</a></li>
+<li><a href="http://www.codeceo.com/article/algorithm-complexity-table.html">每个程序员都应该收藏的算法复杂度速查表</a> good</li>
+<li><a href="https://yq.aliyun.com/articles/38838">从头到尾彻底解析Hash表算法</a></li>
+<li><a href="https://www.bigocheatsheet.com/">big O</a> good</li>
+<li><a href="http://dongxicheng.org/structure/sort/">董的博客 - 算法之排序算法</a>   稳定排序，原地排序</li>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure Visualizations</a>  good</li>
+<li><a href="https://mp.weixin.qq.com/s/UuMzvp3hoqRx5j4slvpPUw">五分钟小知识：为什么要分稳定排序和非稳定排序？</a></li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#一-master-thereom--主定律">一. Master Thereom  主定律</a></li>
+        <li><a href="#二-数据结构操作-on">二. 数据结构操作 O(n)</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#三-数组排序算法-on">三. 数组排序算法 O(n)</a></li>
+        <li><a href="#四---二---三">四 =  二 +  三</a></li>
+        <li><a href="#五-堆实现-on">五. 堆实现 O(n)</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#参考">参考:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

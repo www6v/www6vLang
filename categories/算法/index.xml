@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Language</title>
+    <link>https://www6v.github.io/www6vLang/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 25 Aug 2019 22:32:31 +0000</lastBuildDate>
+    <atom:link href="https://www6v.github.io/www6vLang/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>算法和数据结构 - 题目</title>
+      <link>https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/</link>
+      <pubDate>Sun, 25 Aug 2019 22:32:31 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/</guid>
+      <description>一. 线性表 # 数组 # Top K问题 : 数组中最小的 k 个数 # 方法一： 堆， 时间复杂度 O(n log k) 方法二： 快排变形， （平均）时间复杂度 O(n)&#xA;数组中最小的 k 个数：Top K 问题的两种经典解法&#xA;数组的两分搜索 # LeetCode 540. Single Element in a Sorted Array [中等]&#xA;合并有序数组 [简单] # LeetCode 88&#xA;方法一：直接合并后排序 方法二：双指针 方法三：逆向双指针 Leetcode 283. 移动零 # 链表 # 单链表的反转 [简单] # 使用3个指针遍历单链表，逐个链接点进行反转。 复杂 从第2个节点到第N个节点，依次逐节点插入到第1个节点(head节点)之后，最后将第一个节点挪到新表的表尾。 容易理解 public static Node reverseList(Node node) {&#xD;Node pre = null;&#xD;Node next = null;&#xD;while (node !</description>
+    </item>
+    <item>
+      <title>算法和数据结构</title>
+      <link>https://www6v.github.io/www6vLang/docs/Algo/algorithm/</link>
+      <pubDate>Wed, 07 Aug 2019 19:41:32 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Algo/algorithm/</guid>
+      <description>一. Master Thereom 主定律 # 图1.主定律在常用算法中的应用&#xA;二. 数据结构操作 O(n) # 图2.数据结构操作&#xA;线性表: # Array, Stack, Queue, Singly-Linked List, Doubly-Linked List&#xD;Skip List &amp;amp;&amp;amp; Binary Search Tree: # + Average &amp;amp;&amp;amp; Worst 相同&#xD;+ Redis的SortedSet用Skip List实现&#xD;二叉搜索树: # + 左子树上所有结点的值均小于它的根结点的值； 右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉搜索树。&#xD;+ 最差时间复杂度的二叉搜索树是O(n)，退化成链表;&#xD;所以提出了平衡二叉搜索树， 最差时间复杂度是O(logn)。&#xD;平衡二叉搜索树: Red-Black Tree, Splay Tree, AVL Tree&#xD;B-tree: # 多路搜索树，并不是二叉的&#xD;三. 数组排序算法 O(n) # 稳定排序:有两个排序关键字的时候，稳定排序可以让第一个关键字排序的结果服务于第二个关键字排序中数值相等的那些数. [5][7]&#xA;四 = 二 + 三 # 图4.BigO总结&#xA;五. 堆实现 O(n) # 图5.</description>
+    </item>
+  </channel>
+</rss>

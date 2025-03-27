@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异步化 总结 on Language</title>
+    <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/async/</link>
+    <description>Recent content in 异步化 总结 on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://www6v.github.io/www6vLang/docs/Java/concurrent/async/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+Reactive # ReactiveX An API for asynchronous programming with observable streams 响应式流（Reactive Stream） 具备“异步非阻塞”特性和“流量控制”能力的数据流. RSocket 是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。 Java8、RxJava、Reactor比较[11] # 核心特性 async，back-pressure(Stream) 全异步化 # 全异步化(基于消息和事件)【7,8】 框架 Akka （Actor&#43;mailbox） 库 RxJava (Observable&#43;event) 协议 RSocket 参考 # Reactive，ReactiveX # The introduction to Reactive Programming 全面异步化：淘宝反应式架构升级探索 Introduction to RSocket 我为什么不再推荐RxJava 八个层面比较 Java 8, RxJava, Reactor good reactivex 官网 reactive-streams-jvm git Reactive Streams （1）什么是响应式编程——响应式Spring的道法术器 未 （2）响应式流——响应式Spring的道法术器 未 ">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/">
+  <meta property="og:site_name" content="Language">
+  <meta property="og:title" content="异步化 Reactive">
+  <meta property="og:description" content="
+Reactive # ReactiveX An API for asynchronous programming with observable streams 响应式流（Reactive Stream） 具备“异步非阻塞”特性和“流量控制”能力的数据流. RSocket 是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。 Java8、RxJava、Reactor比较[11] # 核心特性 async，back-pressure(Stream) 全异步化 # 全异步化(基于消息和事件)【7,8】 框架 Akka （Actor&#43;mailbox） 库 RxJava (Observable&#43;event) 协议 RSocket 参考 # Reactive，ReactiveX # The introduction to Reactive Programming 全面异步化：淘宝反应式架构升级探索 Introduction to RSocket 我为什么不再推荐RxJava 八个层面比较 Java 8, RxJava, Reactor good reactivex 官网 reactive-streams-jvm git Reactive Streams （1）什么是响应式编程——响应式Spring的道法术器 未 （2）响应式流——响应式Spring的道法术器 未 ">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>异步化 Reactive | Language</title>
+<link rel="icon" href="/www6vLang/favicon.png" >
+<link rel="manifest" href="/www6vLang/manifest.json">
+<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/">
+<link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
+  <script defer src="/www6vLang/fuse.min.js"></script>
+  <script defer src="/www6vLang/en.search.min.af3dfe4ab4797273e80f8d18e8e18e21cc5f910e252ad68dd492c5075ef73a2e.js" integrity="sha256-rz3&#43;SrR5cnPoD40Y6OGOIcxfkQ4lKtaN1JLFB173Oi4=" crossorigin="anonymous"></script>
+
+  
+
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/index.xml" title="Language" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/www6vLang/"><span>Language</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
+      <a role="button" class="">Java</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaFeature/" class="">Java Feature</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/collection/" class="">Java集合总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/aop/" class="">AOP总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/classloaderSummarize/" class="">Classloader总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/gc/" class="">垃圾收集GC总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaMemoryLeak/" class="">Java内存泄漏的案例和解决方案</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaString/" class="">Java 字符串</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/core/javaMemoryModel/" class="">Java内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>并发</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/asyncReactive/" class="active">异步化 Reactive</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/reactive/" class="">Reactive-Actor</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/async/" class="">异步化 总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/threadNum/" class="">线程池最佳线程数</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/volatile-CAS/" class="">多线程中的volatile和CAS</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/lock/" class="">多线程中的锁</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/thread/" class="">Java多线程总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/cancelAndShutdown/" class="">Java多线程中的取消和关闭</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/concurrent/concurrentCollection/" class="">Java并发容器总结</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>Other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/other/designPatternsInJava/" class="">Java里的设计模式</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Java/other/optimize/" class="">JVM性能调优</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
+    <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
+      <a role="button" class="">Golang</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>core</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangMap/" class="">Golang内置类型-Map</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangSlice/" class="">Golang基础-Slice</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBugs/" class="">Golang 基础-Errors&amp;Bugs</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBasicLinter/" class="">Golang 基础-Linter</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangMemoryModel/" class="">Golang Rumtime-内存模型</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangBasic/" class="">Golang 基础</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/core/golangGMP/" class="">Golang Rumtime-GMP</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>concurrent</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangChannel/" class="">Golang内置类型-Channel</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangConcurrencyBug/" class="">Golang 并发Bug</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/concurrent/golangConcurrency/" class="">Golang Concurrency</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>other</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/other/golangStudy/" class="">Golang 学习资源</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Golang/other/golangFramework/" class="">Go Framework</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-af158b1c4e788eda7f994286b69d9b20" class="toggle"  />
+    <label for="section-af158b1c4e788eda7f994286b69d9b20" class="flex justify-between">
+      <a role="button" class="">Hybrid</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Hybrid/paradigm/" class="">范式Paradigm-语言</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Hybrid/javaAndGoConcurrent/" class="">Java和Go的并发</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-598c64232d4e22bc9851876a3bd29972" class="toggle"  />
+    <label for="section-598c64232d4e22bc9851876a3bd29972" class="flex justify-between">
+      <a role="button" class="">Algo</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Algo/algorithmSubject/" class="">算法和数据结构 - 题目</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Algo/algorithm/" class="">算法和数据结构</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/www6vLang/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>异步化 Reactive</h3>
+
+  <label for="toc-control">
+    
+    <img src="/www6vLang/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#reactive">Reactive</a></li>
+    <li><a href="#java8rxjavareactor比较11">Java8、RxJava、Reactor比较[11]</a></li>
+    <li><a href="#全异步化">全异步化</a></li>
+    <li><a href="#参考">参考</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<h1 id="reactive">
+  Reactive
+  <a class="anchor" href="#reactive">#</a>
+</h1>
+<ul>
+<li>ReactiveX
+An API for asynchronous programming  with observable streams</li>
+<li>响应式流（Reactive Stream）
+具备“异步非阻塞”特性和“流量控制”能力的数据流.</li>
+<li>RSocket
+是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。</li>
+</ul>
+<h1 id="java8rxjavareactor比较11">
+  Java8、RxJava、Reactor比较[11]
+  <a class="anchor" href="#java8rxjavareactor%e6%af%94%e8%be%8311">#</a>
+</h1>
+<p><img src="./images/reactor.jpeg" alt="Java8、RxJava、Reactor比较" /></p>
+<ul>
+<li>核心特性 async，back-pressure(Stream)</li>
+</ul>
+<h1 id="全异步化">
+  全异步化
+  <a class="anchor" href="#%e5%85%a8%e5%bc%82%e6%ad%a5%e5%8c%96">#</a>
+</h1>
+<ul>
+<li>全异步化(基于消息和事件)【7,8】
+<ul>
+<li>框架  Akka （Actor+mailbox）</li>
+<li>库  RxJava (Observable+event)</li>
+<li>协议 RSocket</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h1>
+<h5 id="reactivereactivex">
+  Reactive，ReactiveX
+  <a class="anchor" href="#reactivereactivex">#</a>
+</h5>
+<ol start="7">
+<li><a href="https://github.com/benjycui/introrx-chinese-edition?utm_source=tuicool&amp;utm_medium=referral">The introduction to Reactive Programming</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Cfg-7MzabvPOLWrrlTVXzA">全面异步化：淘宝反应式架构升级探索</a></li>
+<li><a href="https://www.baeldung.com/rsocket">Introduction to RSocket</a></li>
+<li><a href="https://juejin.im/post/5cd04b6e51882540e53fdfa2">我为什么不再推荐RxJava</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1356284">八个层面比较 Java 8, RxJava, Reactor</a> good</li>
+<li><a href="http://reactivex.io/">reactivex 官网</a></li>
+<li><a href="https://github.com/www6v/reactive-streams-jvm">reactive-streams-jvm git</a></li>
+<li><a href="http://www.reactive-streams.org/">Reactive Streams</a></li>
+<li><a href="https://blog.csdn.net/get_set/article/details/79455258">（1）什么是响应式编程——响应式Spring的道法术器</a> 未</li>
+<li><a href="https://blog.csdn.net/get_set/article/details/79466402">（2）响应式流——响应式Spring的道法术器</a> 未</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#reactive">Reactive</a></li>
+    <li><a href="#java8rxjavareactor比较11">Java8、RxJava、Reactor比较[11]</a></li>
+    <li><a href="#全异步化">全异步化</a></li>
+    <li><a href="#参考">参考</a>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

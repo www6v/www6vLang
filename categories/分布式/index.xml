@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式 on Language</title>
+    <link>https://www6v.github.io/www6vLang/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+    <description>Recent content in 分布式 on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Jul 2022 13:31:54 +0000</lastBuildDate>
+    <atom:link href="https://www6v.github.io/www6vLang/categories/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>异步化 Reactive</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</link>
+      <pubDate>Thu, 21 Jul 2022 13:31:54 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</guid>
+      <description>&#xA;Reactive # ReactiveX An API for asynchronous programming with observable streams 响应式流（Reactive Stream） 具备“异步非阻塞”特性和“流量控制”能力的数据流. RSocket 是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。 Java8、RxJava、Reactor比较[11] # 核心特性 async，back-pressure(Stream) 全异步化 # 全异步化(基于消息和事件)【7,8】 框架 Akka （Actor+mailbox） 库 RxJava (Observable+event) 协议 RSocket 参考 # Reactive，ReactiveX # The introduction to Reactive Programming 全面异步化：淘宝反应式架构升级探索 Introduction to RSocket 我为什么不再推荐RxJava 八个层面比较 Java 8, RxJava, Reactor good reactivex 官网 reactive-streams-jvm git Reactive Streams （1）什么是响应式编程——响应式Spring的道法术器 未 （2）响应式流——响应式Spring的道法术器 未 </description>
+    </item>
+    <item>
+      <title>Reactive-Actor</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/reactive/</link>
+      <pubDate>Mon, 10 May 2021 10:24:41 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/reactive/</guid>
+      <description>Reactive # Akka &amp;amp;&amp;amp; Actor # / Responsive Resilient Elastic Message Driven Akka Actor and Stream Supervisor策略 Load balance and adptive routing（dispatcher） mail-box, private State， backpressure Actor 允许的操作&#xA;create Actor Send message desigate how to handle the next message Actor Message： Simple，Immutable data structures&#xA;Actor Actors process only one message at a time&#xA;Actor 类型： Local actor Remote actor&#xA;哪些系统在用Akka Flink， spark 2.0从Akka迁移到Netty play framework（web）&#xA;参考： # 5分钟理解分布式架构Actor模型 The Reactive Manifesto</description>
+    </item>
+    <item>
+      <title>异步化 总结</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/async/</link>
+      <pubDate>Sat, 05 Dec 2015 12:11:22 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/async/</guid>
+      <description>异步编程范式-Callback [0] # Continuation == 回调函数 # 编程模式 Continuation-passing style（CPS） 把调用者 f() 还未执行的部分包成一个函数对象 cont，一同传给被调用者 g()； 正常运行 g() 函数体； g() 完成后，连同它的结果一起回调 cont，从而继续执行 f() 里剩余的代码。&#xA;Callback实现 # 而异步 IO 中，进程发起 IO 操作时也会一并输入回调（也就是 Continuation），这大大解放了生产力 —— 现场无需等待，可以立即返回去做其他事情。一旦 IO 成功后，AIO 的 Event Loop 会调用刚刚设置的回调函数，把剩下的工作完成。这种模式有时也被称为 Fire and Forget。 通过实现的 Continuation，线程不再受 IO 阻塞，可以自由自在地跑满 CPU。&#xA;Callback语法糖：Promise # Promise 是对异步调用结果的一个封装，在 Java 中它叫作 CompletableFuture 或者 ListenableFuture (Guava)。 Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些。&#xA;反应式编程(Promise 的极大增强) # 相比 Promise，反应式引入了流（Flow）的概念。&#xA;异步编程范式- Coroutine [0] # CPS 变换：Coroutine 与 async/await # 在异步函数调用时加上 await，编译器就会自动把它转化为协程（Coroutine），而非昂贵的线程。</description>
+    </item>
+  </channel>
+</rss>

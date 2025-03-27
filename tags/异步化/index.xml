@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异步化 on Language</title>
+    <link>https://www6v.github.io/www6vLang/tags/%E5%BC%82%E6%AD%A5%E5%8C%96/</link>
+    <description>Recent content in 异步化 on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Jul 2022 13:31:54 +0000</lastBuildDate>
+    <atom:link href="https://www6v.github.io/www6vLang/tags/%E5%BC%82%E6%AD%A5%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>异步化 Reactive</title>
+      <link>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</link>
+      <pubDate>Thu, 21 Jul 2022 13:31:54 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Java/concurrent/asyncReactive/</guid>
+      <description>&#xA;Reactive # ReactiveX An API for asynchronous programming with observable streams 响应式流（Reactive Stream） 具备“异步非阻塞”特性和“流量控制”能力的数据流. RSocket 是一个支持 reactive-stream 语义的开源网络通信协议，它将 reactive 语义的复杂逻辑封装了起来，使得上层可以方便实现网络程序。 Java8、RxJava、Reactor比较[11] # 核心特性 async，back-pressure(Stream) 全异步化 # 全异步化(基于消息和事件)【7,8】 框架 Akka （Actor+mailbox） 库 RxJava (Observable+event) 协议 RSocket 参考 # Reactive，ReactiveX # The introduction to Reactive Programming 全面异步化：淘宝反应式架构升级探索 Introduction to RSocket 我为什么不再推荐RxJava 八个层面比较 Java 8, RxJava, Reactor good reactivex 官网 reactive-streams-jvm git Reactive Streams （1）什么是响应式编程——响应式Spring的道法术器 未 （2）响应式流——响应式Spring的道法术器 未 </description>
+    </item>
+  </channel>
+</rss>

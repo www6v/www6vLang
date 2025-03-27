@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrent on Language</title>
+    <link>https://www6v.github.io/www6vLang/tags/concurrent/</link>
+    <description>Recent content in Concurrent on Language</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Apr 2020 13:02:16 +0000</lastBuildDate>
+    <atom:link href="https://www6v.github.io/www6vLang/tags/concurrent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java和Go的并发</title>
+      <link>https://www6v.github.io/www6vLang/docs/Hybrid/javaAndGoConcurrent/</link>
+      <pubDate>Thu, 30 Apr 2020 13:02:16 +0000</pubDate>
+      <guid>https://www6v.github.io/www6vLang/docs/Hybrid/javaAndGoConcurrent/</guid>
+      <description>&#xA;Java和Go的并发 # Java和Go的并发 # 用户线程和系统线程之间的关系（M:N，1:1） # </description>
+    </item>
+  </channel>
+</rss>
