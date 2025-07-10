@@ -3,25 +3,38 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="动态规划 # leetcode # 53. 最大子数组和
+62.不同路径
+70. 爬楼梯
+参考 # 背包问题研究与应用
+算法面试通关40讲 - 动态规划 覃超
+看一遍就理解：动态规划详解
+动态规划">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Golang/other/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/">
   <meta property="og:site_name" content="Language">
-  <meta property="og:title" content="other">
+  <meta property="og:title" content="算法和数据结构[题目 动态规划]">
+  <meta property="og:description" content="动态规划 # leetcode # 53. 最大子数组和
+62.不同路径
+70. 爬楼梯
+参考 # 背包问题研究与应用
+算法面试通关40讲 - 动态规划 覃超
+看一遍就理解：动态规划详解
+动态规划">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
-<title>other | Language</title>
+<title>算法和数据结构[题目 动态规划] | Language</title>
 <link rel="icon" href="/www6vLang/favicon.png" >
 <link rel="manifest" href="/www6vLang/manifest.json">
-<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Golang/other/">
+<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
   <script defer src="/www6vLang/en.search.min.5906ddd832fcddacf8af3aae810eb6ab92ac83379945fe8607d6500a4d69ba7a.js" integrity="sha256-WQbd2DL83az4rzqugQ62q5KsgzeZRf6GB9ZQCk1puno=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Golang/other/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -490,7 +503,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle" checked />
+    <input type="checkbox" id="section-09891bfa202ab1cd0495132ee11b1daa" class="toggle"  />
     <label for="section-09891bfa202ab1cd0495132ee11b1daa" class="flex justify-between">
       <a role="button" class="">Golang</a>
     </label>
@@ -838,7 +851,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-598c64232d4e22bc9851876a3bd29972" class="toggle"  />
+    <input type="checkbox" id="section-598c64232d4e22bc9851876a3bd29972" class="toggle" checked />
     <label for="section-598c64232d4e22bc9851876a3bd29972" class="flex justify-between">
       <a role="button" class="">Algo</a>
     </label>
@@ -908,7 +921,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/" class="">算法和数据结构[题目 动态规划]</a>
+    <a href="/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/" class="active">算法和数据结构[题目 动态规划]</a>
   
 
           
@@ -977,7 +990,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/www6vLang/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>other</h3>
+  <h3>算法和数据结构[题目 动态规划]</h3>
 
   <label for="toc-control">
     
@@ -991,7 +1004,20 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#动态规划">动态规划</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#leetcode">leetcode</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
 
 
 
@@ -1002,7 +1028,36 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"></article>
+  <article class="markdown book-article"><p></p>
+<!-- more -->
+<h1 id="动态规划">
+  动态规划
+  <a class="anchor" href="#%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92">#</a>
+</h1>
+<h3 id="leetcode">
+  leetcode
+  <a class="anchor" href="#leetcode">#</a>
+</h3>
+<ul>
+<li>
+<p><a href="https://leetcode.cn/problems/maximum-subarray/solution/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/">53. 最大子数组和</a></p>
+</li>
+<li>
+<p><a href="https://leetcode.cn/problems/unique-paths/description/">62.不同路径</a></p>
+</li>
+<li>
+<p><a href="https://leetcode.cn/problems/climbing-stairs/solution/pa-lou-ti-by-leetcode-solution/">70. 爬楼梯</a></p>
+</li>
+</ul>
+<h1 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h1>
+<p><a href="http://dongxicheng.org/structure/knapsack-problems/">背包问题研究与应用</a><br>
+<a href="">算法面试通关40讲  - 动态规划</a>  覃超</p>
+<p><a href="https://zhuanlan.zhihu.com/p/365698607">看一遍就理解：动态规划详解</a><br>
+<a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a></p>
+</article>
  
       
 
@@ -1027,6 +1082,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -1037,7 +1096,20 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#动态规划">动态规划</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#leetcode">leetcode</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
 
 
  
