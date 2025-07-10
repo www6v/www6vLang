@@ -5,11 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="HashTable 哈希表 # 两数之和 # Leetcode 1 a &#43; b = 9 a; b= 9 -a =&gt; Set(查询) ; O(n)
 三数之和 # Leetcode 15 a, b -&gt; 2 loop; c = -(a&#43;b) -&gt; Set(查询); O(n^2)
-字符串 # 一个字符串中， 要找到其中最长的字符串，并且没有重复字符。 # Leetcode 3 LeetCode 3 3. 无重复字符的最长子串
-字符串转换为整数 # 剑指 50题 leetcode 8 leetcode 8
-字符串中第一个只出现一次的字符，如何优化算法使得遍历次数更少 # 剑指 35题
-KMP子串查找算法 # Leetcode 415. 字符串相加: 字符串表示的数字相加 # Leetcode 415. 字符串相加
-Leetcode 344.">
+其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
+QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 来源于以前百度的blog [极客时间 - 程序员的数据基础课 19,20,21] 基于概率 响应时间短的概率越大， 响应时间是正态分布的 nginx fair负载均衡算法 按后端服务器的响应时间来分配请求，响应时间短的优先分配。 某一个id访问了系统多次，怎么做限流 # [参考12] : leecode 239 Array &#43; sliding window maximum 解： &#43; 优先级队列 大顶堆 O(n * logk) &#43; queue deque O(n*1)">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/">
@@ -17,11 +14,8 @@ Leetcode 344.">
   <meta property="og:title" content="算法和数据结构[题目]">
   <meta property="og:description" content="HashTable 哈希表 # 两数之和 # Leetcode 1 a &#43; b = 9 a; b= 9 -a =&gt; Set(查询) ; O(n)
 三数之和 # Leetcode 15 a, b -&gt; 2 loop; c = -(a&#43;b) -&gt; Set(查询); O(n^2)
-字符串 # 一个字符串中， 要找到其中最长的字符串，并且没有重复字符。 # Leetcode 3 LeetCode 3 3. 无重复字符的最长子串
-字符串转换为整数 # 剑指 50题 leetcode 8 leetcode 8
-字符串中第一个只出现一次的字符，如何优化算法使得遍历次数更少 # 剑指 35题
-KMP子串查找算法 # Leetcode 415. 字符串相加: 字符串表示的数字相加 # Leetcode 415. 字符串相加
-Leetcode 344.">
+其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
+QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 来源于以前百度的blog [极客时间 - 程序员的数据基础课 19,20,21] 基于概率 响应时间短的概率越大， 响应时间是正态分布的 nginx fair负载均衡算法 按后端服务器的响应时间来分配请求，响应时间短的优先分配。 某一个id访问了系统多次，怎么做限流 # [参考12] : leecode 239 Array &#43; sliding window maximum 解： &#43; 优先级队列 大顶堆 O(n * logk) &#43; queue deque O(n*1)">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 <title>算法和数据结构[题目] | Language</title>
@@ -30,7 +24,7 @@ Leetcode 344.">
 <link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
-  <script defer src="/www6vLang/en.search.min.5906ddd832fcddacf8af3aae810eb6ab92ac83379945fe8607d6500a4d69ba7a.js" integrity="sha256-WQbd2DL83az4rzqugQ62q5KsgzeZRf6GB9ZQCk1puno=" crossorigin="anonymous"></script>
+  <script defer src="/www6vLang/en.search.min.012d635fab8f54b918901793bc5f5334ab50a59fe53effc81d32a9854b418800.js" integrity="sha256-AS1jX6uPVLkYkBeTvF9TNKtQpZ/lPv/IHTKphUtBiAA=" crossorigin="anonymous"></script>
 
   
 
@@ -921,6 +915,24 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/www6vLang/docs/Algo/algorithmSubjectString/" class="">算法和数据结构[题目 字符串]</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/www6vLang/docs/Algo/algorithmSubjectDynamicProgramming/" class="">算法和数据结构[题目 动态规划]</a>
   
 
@@ -1016,21 +1028,6 @@ https://github.com/alex-shpak/hugo-book
         </li>
       </ul>
     </li>
-    <li><a href="#字符串">字符串</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#一个字符串中-要找到其中最长的字符串并且没有重复字符">一个字符串中， 要找到其中最长的字符串，并且没有重复字符。</a></li>
-            <li><a href="#字符串转换为整数">字符串转换为整数</a></li>
-            <li><a href="#字符串中第一个只出现一次的字符如何优化算法使得遍历次数更少">字符串中第一个只出现一次的字符，如何优化算法使得遍历次数更少</a></li>
-            <li><a href="#kmp子串查找算法">KMP子串查找算法</a></li>
-            <li><a href="#leetcode-415-字符串相加-字符串表示的数字相加">Leetcode 415. 字符串相加: 字符串表示的数字相加</a></li>
-            <li><a href="#leetcode-344-反转字符串">Leetcode 344. 反转字符串</a></li>
-            <li><a href="#leetcode-205-同构字符串">Leetcode 205. 同构字符串</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#其他">其他</a>
       <ul>
         <li>
@@ -1093,52 +1090,6 @@ a, b  -&gt; 2 loop;
 c = -(a+b) -&gt; Set(查询);
 O(n^2)</p>
 </blockquote>
-<h1 id="字符串">
-  字符串
-  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
-</h1>
-<h3 id="一个字符串中-要找到其中最长的字符串并且没有重复字符">
-  一个字符串中， 要找到其中最长的字符串，并且没有重复字符。
-  <a class="anchor" href="#%e4%b8%80%e4%b8%aa%e5%ad%97%e7%ac%a6%e4%b8%b2%e4%b8%ad-%e8%a6%81%e6%89%be%e5%88%b0%e5%85%b6%e4%b8%ad%e6%9c%80%e9%95%bf%e7%9a%84%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%b9%b6%e4%b8%94%e6%b2%a1%e6%9c%89%e9%87%8d%e5%a4%8d%e5%ad%97%e7%ac%a6">#</a>
-</h3>
-<blockquote>
-<p><a href="https://github.com/MisterBooo/LeetCodeAnimation/blob/master/notes/LeetCode%E7%AC%AC3%E5%8F%B7%E9%97%AE%E9%A2%98%EF%BC%9A%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.md">Leetcode 3</a>
-<a href="https://github.com/grandyang/leetcode/issues/3">LeetCode 3</a>
-<a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-cshi-xian-/">3. 无重复字符的最长子串</a></p>
-</blockquote>
-<h3 id="字符串转换为整数">
-  字符串转换为整数
-  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bd%ac%e6%8d%a2%e4%b8%ba%e6%95%b4%e6%95%b0">#</a>
-</h3>
-<blockquote>
-<p>剑指 50题
-<a href="https://blog.csdn.net/u010651249/article/details/85709554">leetcode 8</a>
-<a href="https://github.com/grandyang/leetcode/issues/8">leetcode 8</a></p>
-</blockquote>
-<h3 id="字符串中第一个只出现一次的字符如何优化算法使得遍历次数更少">
-  字符串中第一个只出现一次的字符，如何优化算法使得遍历次数更少
-  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8f%aa%e5%87%ba%e7%8e%b0%e4%b8%80%e6%ac%a1%e7%9a%84%e5%ad%97%e7%ac%a6%e5%a6%82%e4%bd%95%e4%bc%98%e5%8c%96%e7%ae%97%e6%b3%95%e4%bd%bf%e5%be%97%e9%81%8d%e5%8e%86%e6%ac%a1%e6%95%b0%e6%9b%b4%e5%b0%91">#</a>
-</h3>
-<blockquote>
-<p>剑指 35题</p>
-</blockquote>
-<h3 id="kmp子串查找算法">
-  KMP子串查找算法
-  <a class="anchor" href="#kmp%e5%ad%90%e4%b8%b2%e6%9f%a5%e6%89%be%e7%ae%97%e6%b3%95">#</a>
-</h3>
-<h3 id="leetcode-415-字符串相加-字符串表示的数字相加">
-  Leetcode 415. 字符串相加: 字符串表示的数字相加
-  <a class="anchor" href="#leetcode-415-%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9b%b8%e5%8a%a0-%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%a1%a8%e7%a4%ba%e7%9a%84%e6%95%b0%e5%ad%97%e7%9b%b8%e5%8a%a0">#</a>
-</h3>
-<p><a href="https://leetcode.cn/problems/add-strings/solution/add-strings-shuang-zhi-zhen-fa-by-jyd/">Leetcode 415. 字符串相加</a></p>
-<h3 id="leetcode-344-反转字符串">
-  Leetcode 344. 反转字符串
-  <a class="anchor" href="#leetcode-344-%e5%8f%8d%e8%bd%ac%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
-</h3>
-<h3 id="leetcode-205-同构字符串">
-  Leetcode 205. 同构字符串
-  <a class="anchor" href="#leetcode-205-%e5%90%8c%e6%9e%84%e5%ad%97%e7%ac%a6%e4%b8%b2">#</a>
-</h3>
 <h1 id="其他">
   其他
   <a class="anchor" href="#%e5%85%b6%e4%bb%96">#</a>
@@ -1297,21 +1248,6 @@ Mapredue bloomfilter
           <ul>
             <li><a href="#两数之和">两数之和</a></li>
             <li><a href="#三数之和">三数之和</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#字符串">字符串</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#一个字符串中-要找到其中最长的字符串并且没有重复字符">一个字符串中， 要找到其中最长的字符串，并且没有重复字符。</a></li>
-            <li><a href="#字符串转换为整数">字符串转换为整数</a></li>
-            <li><a href="#字符串中第一个只出现一次的字符如何优化算法使得遍历次数更少">字符串中第一个只出现一次的字符，如何优化算法使得遍历次数更少</a></li>
-            <li><a href="#kmp子串查找算法">KMP子串查找算法</a></li>
-            <li><a href="#leetcode-415-字符串相加-字符串表示的数字相加">Leetcode 415. 字符串相加: 字符串表示的数字相加</a></li>
-            <li><a href="#leetcode-344-反转字符串">Leetcode 344. 反转字符串</a></li>
-            <li><a href="#leetcode-205-同构字符串">Leetcode 205. 同构字符串</a></li>
           </ul>
         </li>
       </ul>
