@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="HashTable 哈希表 # 两数之和 # Leetcode 1 a &#43; b = 9 a; b= 9 -a =&gt; Set(查询) ; O(n)
 三数之和 # Leetcode 15 a, b -&gt; 2 loop; c = -(a&#43;b) -&gt; Set(查询); O(n^2)
-其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
+堆 # 其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
 QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 来源于以前百度的blog [极客时间 - 程序员的数据基础课 19,20,21] 基于概率 响应时间短的概率越大， 响应时间是正态分布的 nginx fair负载均衡算法 按后端服务器的响应时间来分配请求，响应时间短的优先分配。 某一个id访问了系统多次，怎么做限流 # [参考12] : leecode 239 Array &#43; sliding window maximum 解： &#43; 优先级队列 大顶堆 O(n * logk) &#43; queue deque O(n*1)">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
@@ -14,7 +14,7 @@ QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 
   <meta property="og:title" content="算法和数据结构[题目]">
   <meta property="og:description" content="HashTable 哈希表 # 两数之和 # Leetcode 1 a &#43; b = 9 a; b= 9 -a =&gt; Set(查询) ; O(n)
 三数之和 # Leetcode 15 a, b -&gt; 2 loop; c = -(a&#43;b) -&gt; Set(查询); O(n^2)
-其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
+堆 # 其他 # 最小响应时间的算法 # 有的task 执行时间长，有的task 执行时间短， 如何设计一个负载均衡策略
 QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 来源于以前百度的blog [极客时间 - 程序员的数据基础课 19,20,21] 基于概率 响应时间短的概率越大， 响应时间是正态分布的 nginx fair负载均衡算法 按后端服务器的响应时间来分配请求，响应时间短的优先分配。 某一个id访问了系统多次，怎么做限流 # [参考12] : leecode 239 Array &#43; sliding window maximum 解： &#43; 优先级队列 大顶堆 O(n * logk) &#43; queue deque O(n*1)">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
@@ -24,7 +24,7 @@ QPS比Nginx提升60%，阿里Tengine负载均衡算法揭秘 超级负载均衡 
 <link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubject/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
-  <script defer src="/www6vLang/en.search.min.012d635fab8f54b918901793bc5f5334ab50a59fe53effc81d32a9854b418800.js" integrity="sha256-AS1jX6uPVLkYkBeTvF9TNKtQpZ/lPv/IHTKphUtBiAA=" crossorigin="anonymous"></script>
+  <script defer src="/www6vLang/en.search.min.b07442964c96d67ae0eb93b6603be4a1d2775f89b2917d952d7890dabf1ae8e4.js" integrity="sha256-sHRClkyW1nrg65O2YDvkodJ3X4mykX2VLXiQ2r8a6OQ=" crossorigin="anonymous"></script>
 
   
 
@@ -861,6 +861,24 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/www6vLang/docs/Algo/algorithmSubjectCore/" class="">算法和数据结构[核心思路&#43;资源]</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/www6vLang/docs/Algo/algorithm/" class="">算法和数据结构</a>
   
 
@@ -1028,6 +1046,7 @@ https://github.com/alex-shpak/hugo-book
         </li>
       </ul>
     </li>
+    <li><a href="#堆">堆</a></li>
     <li><a href="#其他">其他</a>
       <ul>
         <li>
@@ -1044,15 +1063,7 @@ https://github.com/alex-shpak/hugo-book
         </li>
       </ul>
     </li>
-    <li><a href="#参考">参考</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#git">git</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
 
@@ -1090,6 +1101,10 @@ a, b  -&gt; 2 loop;
 c = -(a+b) -&gt; Set(查询);
 O(n^2)</p>
 </blockquote>
+<h1 id="堆">
+  堆
+  <a class="anchor" href="#%e5%a0%86">#</a>
+</h1>
 <h1 id="其他">
   其他
   <a class="anchor" href="#%e5%85%b6%e4%bb%96">#</a>
@@ -1190,17 +1205,6 @@ Mapredue bloomfilter
 <li><a href="">23.面试题：求众数</a></li>
 <li><a href="">55.理论讲解： LRU Cache</a> LRU， LFU</li>
 </ol>
-<hr>
-<h3 id="git">
-  git
-  <a class="anchor" href="#git">#</a>
-</h3>
-<ul>
-<li><a href="https://github.com/wangzheng0822/algo">https://github.com/wangzheng0822/algo</a>   王争</li>
-<li><a href="https://github.com/www6v/leetcode-2">https://github.com/www6v/leetcode-2</a>   作者出版了算法书</li>
-<li><a href="https://github.com/www6v/algorithm">https://github.com/www6v/algorithm</a>  star 100K<br>
-<a href="https://labuladong.github.io/algo/">https://labuladong.github.io/algo/</a>   labuladong 的算法网站</li>
-</ul>
 </article>
  
       
@@ -1252,6 +1256,7 @@ Mapredue bloomfilter
         </li>
       </ul>
     </li>
+    <li><a href="#堆">堆</a></li>
     <li><a href="#其他">其他</a>
       <ul>
         <li>
@@ -1268,15 +1273,7 @@ Mapredue bloomfilter
         </li>
       </ul>
     </li>
-    <li><a href="#参考">参考</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#git">git</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
 
