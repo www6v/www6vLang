@@ -7,11 +7,6 @@
 中序遍历 非递归算法
 Solution
 指南 P88 LeetCode 94：二叉树的中序遍历 在迭代的时候需要显式地将这个栈模拟出来
-公共祖先 # 剑指 50题 ，指南 P153
-[参考17] LeetCode 235,236. 递归，非递归
-二叉树的最大距离（即相距最远的两个叶子节点）。 # LeetCode 112 # 题目 二叉树中和为某一值的路径
-Solution
-剑指 25题 LeetCode 112: 路径总和. 用栈来存路径
 LeetCode 102 # 题目 二叉树的层序遍历
 Solution
 [参考 19] LeetCode 102
@@ -22,7 +17,14 @@ LeetCode 104 # 题目
 二叉树的最小/最大深度， 二叉树的深度
 Solution
 剑指 39题 ， 递归的方法
-LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一个达到的叶子节点是最大深度。">
+LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一个达到的叶子节点是最大深度。
+DFS递归。
+LeetCode 112 # 题目 二叉树中和为某一值的路径
+Solution
+剑指 25题 LeetCode 112: 路径总和. 用栈来存路径
+LeetCode 235,236 # 题目 公共祖先
+Solution
+剑指 50题 ，指南 P153">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubjectBinary/">
@@ -32,11 +34,6 @@ LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一�
 中序遍历 非递归算法
 Solution
 指南 P88 LeetCode 94：二叉树的中序遍历 在迭代的时候需要显式地将这个栈模拟出来
-公共祖先 # 剑指 50题 ，指南 P153
-[参考17] LeetCode 235,236. 递归，非递归
-二叉树的最大距离（即相距最远的两个叶子节点）。 # LeetCode 112 # 题目 二叉树中和为某一值的路径
-Solution
-剑指 25题 LeetCode 112: 路径总和. 用栈来存路径
 LeetCode 102 # 题目 二叉树的层序遍历
 Solution
 [参考 19] LeetCode 102
@@ -47,7 +44,14 @@ LeetCode 104 # 题目
 二叉树的最小/最大深度， 二叉树的深度
 Solution
 剑指 39题 ， 递归的方法
-LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一个达到的叶子节点是最大深度。">
+LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一个达到的叶子节点是最大深度。
+DFS递归。
+LeetCode 112 # 题目 二叉树中和为某一值的路径
+Solution
+剑指 25题 LeetCode 112: 路径总和. 用栈来存路径
+LeetCode 235,236 # 题目 公共祖先
+Solution
+剑指 50题 ，指南 P153">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 <title>算法和数据结构[题目 二叉树] | Language</title>
@@ -56,7 +60,7 @@ LeetCode 104 BFS： 第一个达到的叶子节点是最小深度， 最后一�
 <link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Algo/algorithmSubjectBinary/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
-  <script defer src="/www6vLang/en.search.min.7e451d2b0b8302a065f37cdbfbd578d1f70a41a5eb085e28a65d228270095757.js" integrity="sha256-fkUdKwuDAqBl83zb&#43;9V40fcKQaXrCF4opl0ignAJV1c=" crossorigin="anonymous"></script>
+  <script defer src="/www6vLang/en.search.min.d4cfa52ed713f7aaa75aea356b22cdd17d946ce39e192592217d7c888e87d8d1.js" integrity="sha256-1M&#43;lLtcT96qnWuo1ayLN0X2UbOOeGSWSIX18iI6H2NE=" crossorigin="anonymous"></script>
 
   
 
@@ -1073,11 +1077,11 @@ https://github.com/alex-shpak/hugo-book
         <li>
           <ul>
             <li><a href="#leetcode-94">LeetCode 94</a></li>
-            <li><a href="#公共祖先">公共祖先</a></li>
-            <li><a href="#二叉树的最大距离即相距最远的两个叶子节点">二叉树的最大距离（即相距最远的两个叶子节点）。</a></li>
-            <li><a href="#leetcode-112">LeetCode 112</a></li>
             <li><a href="#leetcode-102">LeetCode 102</a></li>
             <li><a href="#leetcode-104">LeetCode 104</a></li>
+            <li><a href="#leetcode-112">LeetCode 112</a></li>
+            <li><a href="#leetcode-235236">LeetCode 235,236</a></li>
+            <li><a href="#二叉树的最大距离即相距最远的两个叶子节点">二叉树的最大距离（即相距最远的两个叶子节点）。</a></li>
           </ul>
         </li>
       </ul>
@@ -1116,35 +1120,6 @@ https://github.com/alex-shpak/hugo-book
 <p>指南 P88
 <a href="https://github.com/MisterBooo/LeetCodeAnimation/blob/master/notes/LeetCode%E7%AC%AC94%E5%8F%B7%E9%97%AE%E9%A2%98%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.md">LeetCode 94：二叉树的中序遍历</a>
 在迭代的时候需要显式地将这个栈模拟出来</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="公共祖先">
-  公共祖先
-  <a class="anchor" href="#%e5%85%ac%e5%85%b1%e7%a5%96%e5%85%88">#</a>
-</h3>
-<blockquote>
-<p>剑指 50题 ，指南 P153<br>
-[参考17] LeetCode 235,236. 递归，非递归</p>
-</blockquote>
-<h3 id="二叉树的最大距离即相距最远的两个叶子节点">
-  二叉树的最大距离（即相距最远的两个叶子节点）。
-  <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e8%b7%9d%e7%a6%bb%e5%8d%b3%e7%9b%b8%e8%b7%9d%e6%9c%80%e8%bf%9c%e7%9a%84%e4%b8%a4%e4%b8%aa%e5%8f%b6%e5%ad%90%e8%8a%82%e7%82%b9">#</a>
-</h3>
-<h3 id="leetcode-112">
-  LeetCode 112
-  <a class="anchor" href="#leetcode-112">#</a>
-</h3>
-<ul>
-<li>
-<p>题目
-二叉树中和为某一值的路径</p>
-</li>
-<li>
-<p>Solution</p>
-<blockquote>
-<p>剑指 25题
-LeetCode 112: 路径总和. 用栈来存路径</p>
 </blockquote>
 </li>
 </ul>
@@ -1187,6 +1162,44 @@ DFS递归。</p>
 </blockquote>
 </li>
 </ul>
+<h3 id="leetcode-112">
+  LeetCode 112
+  <a class="anchor" href="#leetcode-112">#</a>
+</h3>
+<ul>
+<li>
+<p>题目
+二叉树中和为某一值的路径</p>
+</li>
+<li>
+<p>Solution</p>
+<blockquote>
+<p>剑指 25题
+LeetCode 112: 路径总和. 用栈来存路径</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="leetcode-235236">
+  LeetCode 235,236
+  <a class="anchor" href="#leetcode-235236">#</a>
+</h3>
+<ul>
+<li>
+<p>题目
+公共祖先</p>
+</li>
+<li>
+<p>Solution</p>
+<blockquote>
+<p>剑指 50题 ，指南 P153<br>
+[参考17] . 递归，非递归</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="二叉树的最大距离即相距最远的两个叶子节点">
+  二叉树的最大距离（即相距最远的两个叶子节点）。
+  <a class="anchor" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%9c%80%e5%a4%a7%e8%b7%9d%e7%a6%bb%e5%8d%b3%e7%9b%b8%e8%b7%9d%e6%9c%80%e8%bf%9c%e7%9a%84%e4%b8%a4%e4%b8%aa%e5%8f%b6%e5%ad%90%e8%8a%82%e7%82%b9">#</a>
+</h3>
 <h1 id="参考">
   参考
   <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
@@ -1248,11 +1261,11 @@ DFS递归。</p>
         <li>
           <ul>
             <li><a href="#leetcode-94">LeetCode 94</a></li>
-            <li><a href="#公共祖先">公共祖先</a></li>
-            <li><a href="#二叉树的最大距离即相距最远的两个叶子节点">二叉树的最大距离（即相距最远的两个叶子节点）。</a></li>
-            <li><a href="#leetcode-112">LeetCode 112</a></li>
             <li><a href="#leetcode-102">LeetCode 102</a></li>
             <li><a href="#leetcode-104">LeetCode 104</a></li>
+            <li><a href="#leetcode-112">LeetCode 112</a></li>
+            <li><a href="#leetcode-235236">LeetCode 235,236</a></li>
+            <li><a href="#二叉树的最大距离即相距最远的两个叶子节点">二叉树的最大距离（即相距最远的两个叶子节点）。</a></li>
           </ul>
         </li>
       </ul>
