@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Coroutine[1] # 协程
-无栈协程 -&gt; asyncio 有栈协程 -&gt; gevent asyncio
-eventloop
+<meta name="description" content="Coroutine[1] # 协程 # 无栈协程 -&gt; asyncio 有栈协程 -&gt; gevent asyncio [3] # eventloop
 event task注册 封装task
 asyncio.create_task 所有权 await 关键字 [2] 用于等待一个可等待对象（如协程、Future、Task）的结果。
 用于等待一个可等待对象的结果，协程在此暂停，直到结果返回。 当协程遇到 await，它会暂停执行，等待结果返回后继续。 多线程 # 线程池 concurrent.futures.ThreadPoolExecutor
-executor.submit() 多进程与多线程[10] # 参考 # Coroutine # Coroutine asyncio_basics 多进程与多线程 # 10.多进程与多线程">
+executor.submit() 多进程与多线程[10] # 参考 # Coroutine # Coroutine asyncio_basics git async_pattern.ipynb git 多进程与多线程 # 10.多进程与多线程">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Python/concurrent/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="concurrent">
-  <meta property="og:description" content="Coroutine[1] # 协程
-无栈协程 -&gt; asyncio 有栈协程 -&gt; gevent asyncio
-eventloop
+  <meta property="og:description" content="Coroutine[1] # 协程 # 无栈协程 -&gt; asyncio 有栈协程 -&gt; gevent asyncio [3] # eventloop
 event task注册 封装task
 asyncio.create_task 所有权 await 关键字 [2] 用于等待一个可等待对象（如协程、Future、Task）的结果。
 用于等待一个可等待对象的结果，协程在此暂停，直到结果返回。 当协程遇到 await，它会暂停执行，等待结果返回后继续。 多线程 # 线程池 concurrent.futures.ThreadPoolExecutor
-executor.submit() 多进程与多线程[10] # 参考 # Coroutine # Coroutine asyncio_basics 多进程与多线程 # 10.多进程与多线程">
+executor.submit() 多进程与多线程[10] # 参考 # Coroutine # Coroutine asyncio_basics git async_pattern.ipynb git 多进程与多线程 # 10.多进程与多线程">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 <title>concurrent | Language</title>
@@ -30,7 +26,7 @@ executor.submit() 多进程与多线程[10] # 参考 # Coroutine # Coroutine asy
 <link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Python/concurrent/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
-  <script defer src="/www6vLang/en.search.min.efb5eb070c20dbfa3f18c47a883d735761662b51ea694062f9c503dd9d08f47f.js" integrity="sha256-77XrBwwg2/o/GMR6iD1zV2FmK1HqaUBi&#43;cUD3Z0I9H8=" crossorigin="anonymous"></script>
+  <script defer src="/www6vLang/en.search.min.b285acaa3c5b5f4b6e36851564b4fa41629f52d2e653618cade447c4e900b8c8.js" integrity="sha256-soWsqjxbX0tuNoUVZLT6QWKfUtLmU2GMreRHxOkAuMg=" crossorigin="anonymous"></script>
 
   
 
@@ -896,6 +892,24 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/www6vLang/docs/Python/decorator/" class="">decorator</a>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -1099,7 +1113,16 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#coroutine1">Coroutine[1]</a></li>
+    <li><a href="#coroutine1">Coroutine[1]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#协程">协程</a></li>
+            <li><a href="#asyncio-3">asyncio [3]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#多线程">多线程</a></li>
     <li><a href="#多进程与多线程10">多进程与多线程[10]</a></li>
     <li><a href="#参考">参考</a>
@@ -1128,16 +1151,18 @@ https://github.com/alex-shpak/hugo-book
   Coroutine[1]
   <a class="anchor" href="#coroutine1">#</a>
 </h1>
-<ul>
-<li>
-<p>协程</p>
+<h3 id="协程">
+  协程
+  <a class="anchor" href="#%e5%8d%8f%e7%a8%8b">#</a>
+</h3>
 <ul>
 <li>无栈协程 -&gt; asyncio</li>
 <li>有栈协程 -&gt; gevent</li>
 </ul>
-</li>
-<li>
-<p>asyncio</p>
+<h3 id="asyncio-3">
+  asyncio [3]
+  <a class="anchor" href="#asyncio-3">#</a>
+</h3>
 <ul>
 <li>eventloop<br>
 event   task注册</li>
@@ -1148,8 +1173,6 @@ asyncio.create_task     所有权</li>
 <li>用于等待一个可等待对象（如协程、Future、Task）的结果。<br>
 用于等待一个可等待对象的结果，协程在此暂停，直到结果返回。</li>
 <li>当协程遇到 await，它会暂停执行，等待结果返回后继续。</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -1176,7 +1199,8 @@ executor.submit()</li>
 </h3>
 <ol>
 <li><a href="https://github.com/www6v/pyExamples/tree/master/concurrent/Coroutine">Coroutine</a></li>
-<li><a href="https://github.com/www6v/pyExamples/blob/master/concurrent/%E5%A4%9A%E8%BF%9B%E7%A8%8B_%E5%A4%9A%E7%BA%BF%E7%A8%8B/asyncio_basics.ipynb">asyncio_basics</a></li>
+<li><a href="https://github.com/www6v/pyExamples/blob/master/concurrent/%E5%A4%9A%E8%BF%9B%E7%A8%8B_%E5%A4%9A%E7%BA%BF%E7%A8%8B/asyncio_basics.ipynb">asyncio_basics</a> git</li>
+<li><a href="https://github.com/www6v/pyExamples/blob/master/concurrent/Coroutine/async_pattern.ipynb">async_pattern.ipynb</a> git</li>
 </ol>
 <h3 id="多进程与多线程">
   多进程与多线程
@@ -1224,7 +1248,16 @@ executor.submit()</li>
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#coroutine1">Coroutine[1]</a></li>
+    <li><a href="#coroutine1">Coroutine[1]</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#协程">协程</a></li>
+            <li><a href="#asyncio-3">asyncio [3]</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#多线程">多线程</a></li>
     <li><a href="#多进程与多线程10">多进程与多线程[10]</a></li>
     <li><a href="#参考">参考</a>
