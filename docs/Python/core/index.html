@@ -3,34 +3,30 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="异步编程范式-Callback [0] # Continuation == 回调函数 # 编程模式 Continuation-passing style（CPS） 把调用者 f() 还未执行的部分包成一个函数对象 cont，一同传给被调用者 g()； 正常运行 g() 函数体； g() 完成后，连同它的结果一起回调 cont，从而继续执行 f() 里剩余的代码。
-Callback实现 # 而异步 IO 中，进程发起 IO 操作时也会一并输入回调（也就是 Continuation），这大大解放了生产力 —— 现场无需等待，可以立即返回去做其他事情。一旦 IO 成功后，AIO 的 Event Loop 会调用刚刚设置的回调函数，把剩下的工作完成。这种模式有时也被称为 Fire and Forget。 通过实现的 Continuation，线程不再受 IO 阻塞，可以自由自在地跑满 CPU。
-Callback语法糖：Promise # Promise 是对异步调用结果的一个封装，在 Java 中它叫作 CompletableFuture 或者 ListenableFuture (Guava)。 Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些。
-反应式编程(Promise 的极大增强) # 相比 Promise，反应式引入了流（Flow）的概念。
-异步编程范式- Coroutine [0] # CPS 变换：Coroutine 与 async/await # 在异步函数调用时加上 await，编译器就会自动把它转化为协程（Coroutine），而非昂贵的线程。">
+<meta name="description" content=" Core # 装饰器[2] 迭代器[2] Generator[2] OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
+_xx
+__xx 魔术方法 contextmanager[1] 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Java/concurrent/async/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Python/core/">
   <meta property="og:site_name" content="Language">
-  <meta property="og:title" content="异步化 总结">
-  <meta property="og:description" content="异步编程范式-Callback [0] # Continuation == 回调函数 # 编程模式 Continuation-passing style（CPS） 把调用者 f() 还未执行的部分包成一个函数对象 cont，一同传给被调用者 g()； 正常运行 g() 函数体； g() 完成后，连同它的结果一起回调 cont，从而继续执行 f() 里剩余的代码。
-Callback实现 # 而异步 IO 中，进程发起 IO 操作时也会一并输入回调（也就是 Continuation），这大大解放了生产力 —— 现场无需等待，可以立即返回去做其他事情。一旦 IO 成功后，AIO 的 Event Loop 会调用刚刚设置的回调函数，把剩下的工作完成。这种模式有时也被称为 Fire and Forget。 通过实现的 Continuation，线程不再受 IO 阻塞，可以自由自在地跑满 CPU。
-Callback语法糖：Promise # Promise 是对异步调用结果的一个封装，在 Java 中它叫作 CompletableFuture 或者 ListenableFuture (Guava)。 Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些。
-反应式编程(Promise 的极大增强) # 相比 Promise，反应式引入了流（Flow）的概念。
-异步编程范式- Coroutine [0] # CPS 变换：Coroutine 与 async/await # 在异步函数调用时加上 await，编译器就会自动把它转化为协程（Coroutine），而非昂贵的线程。">
+  <meta property="og:title" content="core">
+  <meta property="og:description" content=" Core # 装饰器[2] 迭代器[2] Generator[2] OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
+_xx
+__xx 魔术方法 contextmanager[1] 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
-<title>异步化 总结 | Language</title>
+<title>core | Language</title>
 <link rel="icon" href="/www6vLang/favicon.png" >
 <link rel="manifest" href="/www6vLang/manifest.json">
-<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Java/concurrent/async/">
+<link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Python/core/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
   <script defer src="/www6vLang/en.search.min.f682dbf2cc091c0044fdc7cad988d3af1b9d19fa95b26fc880e1af636a831f52.js" integrity="sha256-9oLb8swJHABE/cfK2YjTrxudGfqVsm/IgOGvY2qDH1I=" crossorigin="anonymous"></script>
 
   
 
-<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Java/concurrent/async/index.xml" title="Language" />
+<link rel="alternate" type="application/rss+xml" href="https://www6v.github.io/www6vLang/docs/Python/core/index.xml" title="Language" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -82,7 +78,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle" checked />
+    <input type="checkbox" id="section-dfc62bc51fd10e15afc9a11c29a21438" class="toggle"  />
     <label for="section-dfc62bc51fd10e15afc9a11c29a21438" class="flex justify-between">
       <a role="button" class="">Java</a>
     </label>
@@ -309,7 +305,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/www6vLang/docs/Java/concurrent/async/" class="active">异步化 总结</a>
+    <a href="/www6vLang/docs/Java/concurrent/async/" class="">异步化 总结</a>
   
 
           
@@ -847,7 +843,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-87bfe5763e1ce21fa172f75f03c4b467" class="toggle"  />
+    <input type="checkbox" id="section-87bfe5763e1ce21fa172f75f03c4b467" class="toggle" checked />
     <label for="section-87bfe5763e1ce21fa172f75f03c4b467" class="flex justify-between">
       <a role="button" class="">Python</a>
     </label>
@@ -863,7 +859,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/www6vLang/docs/Python/core/" class="">core</a>
+    <a href="/www6vLang/docs/Python/core/" class="active">core</a>
   
 
           
@@ -1115,7 +1111,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/www6vLang/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>异步化 总结</h3>
+  <h3>core</h3>
 
   <label for="toc-control">
     
@@ -1131,29 +1127,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#异步编程范式-callback-0">异步编程范式-Callback [0]</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#continuation--回调函数">Continuation == 回调函数</a></li>
-            <li><a href="#callback实现">Callback实现</a></li>
-            <li><a href="#callback语法糖promise">Callback语法糖：Promise</a></li>
-            <li><a href="#反应式编程promise-的极大增强">反应式编程(Promise 的极大增强)</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#异步编程范式--coroutine-0">异步编程范式- Coroutine [0]</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#cps-变换coroutine-与-asyncawait">CPS 变换：Coroutine 与 async/await</a></li>
-            <li><a href="#用户态线程">用户态线程</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#并行-范式编程模型">并行 范式/编程模型</a></li>
+    <li><a href="#core">Core</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -1167,109 +1141,32 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><p></p>
-<!-- more -->
-<p><img src="./images/async.jpg" alt="服务异步化总结" /></p>
-<h1 id="异步编程范式-callback-0">
-  异步编程范式-Callback [0]
-  <a class="anchor" href="#%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8b%e8%8c%83%e5%bc%8f-callback-0">#</a>
+  <article class="markdown book-article"><h1 id="core">
+  Core
+  <a class="anchor" href="#core">#</a>
 </h1>
-<h3 id="continuation--回调函数">
-  Continuation == 回调函数
-  <a class="anchor" href="#continuation--%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0">#</a>
-</h3>
 <ul>
-<li>编程模式    Continuation-passing style（CPS）
-<ol>
-<li>把调用者 f() 还未执行的部分包成一个函数对象 cont，一同传给被调用者 g()；</li>
-<li>正常运行 g() 函数体；</li>
-<li>g() 完成后，连同它的结果一起回调 cont，从而继续执行 f() 里剩余的代码。<br>
-<img src="./images/CSP.jpg" alt="CSP.jpg" /></li>
-</ol>
-</li>
+<li>装饰器[2]</li>
+<li>迭代器[2]</li>
+<li>Generator[2]</li>
+<li>OOP
+<ul>
+<li>@staticmethod 与 @classmethod[2]</li>
+<li>私有变量 [2]<br>
+_xx<br>
+__xx</li>
 </ul>
-<h3 id="callback实现">
-  Callback实现
-  <a class="anchor" href="#callback%e5%ae%9e%e7%8e%b0">#</a>
-</h3>
-<p>而异步 IO 中，进程发起 IO 操作时也会一并输入回调（也就是 Continuation），这大大解放了生产力 —— <strong>现场无需等待，可以立即返回去做其他事情</strong>。一旦 IO 成功后，AIO 的 Event Loop 会调用刚刚设置的回调函数，把剩下的工作完成。这种模式有时也被称为 Fire and Forget。
-通过实现的 Continuation，<strong>线程不再受 IO 阻塞，可以自由自在地跑满 CPU</strong>。</p>
-<h3 id="callback语法糖promise">
-  Callback语法糖：Promise
-  <a class="anchor" href="#callback%e8%af%ad%e6%b3%95%e7%b3%96promise">#</a>
-</h3>
-<p><strong>Promise 是对异步调用结果的一个封装</strong>，在 Java 中它叫作 <strong>CompletableFuture</strong>  或者 <strong>ListenableFuture</strong> (Guava)。
-Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些。</p>
-<h3 id="反应式编程promise-的极大增强">
-  反应式编程(Promise 的极大增强)
-  <a class="anchor" href="#%e5%8f%8d%e5%ba%94%e5%bc%8f%e7%bc%96%e7%a8%8bpromise-%e7%9a%84%e6%9e%81%e5%a4%a7%e5%a2%9e%e5%bc%ba">#</a>
-</h3>
-<p>相比 Promise，反应式引入了流（Flow）的概念。</p>
-<h1 id="异步编程范式--coroutine-0">
-  异步编程范式- Coroutine [0]
-  <a class="anchor" href="#%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8b%e8%8c%83%e5%bc%8f--coroutine-0">#</a>
-</h1>
-<h3 id="cps-变换coroutine-与-asyncawait">
-  CPS 变换：Coroutine 与 async/await
-  <a class="anchor" href="#cps-%e5%8f%98%e6%8d%a2coroutine-%e4%b8%8e-asyncawait">#</a>
-</h3>
-<p>在异步函数调用时加上 await，编译器就会自动把它转化为协程（Coroutine），而非昂贵的线程。</p>
-<h3 id="用户态线程">
-  用户态线程
-  <a class="anchor" href="#%e7%94%a8%e6%88%b7%e6%80%81%e7%ba%bf%e7%a8%8b">#</a>
-</h3>
-<p>goroutine</p>
-<h1 id="并行-范式编程模型">
-  并行 范式/编程模型
-  <a class="anchor" href="#%e5%b9%b6%e8%a1%8c-%e8%8c%83%e5%bc%8f%e7%bc%96%e7%a8%8b%e6%a8%a1%e5%9e%8b">#</a>
-</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">并行 范式/编程模型</th>
-<th style="text-align:center">系统/语言</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">线程和锁</td>
-<td style="text-align:center">Java</td>
-</tr>
-<tr>
-<td style="text-align:center">函数式(Future，Promise）</td>
-<td style="text-align:center">Java8 Streaming API, lambda表达式<br> Spark/Flink 算子<br> Clojure reducer</td>
-</tr>
-<tr>
-<td style="text-align:center">分离标识和状态</td>
-<td style="text-align:center">Clojure</td>
-</tr>
-<tr>
-<td style="text-align:center">Actor</td>
-<td style="text-align:center">Scala Actor, Akka</td>
-</tr>
-<tr>
-<td style="text-align:center">CSP</td>
-<td style="text-align:center">Golang协程, Kotlin协程</td>
-</tr>
-<tr>
-<td style="text-align:center">Reactive</td>
-<td style="text-align:center">RxJava<br> Flux (Reactor Core)<br> RSocket</td>
-</tr>
-</tbody>
-</table>
+</li>
+<li>魔术方法</li>
+<li>contextmanager[1]</li>
+</ul>
 <h1 id="参考">
   参考
   <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
 </h1>
-<ol start="0">
-<li><a href="http://ericfu.me/several-ways-to-aync/">异步编程的几种方式 </a> ***</li>
-<li><a href="http://ifeve.com/google-guava-listenablefuture/">google Guava包的ListenableFuture解析</a> 罗立树</li>
-<li>谈谈服务化体系中的异步（上） 花钱的年华</li>
-<li><a href="https://www.infoq.cn/article/member-task-platform-practice">苏宁 11.11：如何基于异步化打造会员任务平台？-基于异步化的性能优化实践</a>  葛苏杰</li>
-<li><a href="https://blog.csdn.net/cenwenchu79/article/details/5703430">Web服务请求异步化介绍（概念篇）</a> 放翁（文初）  ***</li>
-<li>Java中的纤程库 - Quasar 鸟窝</li>
-<li><a href="https://www.researchgate.net/publication/2391753_SEDA_An_Architecture_for_Well-Conditioned_Scalable_Internet_Services">SEDA: An Architecture for Well-Conditioned, Scalable Internet Services</a></li>
-<li>《七周七并发》</li>
+<ol>
+<li><a href="https://www.bilibili.com/video/BV1YUTxzcEXM/">Python 为什么 到处使用 with 关键词 - @contextmanager</a></li>
+<li>up 高天</li>
 </ol>
 </article>
  
@@ -1312,29 +1209,7 @@ Promise 改善了 Callback 的可读性，也让异常处理稍稍优雅了些�
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#异步编程范式-callback-0">异步编程范式-Callback [0]</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#continuation--回调函数">Continuation == 回调函数</a></li>
-            <li><a href="#callback实现">Callback实现</a></li>
-            <li><a href="#callback语法糖promise">Callback语法糖：Promise</a></li>
-            <li><a href="#反应式编程promise-的极大增强">反应式编程(Promise 的极大增强)</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#异步编程范式--coroutine-0">异步编程范式- Coroutine [0]</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#cps-变换coroutine-与-asyncawait">CPS 变换：Coroutine 与 async/await</a></li>
-            <li><a href="#用户态线程">用户态线程</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#并行-范式编程模型">并行 范式/编程模型</a></li>
+    <li><a href="#core">Core</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
