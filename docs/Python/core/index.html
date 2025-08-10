@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Core # 装饰器[2] 迭代器[2] Generator[2] OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
+<meta name="description" content="Core # Decorators [2] Iterator [2] Generator[2] AsyncGenerator OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
 _xx
-__xx 魔术方法 contextmanager[1] Others # Monkey Patch（猴子补丁） 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 Others # Python Monkey Patch 深度解析 python笔记69 - 什么是猴子补丁(Monkey Patch)?">
+__xx 魔术方法 contextmanager[1] Advanced # for loop 替代[2] builtin max() min() any() all() 用 generator 更快 filter() &rsquo;&rsquo;&rsquo; python filter(good, lst) [num for num in lst if good(num)] &rsquo;&#39;&#39; map() &rsquo;&rsquo;&rsquo; python map(change, lst) (change(num) for num in list) &rsquo;&#39;&#39; zip() itertools Others # Monkey Patch（猴子补丁） 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 Others # Python Monkey Patch 深度解析">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://www6v.github.io/www6vLang/docs/Python/core/">
   <meta property="og:site_name" content="Language">
   <meta property="og:title" content="core">
-  <meta property="og:description" content="Core # 装饰器[2] 迭代器[2] Generator[2] OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
+  <meta property="og:description" content="Core # Decorators [2] Iterator [2] Generator[2] AsyncGenerator OOP @staticmethod 与 @classmethod[2] 私有变量 [2]
 _xx
-__xx 魔术方法 contextmanager[1] Others # Monkey Patch（猴子补丁） 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 Others # Python Monkey Patch 深度解析 python笔记69 - 什么是猴子补丁(Monkey Patch)?">
+__xx 魔术方法 contextmanager[1] Advanced # for loop 替代[2] builtin max() min() any() all() 用 generator 更快 filter() ’’’ python filter(good, lst) [num for num in lst if good(num)] ’&#39;&#39; map() ’’’ python map(change, lst) (change(num) for num in list) ’&#39;&#39; zip() itertools Others # Monkey Patch（猴子补丁） 参考 # Python 为什么 到处使用 with 关键词 - @contextmanager up 高天 Others # Python Monkey Patch 深度解析">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 <title>core | Language</title>
@@ -22,7 +22,7 @@ __xx 魔术方法 contextmanager[1] Others # Monkey Patch（猴子补丁） 参�
 <link rel="canonical" href="https://www6v.github.io/www6vLang/docs/Python/core/">
 <link rel="stylesheet" href="/www6vLang/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" integrity="sha256-bIudKh/JUHXtfaRsqBBgs5rdj/9nQaxRJZ92iSkoHiw=" crossorigin="anonymous">
   <script defer src="/www6vLang/fuse.min.js"></script>
-  <script defer src="/www6vLang/en.search.min.706934c00ff028347d465b02bce905e8755c38b0a0fb9c3a227bd67a8adea47a.js" integrity="sha256-cGk0wA/wKDR9RlsCvOkF6HVcOLCg&#43;5w6InvWeorepHo=" crossorigin="anonymous"></script>
+  <script defer src="/www6vLang/en.search.min.5a32e3037979c11c29e30459a7f7d03eae035de0895df69ee419f36d4c6b6524.js" integrity="sha256-WjLjA3l5wRwp4wRZp/fQPq4DXeCJXfae5BnzbUxrZSQ=" crossorigin="anonymous"></script>
 
   
 
@@ -1128,6 +1128,7 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#core">Core</a></li>
+    <li><a href="#advanced">Advanced</a></li>
     <li><a href="#others">Others</a></li>
     <li><a href="#参考">参考</a>
       <ul>
@@ -1155,9 +1156,13 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#core">#</a>
 </h1>
 <ul>
-<li>装饰器[2]</li>
-<li>迭代器[2]</li>
-<li>Generator[2]</li>
+<li>Decorators [2]</li>
+<li>Iterator [2]</li>
+<li>Generator[2]
+<ul>
+<li>AsyncGenerator</li>
+</ul>
+</li>
 <li>OOP
 <ul>
 <li>@staticmethod 与 @classmethod[2]</li>
@@ -1168,6 +1173,35 @@ __xx</li>
 </li>
 <li>魔术方法</li>
 <li>contextmanager[1]</li>
+</ul>
+<h1 id="advanced">
+  Advanced
+  <a class="anchor" href="#advanced">#</a>
+</h1>
+<ul>
+<li>for loop 替代[2]
+<ul>
+<li>builtin
+<ul>
+<li>max()  min()</li>
+<li>any()  all()
+用 generator 更快</li>
+<li>filter()
+&rsquo;&rsquo;&rsquo; python
+filter(good, lst) <br>
+[num for num in lst if good(num)]              <br>
+&rsquo;''</li>
+<li>map()
+&rsquo;&rsquo;&rsquo; python
+map(change, lst)
+(change(num)  for num in list)
+&rsquo;''</li>
+<li>zip()</li>
+<li>itertools</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h1 id="others">
   Others
@@ -1188,7 +1222,7 @@ __xx</li>
   Others
   <a class="anchor" href="#others-1">#</a>
 </h3>
-<p><a href="https://geek-blogs.com/blog/python-monkey-patch/">Python Monkey Patch 深度解析</a>
+<p><a href="https://geek-blogs.com/blog/python-monkey-patch/">Python Monkey Patch 深度解析</a><br>
 <a href="https://cloud.tencent.com/developer/article/1905127">python笔记69 - 什么是猴子补丁(Monkey Patch)?</a></p>
 </article>
  
@@ -1232,6 +1266,7 @@ __xx</li>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#core">Core</a></li>
+    <li><a href="#advanced">Advanced</a></li>
     <li><a href="#others">Others</a></li>
     <li><a href="#参考">参考</a>
       <ul>
